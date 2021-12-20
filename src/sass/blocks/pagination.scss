@@ -1,0 +1,47 @@
+.pagination {
+  background-color: $s-color;
+}
+.pagination__list {
+  @include list-reset;
+  @include wrapper;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media (max-width: $mobile) {
+    padding: 20px 20px 40px;
+  }
+}
+
+.pagination__item {
+  font-size: 20px;
+  padding-right: 10px;
+  position: relative;
+  color: $m-color;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
+
+  &::after {
+    content: "/";
+    margin-left: 5px;
+  }
+
+  &:last-child {
+    &::after {
+      content: "";
+    }
+  }
+
+  a[href] {
+    color: inherit;
+    border-bottom: 1px dashed $m-color;
+    transition: $transition;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

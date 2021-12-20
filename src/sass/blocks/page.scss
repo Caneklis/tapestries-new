@@ -1,0 +1,43 @@
+.page__body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: $m-font;
+  font-size: 16px;
+  // line-height: 161.8%;
+  background: $m-color url("../images/bg.svg") repeat-y top center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: $s-color;
+
+  // @media (max-width: $tablet) {
+  //   background-image: none;
+  // }
+
+  &--fade {
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#000, 0.5);
+    }
+  }
+
+  // &--inner {
+  //   display: block;
+  // }
+}
+
+.page__content {
+  flex-grow: 1;
+}

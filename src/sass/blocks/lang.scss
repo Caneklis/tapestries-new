@@ -1,0 +1,33 @@
+.lang {
+  position: relative;
+  z-index: 102;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+
+  &--active {
+    .lang__link {
+      color: $m-color;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    margin-right: 15px;
+  }
+}
+
+.lang__link {
+  margin: 0 3px;
+  color: #fff;
+  font-family: $s-font;
+  font-size: 30px;
+  line-height: 42px;
+
+  &--active {
+    color: #dcd4c2;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 20px;
+  }
+}

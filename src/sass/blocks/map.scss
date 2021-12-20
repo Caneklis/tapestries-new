@@ -1,0 +1,110 @@
+.map {
+  padding-top: 50px;
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .map__img {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+  position: relative;
+
+  .map__pins {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.map__slider {
+  background-color: $s-color;
+  .swiper-slide {
+    img {
+      filter: none;
+    }
+  }
+
+  .map__slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $s-color;
+
+    h2 {
+      margin-bottom: 35px;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 30px;
+    color: $m-color;
+  }
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+
+  button {
+    padding: 10px 5px;
+    background-color: transparent;
+  }
+}
+
+svg path {
+  // fill: tomato !important;
+  position: relative;
+  // &:hover {
+  //   fill: yellow !important;
+  // }
+
+  &.rast1 {
+    fill: #fff600 !important;
+  }
+
+  &.rast2 {
+    fill: #fff600 !important;
+  }
+
+  &.rast3 {
+    fill: darken(#fff600, 5%) !important;
+  }
+}
+
+.filter {
+  &.active {
+    background-color: tomato;
+  }
+}
+
+.main-stop {
+  stop-color: red;
+}
+.alt-stop {
+  stop-color: green;
+}
+
+.description__item {
+  display: none;
+  &.active {
+    display: block;
+  }
+}

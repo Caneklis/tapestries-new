@@ -1,0 +1,48 @@
+---
+title: Index page111
+description: Description index
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<main class="page__main">
+  <div class="promo-slider1">
+    <div class="swiper-container1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/main-slider-2/full-1.png" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="images/main-slider-2/full-2.png" alt="">
+        </div>
+        <!-- <div class="swiper-slide">
+          <img src="images/main-slider-2/full-3.png" alt="">
+        </div> -->
+        <div class="swiper-slide">
+          <img src="images/main-slider-2/full-4.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+  .promo-slider1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .swiper-container1 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+
+{% endblock %}

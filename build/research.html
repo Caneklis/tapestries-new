@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Исследование нитей</title>
+    <meta name="description" content="Description index">
+    <link rel="stylesheet" media="all" href="/css/style.min.css" />
+    <!-- BEGIN social data -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="">
+    <!-- END social data -->
+    <link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="icon" href="/favicon/favicon.ico"><!-- 32×32 -->
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="/favicon/manifest.webmanifest">
+  </head>
+  <!--  -->
+  <body class="page__body">
+    <!--  -->
+    <header class="header">
+      <nav class="header__wrapper  main-nav">
+        <div class="logo"><a class="logo__link" href="#"><img src="images/gmii-logo.svg" width="156" alt="Логотип ГМИИ им. А.С. Пушкина"></a></div>
+        <ul class="main-nav__list" id="main-nav__list">
+          <li class="main-nav__item"><a href="history-of-tapestries.html">История</a></li>
+          <li class="main-nav__item">
+            <a href="about.html">Шпалеры</a>
+            <ul class="main-nav__sublist">
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Славы</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Надежды</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Иоанн Креститель</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Помпея</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Дети Венеры</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Встреча Исава и Иакова</a></li>
+            </ul>
+          </li>
+          <li class="main-nav__item"><a href="glossary.html">Глоссарий</a></li>
+          <li class="main-nav__item"><a href="test.html">Квиз</a></li>
+          <li class="main-nav__item"><a href="#">Партнеры</a></li>
+          <li class="main-nav__item"><a href="#">3D</a></li>
+        </ul>
+        <div class="header__user-block">
+          <!-- <div class="volume">
+          <button class="volume__button" type="button">
+            <svg class="volume__button-icon" aria-hidden="true" width="30" height="30">
+              <use class="volume__button-icon-play" href="images/sprite_auto.svg#icon-volume"></use>
+              <use class="volume__button-icon-mute" href="images/sprite_auto.svg#icon-mute"></use>
+            </svg>
+          </button>
+        </div> -->
+          <div class="lang">
+            <a href="#" class="lang__link  lang__link--active">Рус</a>/ <a href="#" class="lang__link">Eng</a>
+          </div>
+          <button class="main-nav__button" type="button" aria-expanded="false" aria-controls="main-nav__list">
+            <svg class="main-nav__icon" aria-hidden="true" width="50" height="50">
+              <use class="main-nav__icon-menu" href="images/sprite_auto.svg#menu"></use>
+              <use class="main-nav__icon-cross" href="images/sprite_auto.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- BEGIN content -->
+    <style>
+      .displayregion
+      {
+        border-color: red !important;
+      }
+
+    </style>
+    <div class="pagination">
+      <ul class="pagination__list">
+        <li class="pagination__item"><a href="index.html">На главную</a></li>
+        <li class="pagination__item"><a href="about.html">Дети Венеры - О шпалере</a></li>
+        <li class="pagination__item"><a>Сюжеты</a></li>
+      </ul>
+    </div>
+    <main class="page__content">
+      <div class="ssb ssb__info-expanded  ssb--theme-1">
+        <div id="ssb-banner" class="ssb-banner"></div>
+        <div id="ssb__info" class="ssb__info">
+          <button class="ssb__info-toggle-button ssb__info-toggle-button--close" type="button">
+            <svg class="ssb__info-toggle-button" aria-hidden="true" width="15" height="15">
+              <use href="images/sprite_auto.svg#arrow-down"></use>
+            </svg>
+          </button>
+          <div class="ssb__info-inner">
+            <div class="ssb__welcome">
+              <h1>ШПАЛЕРА «ТРИУМФ НАДЕЖДЫ»</h1>
+              <h2>Исследование нитей</h2>
+              <p>Технико-технологические исследования являются обязательным этапом работ перед началом реставрации. В ходе проведения микроскопических исследований, изучаются параметры отобранных образцов нитей, природа и степень их сохранности. С помощью высокоэффективной жидкостной хроматографии и метода молекулярной спектроскопии определяется природа красителей, использовавшихся при крашении волокон и нитей шпалер. Результаты исследований учитываются при составлении программы реставрации.</p>
+              <audio class="ssb__info-audio">
+              </audio>
+            </div>
+            <div class="ssb__info-container">
+              <h2 class="ssb__info-main-title"></h2>
+              <div class="ssb__info-img-container">
+                <img class="ssb__info-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="">
+              </div>
+              <h3 class="ssb__info-title"></h3>
+              <div class="ssb__info-description"></div>
+              <audio class="ssb__info-audio" src="audio/main-theme.mp3">
+                <source type="audio/wav" />
+              </audio>
+            </div>
+          </div>
+        </div>
+        <div id="ssb-controls" class="ssb__controls is-expanded">
+          <div class="ssb__controls-buttons">
+            <div class="ssb__controls-button  ssb__controls-zoom-in icon-zoom-in" title="Увеличить">
+              <svg class="ssb__controls-button-icon" aria-hidden="true" width="18" height="18">
+                <use href="images/sprite_auto.svg#plus"></use>
+              </svg>
+            </div>
+            <div class="ssb__controls-button  ssb__controls-zoom-out icon-zoom-out" title="Уменьшить">
+              <svg class="ssb__controls-button-icon" aria-hidden="true" width="18" height="18">
+                <use href="images/sprite_auto.svg#minus"></use>
+              </svg>
+            </div>
+            <div class="ssb__controls-button  ssb__controls-reset icon-reset" title="Вернуться к исходному размеру">
+              <svg class="ssb__controls-button-icon" aria-hidden="true" width="36" height="36">
+                <use href="images/sprite_auto.svg#back"></use>
+              </svg>
+            </div>
+            <div class=" ssb__controls-button ssb__controls-toggle-hotspots icon-hide-hotspots" title="Выключить метки">
+              <svg class="ssb__controls-button-icon" aria-hidden="true" width="36" height="36">
+                <use href="images/sprite_auto.svg#marker"></use>
+              </svg>
+            </div>
+            <div class="ssb__controls-button ssb__controls-toggle-info icon-info" title="О проекте">
+              <svg class="ssb__controls-button-icon" aria-hidden="true" width="36" height="36">
+                <use href="images/sprite_auto.svg#info"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="ssb__controls-toggle ssb__controls-toggle--open" title="Свернуть панель управления">
+            <svg class="ssb__controls-button-icon" aria-hidden="true" width="15" height="15">
+              <use href="images/sprite_auto.svg#arrow-down"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- END content -->
+    <div class="tooltip-content">
+    </div>
+    <!-- BEGIN scripts -->
+    <script>
+      const tooltipData = [
+      {
+        id: 1,
+        txt: `
+						<div class="tooptip-content__text">
+							<p>Шпале́ра (польск. szраlerа, нем. Spalier от итал. spalliera, из spalla «опора, плечо»):
+							<ul>
+								<li>
+									<p>Шпалера (садоводство) — решётка, служащая опорой для растений. Шпалера (ковёр) — безворсовый тканый
+										настенный ковёр с сюжетными и орнаментальными композициями. </p>
+								<li>
+									<p>Шпалера (военное дело) — шеренга войск по сторонам пути следования кого-нибудь.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="tooltip-content__image">
+							<img src="images/tooltip-thumb.jpg" alt="">
+						</div>
+					`,
+      },
+      {
+        id: 2,
+        txt: `
+						<div class="tooptip-content__text">
+							<p>Вторая половина XV века
+							<ul>
+								<li>
+									<p>Византийская империя (395—1453) прекратила существование после падения Константинополя (1453).</p>
+								<li>
+									<p>Тринадцатилетняя война (1454—1466). Польша покоряет Тевтонский орден и получает выход к Балтийскому морю.</p>
+								</li>
+								<li>
+									<p>Война Алой и Белой розы (1455—1487). Начало династии Тюдоров.</p>
+								</li>
+							</ul>
+						</div>
+					`,
+      },
+      {
+        id: 3,
+        txt: `
+						<div class="tooltip-content__image">
+							<img src="images/tooltip-thumb.jpg" alt="">
+						</div>
+					`,
+      }, ];
+
+    </script>
+    <script src="/js/main.min.js"></script>
+    <script src="js/data/research/hotspots.js"></script>
+    <script>
+      let twenty = () =>
+      {
+        setTimeout(() =>
+        {
+          $(".before-after").twentytwenty();
+        }, 1000);
+      }
+      if (document.querySelector("#ssb-banner"))
+      {
+        var map = (function(me, $)
+        {
+          "use strict";
+          me.name = 'map';
+          var viewer, pad, $window, $ssb, $info, $controls;
+          pad = 1000;
+          viewer = new OpenSeadragon.Viewer(
+          {
+            id: "ssb-banner",
+            tileSources: "tiles/tapestry-1.dzi",
+            minZoomImageRatio: 1.0,
+            maxZoomPixelRatio: 1.0,
+            animationTime: 3,
+            minZoomLevel: 2,
+            maxZoomLevel: 6,
+            zoomPerClick: 1.0,
+            prefixUrl: "",
+            immediateRender: true,
+            showNavigationControl: false,
+            showNavigator: true,
+            navigatorAutoFade: false,
+            navigatorPosition: "BOTTOM_RIGHT",
+          });
+          $window = $(window);
+          $ssb = $(".ssb");
+          $info = $(".ssb__info", $ssb);
+          $controls = $(".ssb__controls", $ssb);
+          $info.find(".ssb__info-inner").toggleClass("scroll", !!("ontouchstart" in window));
+          var zoomIn = function()
+          {
+            viewer.viewport.zoomBy(2.5).applyConstraints();
+            //viewer.viewport.zoomBy(1.5).applyConstraints();
+          };
+          var zoomOut = function()
+          {
+            viewer.viewport.zoomBy(1 / 1.5).applyConstraints();
+          };
+          var reset = function()
+          {
+            viewer.viewport.goHome();
+          };
+          var toggleHotspots = function()
+          {
+            var $hotspots = $(".ssb-hotspot", $ssb),
+              $hotspotsToggleButton = $(this);
+            $hotspots.toggleClass("is-hidden");
+            if ($hotspots.is(".is-hidden"))
+            {
+              $hotspotsToggleButton.addClass("icon-show-hotspots").removeClass("icon-hide-hotspots").attr("title", "Включить метки");
+            }
+            else
+            {
+              $hotspotsToggleButton.addClass("icon-hide-hotspots").removeClass("icon-show-hotspots").attr("title", "Выключить метки");
+            }
+          };
+          var toggleControls = function()
+          {
+            var $controlsToggleButton = $(".ssb__controls-toggle", $controls);
+            $controls.toggleClass("is-expanded");
+            if ($controls.is(".is-expanded"))
+            {
+              $controlsToggleButton.addClass("ssb__controls-toggle--open").removeClass("ssb__controls-toggle--close").attr("title", "Close Tools");
+            }
+            else
+            {
+              $controlsToggleButton.addClass("ssb__controls-toggle--close").removeClass("ssb__controls-toggle--open").attr("title", "Открыть панель управления");
+            }
+          };
+          var reorient = function(e)
+          {
+            if ($window.width() <= 600)
+            {
+              toggleInfo();
+            }
+            return false;
+          };
+          var toggleInfo = function(event)
+          {
+            if (event) event.stopPropagation();
+            var $infoToggleButton = $(".ssb__info-toggle-button", $info);
+            $ssb.toggleClass("ssb__info-expanded");
+            if ($ssb.is(".ssb__info-expanded"))
+            {
+              $infoToggleButton.addClass("ssb__info-toggle-button--close").removeClass("ssb__info-toggle-button--open").attr("title", "Открыть панель");
+            }
+            else
+            {
+              $infoToggleButton.addClass("ssb__info-toggle-button--open").removeClass("ssb__info-toggle-button--close").attr("title", "Закрыть панель");
+            }
+            return false;
+          };
+          var showInfo = function()
+          {
+            $(".ssb__welcome", $info).hide();
+            $(".ssb__info-container").show();
+          };
+          var showWelcome = function()
+          {
+            $(".ssb__info-container").hide();
+            $(".volume__button").removeClass("volume__button--play");
+            $("audio")[0].pause();
+            var $welcome = $(".ssb__welcome");
+            if (!$welcome.is(":visible") && $ssb.is(".ssb__info-expanded"))
+            {
+              $welcome.show();
+            }
+            else
+            {
+              $welcome.show();
+              toggleInfo();
+            }
+          };
+          var activateHotspot = function(e)
+          {
+            var $hotspot = $(this),
+              $hotspotImg = $info.find(".ssb__info-img"),
+              $hotspotMainTitle = $info.find(".ssb__info-main-title"),
+              $hotspotTitle = $info.find(".ssb__info-title"),
+              $hotspotDescription = $info.find(".ssb__info-description"),
+              $hotspotLink = $info.find(".ssb__info-link"),
+              $hotspotAudio = $info.find(".ssb__info-audio");
+            $hotspotImg.attr("src", "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==").hide();
+            $hotspotMainTitle.hide();
+            $hotspotTitle.hide();
+            $hotspotDescription.hide();
+            $hotspotLink.hide();
+            $hotspotAudio.attr("src", "").hide();
+            $hotspot.addClass("is-active is-viewed").siblings().removeClass("is-active");
+            $(".volume__button").removeClass("volume__button--play");
+            showInfo();
+            $hotspotImg.attr("src", $hotspot.data("image")).show();
+            $hotspotMainTitle.html($hotspot.data("category")).show();
+            $hotspotTitle.html($hotspot.data("title")).show();
+            $hotspotDescription.html($hotspot.data("description")).show();
+            $hotspotLink.attr("href", $hotspot.data("link")).show();
+            $hotspotAudio.attr("src", $hotspot.data("audio")).show();
+            $(".ssb-hotspot").on("click", function()
+            {
+              $(".ssb__info-inner").scrollTop(0);
+            });
+            viewer.viewport.fitBounds($hotspot.data("zoomTo"));
+            setTimeout(function()
+            {
+              if (!$ssb.is(".ssb__info-expanded")) toggleInfo();
+            }, 2000);
+            twenty();
+            $(".ssb__gallery-popup-link").magnificPopup(
+            {
+              type: "image",
+              //delegate: "a",
+              gallery:
+              {
+                tCounter: '<span class="mfp-counter">%curr% / %total%</span>', // markup of counter
+                enabled: true,
+                tPrev: 'Предыдущее изображение', // Alt text on left arrow
+                tNext: 'Следущее изображение', // Alt text on right arrow
+                arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+              },
+              image:
+              {
+                titleSrc: 'data-caption'
+              },
+            });
+            return false;
+          };
+          viewer.addHandler("open", function()
+          {
+            var aspectRatio = viewer.source.width / viewer.source.height;
+            $info.on("click", "a:not(.ssb__gallery-popup-link)", function()
+            {
+              window.open(this.href);
+              return false;
+            });
+            $info.on("click", reorient);
+            $(".ssb__touch-to-begin", $ssb).on("click", toggleInfo);
+            $(".ssb__controls-zoom-in", $controls).on("click", zoomIn);
+            $(".ssb__controls-zoom-out", $controls).on("click", zoomOut);
+            $(".ssb__controls-reset", $controls).on("click", reset);
+            $(".ssb__controls-toggle-hotspots", $controls).on("click", toggleHotspots);
+            $(".ssb__controls-toggle", $controls).on("click", toggleControls);
+            $(".ssb__controls-toggle-info", $controls).on("click", showWelcome);
+            $(".ssb__info-toggle-button", $info).on("click", toggleInfo);
+            // Setup the hotspots...
+            $.each(me.hotspots, function(index, hotspot)
+            {
+              var $hotspot = $("<a/>").addClass("ssb-hotspot"),
+                x = hotspot.x,
+                y = hotspot.y,
+                w = hotspot.w, //выводит размеры из hotspots
+                h = hotspot.h, //выводит размеры из hotspots
+                center = new OpenSeadragon.Point(
+                  (x + w / 2) / viewer.source.width,
+                  (y + h / 2) / viewer.source.height / aspectRatio),
+                rect = new OpenSeadragon.Rect(x / viewer.source.width, y / viewer.source.height / aspectRatio, w / viewer.source.width, h / viewer.source.height / aspectRatio),
+                zoomTo = new OpenSeadragon.Rect(
+                  (x - pad / 2) / viewer.source.width,
+                  (y - pad / 2) / viewer.source.height / aspectRatio,
+                  (w + pad) / viewer.source.width,
+                  (h + pad) / viewer.source.height / aspectRatio),
+                hotspotPlacement = OpenSeadragon.OverlayPlacement.TOP_LEFT;
+              $hotspot.attr(
+              {
+                // title: hotspot.title,
+                // text: hotspot.description,
+                class: `ssb-hotspot  ${hotspot.data}`,
+                href: hotspot.link,
+                id: hotspot.id,
+              });
+              $hotspot.data(
+              {
+                index: index,
+                zoomTo: zoomTo,
+                image: hotspot.image,
+                category: hotspot.category,
+                title: hotspot.title,
+                description: hotspot.description,
+                link: hotspot.link,
+                audio: hotspot.audio
+              });
+              $hotspot.on("click touchend", activateHotspot);
+              viewer.drawer.addOverlay($hotspot[0], rect, hotspotPlacement);
+            });
+          });
+          return me;
+        })(map ||
+        {}, jQuery);
+      }
+
+    </script>
+    <!-- END scripts -->
+  </body>
+</html>

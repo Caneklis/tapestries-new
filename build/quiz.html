@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Квест</title>
+    <meta name="description" content="Description index">
+    <link rel="stylesheet" media="all" href="/css/style.min.css" />
+    <!-- BEGIN social data -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="">
+    <!-- END social data -->
+    <link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="icon" href="/favicon/favicon.ico"><!-- 32×32 -->
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="/favicon/manifest.webmanifest">
+  </head>
+  <!--  -->
+  <body class="page__body">
+    <!--  -->
+    <header class="header">
+      <nav class="header__wrapper  main-nav">
+        <div class="logo"><a class="logo__link" href="#"><img src="images/gmii-logo.svg" width="156" alt="Логотип ГМИИ им. А.С. Пушкина"></a></div>
+        <ul class="main-nav__list" id="main-nav__list">
+          <li class="main-nav__item"><a href="history-of-tapestries.html">История</a></li>
+          <li class="main-nav__item">
+            <a href="about.html">Шпалеры</a>
+            <ul class="main-nav__sublist">
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Славы</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Надежды</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Иоанн Креститель</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Помпея</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Дети Венеры</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Встреча Исава и Иакова</a></li>
+            </ul>
+          </li>
+          <li class="main-nav__item"><a href="glossary.html">Глоссарий</a></li>
+          <li class="main-nav__item"><a href="test.html">Квиз</a></li>
+          <li class="main-nav__item"><a href="#">Партнеры</a></li>
+          <li class="main-nav__item"><a href="#">3D</a></li>
+        </ul>
+        <div class="header__user-block">
+          <!-- <div class="volume">
+          <button class="volume__button" type="button">
+            <svg class="volume__button-icon" aria-hidden="true" width="30" height="30">
+              <use class="volume__button-icon-play" href="images/sprite_auto.svg#icon-volume"></use>
+              <use class="volume__button-icon-mute" href="images/sprite_auto.svg#icon-mute"></use>
+            </svg>
+          </button>
+        </div> -->
+          <div class="lang">
+            <a href="#" class="lang__link  lang__link--active">Рус</a>/ <a href="#" class="lang__link">Eng</a>
+          </div>
+          <button class="main-nav__button" type="button" aria-expanded="false" aria-controls="main-nav__list">
+            <svg class="main-nav__icon" aria-hidden="true" width="50" height="50">
+              <use class="main-nav__icon-menu" href="images/sprite_auto.svg#menu"></use>
+              <use class="main-nav__icon-cross" href="images/sprite_auto.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- BEGIN content -->
+    <div class="pagination">
+      <ul class="pagination__list">
+        <li class="pagination__item"><a href="index.html">На главную</a></li>
+        <li class="pagination__item"><a href="about.html">Триумф Надежды</a></li>
+        <li class="pagination__item"><a>Квест</a></li>
+      </ul>
+    </div>
+    <main class="page__content">
+      <section class="quiz">
+        <div class="quiz-start">
+          <div class="quiz__wrapper">
+            <div class="quiz-start__left">
+              <div class="quiz-start-text">
+                <h2>Онлайн-квест для детей и подростков (10+).</h2>
+                <p>Небольшой вступительный текст. В конце можно вывести количество правильных ответов если нужно. Изображение объекта на шпалере (выделенное или фрагментированное) появляется вместе с вопросом. Подписи, выделенные курсивом, появляются вместе с изображениями и являются пояснениями к ответам.Правильные ответы выделены жирным шрифтом.Изображения муляжей, гербария, могут быть заменены авторскими фото.</p>
+                <button class="start-btn " id="start-btn" type="button"> Старт Викторины </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="quiz__section  hide">
+          <div id="count" class="count">
+            <div class="circle__box">
+              <div class="circle__wrapper circle__wrapper--right">
+                <div class="circle__whole circle__right"></div>
+              </div>
+              <div class="circle__wrapper circle__wrapper--left">
+                <div class="circle__whole circle__left"></div>
+              </div>
+              <div id="app"></div>
+            </div>
+          </div>
+          <div class="quiz__wrapper">
+            <div class="quiz-header">
+              <div class="question-theme">
+                <div class="question-theme-main">
+                  <h1 class="question-theme-title"></h1>
+                  <span class="question-theme-year"></span>
+                </div>
+                <h2 class="question-theme-subtitle"><span>тема вопроса</span></h2>
+              </div>
+              <button class="finish-quiz" type="button" onclick="document.location.reload();">закончить тест</button>
+            </div>
+            <article class="quiz-box  custom-box">
+              <!-- <img class="bg" src="img/bottom-triangle.svg" alt=""> -->
+              <!-- <img src="img/map.svg" alt="" class="map" width="773"> -->
+              <img class="bg" src="" alt="">
+              <div class="question-text"></div>
+              <div class="option-container"></div>
+              <div class="next-question-btn">
+                <!-- <button type="button" class="btn" onclick="next()">Следующий вопрос</button> -->
+              </div>
+              <div class="answer-popup hide">
+                <div class="answer-popup__wrapper">
+                  <h3 class="answer-popup__title"></h3>
+                  <div class="answer-popup__content">
+                    <!-- <img class="answer-popup__line  answer-popup__line--top" src="img/answer-top.svg" alt=""> -->
+                    <div class="answer-popup__video">
+                      <video muted></video>
+                    </div>
+                    <div class="answer-popup__text"></div>
+                    <button class="answer-popup__btn" type="button" onclick="next()">Следующий вопрос</button>
+                    <!-- <img class="answer-popup__line  answer-popup__line--bottom" src="img/answer-bottom.svg" alt=""> -->
+                  </div>
+                </div>
+              </div>
+            </article>
+            <div class="results-box hide">
+              <div class="results-box-popup">
+                <div class="results-box-popup__wrapper">
+                  <h3 class="results-box-popup__title"></h3>
+                  <div class="results-box-popup__content  submit-form" id="certificate_form">
+                    <!-- <img class="results-box-popup__line  results-box-popup__line--top" src="img/answer-top.svg" alt=""> -->
+                    <div class="results-box-popup__text">
+                      <p>Поздравляем, Вы показали глубокие знания истории Атомной промышленности! <br> Сертификат о прохождении викторины будет отправлен Вам на электронную почту.</p>
+                      <div class="results-box-popup__field"><input type="text" placeholder="Фамилия" class="form-control input" type="text" id="certificate_last_name" name="certificate_last_name" required=""></div>
+                      <div class="results-box-popup__field"><input type="text" placeholder="Имя" class="form-control input" type="text" id="certificate_first_name" name="certificate_first_name" required=""></div>
+                      <div class="results-box-popup__field"><input type="text" placeholder="Отчество" class="form-control input" type="text" id="certificate_middle_name" name="certificate_middle_name">
+                      </div>
+                      <div class="results-box-popup__field"><input type="text" placeholder="email" id="certificate_email" name="certificate_email"></div>
+                      <div class="certificate-wrapper  hide">
+                        <div id="certificateExample">
+                          <img src="img/sertificate.jpg" alt="">
+                          <p style="top: 45%; left: 50%;"><b class="field-0"></b></p>
+                          <p style="top: 53%;"><b class="field-1"></b></p>
+                          <p style="top: 60%;"><b class="field-2"></b></p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="results-box-popup__btn  results-box-popup__btn--left" type="button" onclick="document.location.reload();">В НАЧАЛО</button>
+                    <button class="results-box-popup__btn  btnSend">ОТПРАВИТЬ</button>
+                    <img class="results-box-popup__line  results-box-popup__line--bottom" src="img/answer-bottom.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-footer">
+              <div class="question-number"></div>
+              <div class="answers-indicator"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script>
+      const quiz = [
+      {
+        q: "На шпалере «Иоанн Креститель» мы видим изображение плодов и листьев растения, которое по-научному называется Смоковница обыкновенная (Ficus carica L.). В христианстве она является образом мудрости, исцеления, благополучия, божьего благословения. Как ещё называют это растение? Выбери правильный ответ.",
+        options: ["Финик", "Инжир", "Фикус каучуконосный", "Ежевика"],
+        answer: 1,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "images/q-bg/01.jpg",
+        correct: `<p>Смоковница обыкновенная – это фикус колхидский. Фикус каучуконосный относится к тому же роду и является ближайшим родственником смоковницы. Финик относится к другому семейству Пальмовые.</p> `,
+        answer_pic: "https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822",
+      },
+      {
+        q: "На шпалере «Иоанн креститель» мы видим плоды дерева, по форме напоминающие женскую фигуру, расширенную книзу. Поэтому в античности она ассоциировалась с богиней красоты Афродитой (Венерой). ",
+        options: ["Яблоко", "Груша", "Апельсин", "Ежевика"],
+        answer: 1,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "images/q-bg/01.jpg",
+        correct: `<p> Груша с её сладкими плодами часто появляется в изображениях Девы Марии с младенцем Иисусом. Она указывает на сладость добродетели.</p>`,
+        answer_pic: "https://crimeafruct.ru/wp-content/uploads/2019/08/grusha-djushes-zimnij.jpg",
+      }, ];
+      const quizSection = document.querySelector(".quiz__section");
+      const quizStartBlock = document.querySelector(".quiz-start");
+      const quizStartText = document.querySelector(".quiz-start-text");
+      // const quizStartLogo = document.querySelector(".quiz-start-logo");
+      const questionNumber = document.querySelector(".question-number");
+      const questionText = document.querySelector(".question-text");
+      const optionContainer = document.querySelector(".option-container");
+      const answersIndicatorContainer = document.querySelector(".answers-indicator");
+      // const questionPic = document.querySelector(".question-picture");
+      const startBtn = document.querySelector(".start-btn");
+      const homeBox = document.querySelector(".home-box");
+      const quizBox = document.querySelector(".quiz-box");
+      const resultBox = document.querySelector(".results-box");
+      const resultBoxTitle = document.querySelector(".results-box-popup__title");
+      const title = document.querySelector(".question-theme-title");
+      // const subTitle = document.querySelector(".question-theme-year");
+      const answerPopup = document.querySelector(".answer-popup");
+      const count = document.querySelector(".count");
+      const animateLogo = document.querySelector(".logo");
+      const animeteBg = document.querySelector(".bg");
+      let questionCounter = 0;
+      let currentQuestion;
+      let availableQuestions = [];
+      let availableOptions = [];
+      let correctAnswers = 0;
+      let attemt = 0;
+      let intervalId;
+      let timer;
+      let timeerInterval = 60;
+      let circleLeft = document.querySelector(".circle__left");
+      let circleRight = document.querySelector(".circle__right");
+
+      function removeCountAnimation()
+      {
+        circleLeft.classList.remove("circleLeftAnim");
+        circleRight.classList.remove("circleRightAnim");
+      }
+
+      function myTimer()
+      {
+        var sec = timeerInterval;
+        clearInterval(timer);
+        setTimeout(function()
+        {
+          circleLeft.classList.add("circleLeftAnim");
+          circleLeft.classList.remove("paused");
+          circleLeft.style.animationDuration = timeerInterval + "s";
+          circleRight.classList.add("circleRightAnim");
+          circleRight.classList.remove("paused");
+          circleRight.style.animationDuration = timeerInterval + "s";
+        }, 1000);
+        timer = setInterval(function()
+        {
+          document.getElementById("app").innerHTML = sec--;
+          if (sec == -1)
+          {
+            clearInterval(timer);
+            console.log("Время закончилось");
+            // circleLeft.classList.remove("circleLeftAnim");
+            // circleRight.classList.remove("circleRightAnim");
+            removeCountAnimation();
+            getFakeResult();
+          }
+        }, 1000);
+      }
+      startBtn.addEventListener("click", function()
+      {
+        startBtn.classList.add("fadetoright");
+        quizStartText.classList.add("fadetobottom");
+        quizStartBlock.classList.add("hide");
+        quizSection.classList.remove("hide");
+        getNewQuestion()
+        setTimeout(() =>
+        {
+          myTimer();
+        }, 1000);
+      });
+      //push questions into availableQuestions arr
+      function setAvailableQuestions()
+      {
+        const totalQuestion = quiz.length;
+        for (let i = 0; i < totalQuestion; i++)
+        {
+          availableQuestions.push(quiz[i]);
+        }
+        // console.log(savailableQuestions);
+      }
+      //set question number and question options
+      function getNewQuestion()
+      {
+        //set question number
+        count.classList.remove("fadeOut");
+        count.classList.add("fadeIn");
+        // if (questionCounter === 1) {
+        //   playVideo("#v1");
+        // }
+        // if (questionCounter === 3) {
+        //   playVideo("#v1");
+        // }
+        if (questionCounter === quiz.length)
+        {
+          clearInterval(intervalId);
+        }
+        questionNumber.innerHTML = `Вопрос ${questionCounter + 1}  из ${quiz.length}`;
+        console.log("Вопрос номер " + questionCounter);
+        //set question text
+        const questionIndex = availableQuestions[0];
+        currentQuestion = questionIndex;
+        // console.log(currentQuestion);
+        questionText.innerHTML = currentQuestion.q;
+        title.innerHTML = currentQuestion.theme;
+        // subTitle.innerHTML = currentQuestion.year;
+        // questionPic.src = currentQuestion.pic;
+        quizSection.style.backgroundImage = "url(" + currentQuestion.pic + ")";
+        // const answerPopupVideo = document.querySelector(".answer-popup video");
+        // answerPopupVideo.src = "video/" + currentQuestion.video;
+        const answerPopupText = document.querySelector(".answer-popup__text");
+        answerPopupText.innerHTML = currentQuestion.correct;
+        const index1 = availableQuestions.indexOf(questionIndex);
+        availableQuestions.splice(index1, 1);
+        //set options
+        const optionLen = currentQuestion.options.length;
+        // console.log(currentQuestion.options);
+        //Push options into availibleOptions arr
+        for (let i = 0; i < optionLen; i++)
+        {
+          availableOptions.push(i);
+        }
+        // console.log(availableOptions);
+        optionContainer.innerHTML = "";
+        let animationDelay = 0.2;
+        //create options in html
+        setTimeout(() =>
+        {
+          for (let i = 0; i < optionLen; i++)
+          {
+            const optonIndex = availableOptions[Math.floor(Math.random() * availableOptions.length)];
+            // const optonIndex = availableQuestions[0];
+            const index2 = availableOptions.indexOf(optonIndex);
+            availableOptions.splice(index2, 1);
+            const option = document.createElement("div");
+            option.innerHTML = `<p> ${currentQuestion.options[optonIndex]} </p>`;
+            option.id = optonIndex;
+            option.style.animationDelay = animationDelay + "s";
+            // option.style.animationName = "fadeIn";
+            // option.style.animationDuration = 0.8 + "s";
+            // option.style.animationFillMode = "forwards";
+            animationDelay = animationDelay + 0.2;
+            option.className = "option";
+            // option.classList.add("fadeIn");
+            optionContainer.appendChild(option);
+            option.setAttribute("onclick", "getResult(this)");
+            const par = option.querySelector("p");
+            par.style.animationDelay = animationDelay + "s";
+          }
+        }, 1000);
+        questionCounter++;
+      }
+
+      function getFakeResult()
+      {
+        count.classList.remove("fadeIn");
+        count.classList.add("fadeOut");
+        document.querySelector(".question-text").classList.add("scale-out");
+        document.querySelector(".option-container").classList.add("scale-out");
+        animateLogo.classList.add("fadetoright");
+        setTimeout(() =>
+        {
+          animeteBg.classList.add("fadetoright");
+        }, 200);
+        circleLeft.classList.add("paused");
+        circleRight.classList.add("paused");
+        circleLeft.classList.remove("circleLeftAnim");
+        circleRight.classList.remove("circleRightAnim");
+        setTimeout(function()
+        {
+          answerPopup.classList.remove("hide");
+          answerPopup.classList.add("show");
+          answerPopup.querySelector(".answer-popup__title").innerHTML = "Внимание! Правильный ответ:";
+          // answerPopup.querySelector("video").play();
+        }, 800);
+        attemt++;
+        unclickableOptions();
+      }
+      //get result of current question
+      function getResult(element)
+      {
+        clearInterval(timer);
+        const id = parseInt(element.id);
+        circleLeft.classList.add("paused");
+        circleRight.classList.add("paused");
+        circleLeft.classList.remove("circleLeftAnim");
+        circleRight.classList.remove("circleRightAnim");
+        //compere answer id of clicked option
+        if (id === currentQuestion.answer)
+        {
+          console.log("correct");
+          //set green color to correct option
+          element.classList.add("correct");
+          //add indicator corrects mark
+          updateAnswersIndicator("correct");
+          correctAnswers++;
+          setTimeout(() =>
+          {
+            document.querySelector(".question-text").classList.add("scale-out");
+            document.querySelector(".option-container").classList.add("scale-out");
+          }, 500);
+          setTimeout(function()
+          {
+            answerPopup.classList.remove("hide");
+            answerPopup.classList.add("show");
+            answerPopup.querySelector(".answer-popup__title").innerHTML = "Вы ответили верно!";
+            // answerPopup.querySelector("video").play();
+          }, 1000);
+        }
+        else
+        {
+          console.log("incorrect");
+          //set red color to incorrect option
+          element.classList.add("wrong");
+          //add indicator incorrect mark
+          updateAnswersIndicator("wrong");
+          // if the answer is incorrect show correct by adding class
+          // const optionLen = optionContainer.children.length;
+          // for (let i = 0; i < optionLen; i++) {
+          //   if (parseInt(optionContainer.children[i].id) === currentQuestion.answer) {
+          //     optionContainer.children[i].classList.add("correct");
+          //   }
+          // }
+          attemt++;
+          console.log("не правильных ответов " + attemt);
+          // document.querySelector(".question-text").classList.add("scale-out");
+          // document.querySelector(".option-container").classList.add("scale-out");
+          setTimeout(() =>
+          {
+            document.querySelector(".question-text").classList.add("scale-out");
+            document.querySelector(".option-container").classList.add("scale-out");
+          }, 500);
+          setTimeout(function()
+          {
+            answerPopup.classList.remove("hide");
+            answerPopup.classList.add("show");
+            answerPopup.querySelector(".answer-popup__title").innerHTML = "Внимание! Правильный ответ:";
+            // answerPopup.querySelector("video").play();
+          }, 1000);
+        }
+        unclickableOptions();
+        setTimeout(() =>
+        {
+          // document.querySelector(".option:nth-child(1)").classList.add("scale-out");
+          // document.querySelector(".option:nth-child(2)").classList.add("scale-out");
+          // document.querySelector(".option:nth-child(3)").classList.add("scale-out");
+          // circleLeft.classList.add("paused");
+          // circleRight.classList.add("paused");
+          circleLeft.classList.remove("circleLeftAnim");
+          circleRight.classList.remove("circleRightAnim");
+          count.classList.remove("fadeIn");
+          count.classList.add("fadeOut");
+        }, 800);
+        setTimeout(() =>
+        {
+          document.querySelector(".quiz-footer").style.overflowY = "hidden";
+        }, 800);
+        // quizBox.style.backgroundImage = "none";
+        setTimeout(() =>
+        {
+          animateLogo.classList.add("fadetoright");
+          animeteBg.classList.add("fadetoright");
+        }, 800);
+        // setTimeout(function () {
+        //   if (questionCounter === quiz.length) {
+        //     console.log("quiz over");
+        //     quizOver();
+        //   } else {
+        //     clearInterval(intervalId);
+        //     next();
+        //   }
+        //   // next();
+        // }, 1000);
+      }
+      //Disable option after check answer
+      function unclickableOptions()
+      {
+        const optionLen = optionContainer.children.length;
+        for (let i = 0; i < optionLen; i++)
+        {
+          optionContainer.children[i].classList.add("already-answered");
+        }
+      }
+
+      function answersIndicator()
+      {
+        const totalQuestion = quiz.length;
+        for (let i = 0; i < totalQuestion; i++)
+        {
+          const indicator = document.createElement("div");
+          answersIndicatorContainer.appendChild(indicator);
+        }
+      }
+
+      function updateAnswersIndicator(markType)
+      {
+        answersIndicatorContainer.children[questionCounter - 1].classList.add(markType);
+      }
+
+      function next()
+      {
+        if (questionCounter === quiz.length)
+        {
+          console.log("quiz over");
+          // timer(false);
+          clearInterval(timer);
+          quizOver();
+          count.classList.add("fadeOut");
+          document.querySelector(".quiz-footer").style.overflowY = "hidden";
+        }
+        else
+        {
+          answerPopup.classList.add("hide");
+          answerPopup.classList.remove("show");
+          setTimeout(() =>
+          {
+            animateLogo.classList.remove("fadetoright");
+            animeteBg.classList.remove("fadetoright");
+          }, 800);
+          setTimeout(function()
+          {
+            document.querySelector(".question-text").classList.remove("scale-out");
+            document.querySelector(".option-container").classList.remove("scale-out");
+          }, 500);
+          // if (questionCounter === 5) {
+          //   playVideo("#v2");
+          // } else if (questionCounter === 12) {
+          //   playVideo("#v3");
+          // } else if (questionCounter === 21) {
+          //   playVideo("#v4");
+          // } else if (questionCounter === 28) {
+          //   playVideo("#v5");
+          // } else {
+          //   clearInterval(timer);
+          //   // setTimeout(getNewQuestion, 1500);
+          //   setTimeout(() => {
+          //     getNewQuestion();
+          //   }, 500);
+          // }
+          getNewQuestion();
+          count.classList.add("fadeOut");
+          document.querySelector(".quiz-footer").style.overflowY = "visible";
+          myTimer();
+        }
+      }
+
+      function quizOver()
+      {
+        title.innerHTML = `ВИКТОРИНА ЗАВЕРШЕНА`;
+        title.style.fontSize = "30px";
+        document.querySelector(".question-theme-main").style.height = "112px";
+        document.querySelector(".question-theme-main").style.backgroundSize = "cover";
+        quizSection.style.backgroundImage = "none";
+        // subTitle.innerHTML = "";
+        quizBox.classList.add("hide");
+        resultBox.classList.remove("hide");
+        resultBox.querySelector(".results-box-popup").classList.add("show");
+        resultBoxTitle.innerHTML = `Вы ответили правильно на ` + correctAnswers + " " + enumerate(correctAnswers, ["вопрос", "вопроса", "вопросов"]);
+        // clearInterval(intervalId);
+        clearInterval(intervalId);
+      }
+
+      function enumerate(num, dec)
+      {
+        if (num > 100) num = num % 100;
+        if (num <= 20 && num >= 10) return dec[2];
+        if (num > 20) num = num % 10;
+        return num === 1 ? dec[0] : num > 1 && num < 5 ? dec[1] : dec[2];
+      }
+      window.onload = function()
+      {
+        //1-set all questions in availableQuestions arr
+        setAvailableQuestions();
+        //2- call getNewQuestion()
+        // getNewQuestion();
+        //4- answer indicator
+        answersIndicator();
+      };
+
+    </script>
+    <!-- END content -->
+    <div class="tooltip-content">
+    </div>
+    <!-- BEGIN scripts -->
+    <script>
+      const tooltipData = [
+      {
+        id: 1,
+        txt: `
+						<div class="tooptip-content__text">
+							<p>Шпале́ра (польск. szраlerа, нем. Spalier от итал. spalliera, из spalla «опора, плечо»):
+							<ul>
+								<li>
+									<p>Шпалера (садоводство) — решётка, служащая опорой для растений. Шпалера (ковёр) — безворсовый тканый
+										настенный ковёр с сюжетными и орнаментальными композициями. </p>
+								<li>
+									<p>Шпалера (военное дело) — шеренга войск по сторонам пути следования кого-нибудь.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="tooltip-content__image">
+							<img src="images/tooltip-thumb.jpg" alt="">
+						</div>
+					`,
+      },
+      {
+        id: 2,
+        txt: `
+						<div class="tooptip-content__text">
+							<p>Вторая половина XV века
+							<ul>
+								<li>
+									<p>Византийская империя (395—1453) прекратила существование после падения Константинополя (1453).</p>
+								<li>
+									<p>Тринадцатилетняя война (1454—1466). Польша покоряет Тевтонский орден и получает выход к Балтийскому морю.</p>
+								</li>
+								<li>
+									<p>Война Алой и Белой розы (1455—1487). Начало династии Тюдоров.</p>
+								</li>
+							</ul>
+						</div>
+					`,
+      },
+      {
+        id: 3,
+        txt: `
+						<div class="tooltip-content__image">
+							<img src="images/tooltip-thumb.jpg" alt="">
+						</div>
+					`,
+      }, ];
+
+    </script>
+    <script src="/js/main.min.js"></script>
+    <script>
+      let twenty = () =>
+      {
+        setTimeout(() =>
+        {
+          $(".before-after").twentytwenty();
+        }, 1000);
+      }
+      if (document.querySelector("#ssb-banner"))
+      {
+        var map = (function(me, $)
+        {
+          "use strict";
+          me.name = 'map';
+          var viewer, pad, $window, $ssb, $info, $controls;
+          pad = 1000;
+          viewer = new OpenSeadragon.Viewer(
+          {
+            id: "ssb-banner",
+            tileSources: "tiles/tapestry-1.dzi",
+            minZoomImageRatio: 1.0,
+            maxZoomPixelRatio: 1.0,
+            animationTime: 3,
+            minZoomLevel: 2,
+            maxZoomLevel: 6,
+            zoomPerClick: 1.0,
+            prefixUrl: "",
+            immediateRender: true,
+            showNavigationControl: false,
+            showNavigator: true,
+            navigatorAutoFade: false,
+            navigatorPosition: "BOTTOM_RIGHT",
+          });
+          $window = $(window);
+          $ssb = $(".ssb");
+          $info = $(".ssb__info", $ssb);
+          $controls = $(".ssb__controls", $ssb);
+          $info.find(".ssb__info-inner").toggleClass("scroll", !!("ontouchstart" in window));
+          var zoomIn = function()
+          {
+            viewer.viewport.zoomBy(2.5).applyConstraints();
+            //viewer.viewport.zoomBy(1.5).applyConstraints();
+          };
+          var zoomOut = function()
+          {
+            viewer.viewport.zoomBy(1 / 1.5).applyConstraints();
+          };
+          var reset = function()
+          {
+            viewer.viewport.goHome();
+          };
+          var toggleHotspots = function()
+          {
+            var $hotspots = $(".ssb-hotspot", $ssb),
+              $hotspotsToggleButton = $(this);
+            $hotspots.toggleClass("is-hidden");
+            if ($hotspots.is(".is-hidden"))
+            {
+              $hotspotsToggleButton.addClass("icon-show-hotspots").removeClass("icon-hide-hotspots").attr("title", "Включить метки");
+            }
+            else
+            {
+              $hotspotsToggleButton.addClass("icon-hide-hotspots").removeClass("icon-show-hotspots").attr("title", "Выключить метки");
+            }
+          };
+          var toggleControls = function()
+          {
+            var $controlsToggleButton = $(".ssb__controls-toggle", $controls);
+            $controls.toggleClass("is-expanded");
+            if ($controls.is(".is-expanded"))
+            {
+              $controlsToggleButton.addClass("ssb__controls-toggle--open").removeClass("ssb__controls-toggle--close").attr("title", "Close Tools");
+            }
+            else
+            {
+              $controlsToggleButton.addClass("ssb__controls-toggle--close").removeClass("ssb__controls-toggle--open").attr("title", "Открыть панель управления");
+            }
+          };
+          var reorient = function(e)
+          {
+            if ($window.width() <= 600)
+            {
+              toggleInfo();
+            }
+            return false;
+          };
+          var toggleInfo = function(event)
+          {
+            if (event) event.stopPropagation();
+            var $infoToggleButton = $(".ssb__info-toggle-button", $info);
+            $ssb.toggleClass("ssb__info-expanded");
+            if ($ssb.is(".ssb__info-expanded"))
+            {
+              $infoToggleButton.addClass("ssb__info-toggle-button--close").removeClass("ssb__info-toggle-button--open").attr("title", "Открыть панель");
+            }
+            else
+            {
+              $infoToggleButton.addClass("ssb__info-toggle-button--open").removeClass("ssb__info-toggle-button--close").attr("title", "Закрыть панель");
+            }
+            return false;
+          };
+          var showInfo = function()
+          {
+            $(".ssb__welcome", $info).hide();
+            $(".ssb__info-container").show();
+          };
+          var showWelcome = function()
+          {
+            $(".ssb__info-container").hide();
+            $(".volume__button").removeClass("volume__button--play");
+            $("audio")[0].pause();
+            var $welcome = $(".ssb__welcome");
+            if (!$welcome.is(":visible") && $ssb.is(".ssb__info-expanded"))
+            {
+              $welcome.show();
+            }
+            else
+            {
+              $welcome.show();
+              toggleInfo();
+            }
+          };
+          var activateHotspot = function(e)
+          {
+            var $hotspot = $(this),
+              $hotspotImg = $info.find(".ssb__info-img"),
+              $hotspotMainTitle = $info.find(".ssb__info-main-title"),
+              $hotspotTitle = $info.find(".ssb__info-title"),
+              $hotspotDescription = $info.find(".ssb__info-description"),
+              $hotspotLink = $info.find(".ssb__info-link"),
+              $hotspotAudio = $info.find(".ssb__info-audio");
+            $hotspotImg.attr("src", "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==").hide();
+            $hotspotMainTitle.hide();
+            $hotspotTitle.hide();
+            $hotspotDescription.hide();
+            $hotspotLink.hide();
+            $hotspotAudio.attr("src", "").hide();
+            $hotspot.addClass("is-active is-viewed").siblings().removeClass("is-active");
+            $(".volume__button").removeClass("volume__button--play");
+            showInfo();
+            $hotspotImg.attr("src", $hotspot.data("image")).show();
+            $hotspotMainTitle.html($hotspot.data("category")).show();
+            $hotspotTitle.html($hotspot.data("title")).show();
+            $hotspotDescription.html($hotspot.data("description")).show();
+            $hotspotLink.attr("href", $hotspot.data("link")).show();
+            $hotspotAudio.attr("src", $hotspot.data("audio")).show();
+            $(".ssb-hotspot").on("click", function()
+            {
+              $(".ssb__info-inner").scrollTop(0);
+            });
+            viewer.viewport.fitBounds($hotspot.data("zoomTo"));
+            setTimeout(function()
+            {
+              if (!$ssb.is(".ssb__info-expanded")) toggleInfo();
+            }, 2000);
+            twenty();
+            $(".ssb__gallery-popup-link").magnificPopup(
+            {
+              type: "image",
+              //delegate: "a",
+              gallery:
+              {
+                tCounter: '<span class="mfp-counter">%curr% / %total%</span>', // markup of counter
+                enabled: true,
+                tPrev: 'Предыдущее изображение', // Alt text on left arrow
+                tNext: 'Следущее изображение', // Alt text on right arrow
+                arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+              },
+              image:
+              {
+                titleSrc: 'data-caption'
+              },
+            });
+            return false;
+          };
+          viewer.addHandler("open", function()
+          {
+            var aspectRatio = viewer.source.width / viewer.source.height;
+            $info.on("click", "a:not(.ssb__gallery-popup-link)", function()
+            {
+              window.open(this.href);
+              return false;
+            });
+            $info.on("click", reorient);
+            $(".ssb__touch-to-begin", $ssb).on("click", toggleInfo);
+            $(".ssb__controls-zoom-in", $controls).on("click", zoomIn);
+            $(".ssb__controls-zoom-out", $controls).on("click", zoomOut);
+            $(".ssb__controls-reset", $controls).on("click", reset);
+            $(".ssb__controls-toggle-hotspots", $controls).on("click", toggleHotspots);
+            $(".ssb__controls-toggle", $controls).on("click", toggleControls);
+            $(".ssb__controls-toggle-info", $controls).on("click", showWelcome);
+            $(".ssb__info-toggle-button", $info).on("click", toggleInfo);
+            // Setup the hotspots...
+            $.each(me.hotspots, function(index, hotspot)
+            {
+              var $hotspot = $("<a/>").addClass("ssb-hotspot"),
+                x = hotspot.x,
+                y = hotspot.y,
+                w = hotspot.w, //выводит размеры из hotspots
+                h = hotspot.h, //выводит размеры из hotspots
+                center = new OpenSeadragon.Point(
+                  (x + w / 2) / viewer.source.width,
+                  (y + h / 2) / viewer.source.height / aspectRatio),
+                rect = new OpenSeadragon.Rect(x / viewer.source.width, y / viewer.source.height / aspectRatio, w / viewer.source.width, h / viewer.source.height / aspectRatio),
+                zoomTo = new OpenSeadragon.Rect(
+                  (x - pad / 2) / viewer.source.width,
+                  (y - pad / 2) / viewer.source.height / aspectRatio,
+                  (w + pad) / viewer.source.width,
+                  (h + pad) / viewer.source.height / aspectRatio),
+                hotspotPlacement = OpenSeadragon.OverlayPlacement.TOP_LEFT;
+              $hotspot.attr(
+              {
+                // title: hotspot.title,
+                // text: hotspot.description,
+                class: `ssb-hotspot  ${hotspot.data}`,
+                href: hotspot.link,
+                id: hotspot.id,
+              });
+              $hotspot.data(
+              {
+                index: index,
+                zoomTo: zoomTo,
+                image: hotspot.image,
+                category: hotspot.category,
+                title: hotspot.title,
+                description: hotspot.description,
+                link: hotspot.link,
+                audio: hotspot.audio
+              });
+              $hotspot.on("click touchend", activateHotspot);
+              viewer.drawer.addOverlay($hotspot[0], rect, hotspotPlacement);
+            });
+          });
+          return me;
+        })(map ||
+        {}, jQuery);
+      }
+
+    </script>
+    <!-- END scripts -->
+  </body>
+</html>

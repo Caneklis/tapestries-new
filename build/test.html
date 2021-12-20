@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Квест</title>
+    <meta name="description" content="Description index">
+    <link rel="stylesheet" media="all" href="/css/style.min.css" />
+    <!-- BEGIN social data -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="">
+    <!-- END social data -->
+    <link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="icon" href="/favicon/favicon.ico"><!-- 32×32 -->
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="/favicon/manifest.webmanifest">
+  </head>
+  <!--  -->
+  <body class="page__body">
+    <!--  -->
+    <header class="header">
+      <nav class="header__wrapper  main-nav">
+        <div class="logo"><a class="logo__link" href="#"><img src="images/gmii-logo.svg" width="156" alt="Логотип ГМИИ им. А.С. Пушкина"></a></div>
+        <ul class="main-nav__list" id="main-nav__list">
+          <li class="main-nav__item"><a href="history-of-tapestries.html">История</a></li>
+          <li class="main-nav__item">
+            <a href="about.html">Шпалеры</a>
+            <ul class="main-nav__sublist">
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Славы</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Надежды</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Иоанн Креститель</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Триумф Помпея</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Дети Венеры</a></li>
+              <li class="main-nav__sublist-item"><a href="about.html">Встреча Исава и Иакова</a></li>
+            </ul>
+          </li>
+          <li class="main-nav__item"><a href="glossary.html">Глоссарий</a></li>
+          <li class="main-nav__item"><a href="test.html">Квиз</a></li>
+          <li class="main-nav__item"><a href="#">Партнеры</a></li>
+          <li class="main-nav__item"><a href="#">3D</a></li>
+        </ul>
+        <div class="header__user-block">
+          <!-- <div class="volume">
+          <button class="volume__button" type="button">
+            <svg class="volume__button-icon" aria-hidden="true" width="30" height="30">
+              <use class="volume__button-icon-play" href="images/sprite_auto.svg#icon-volume"></use>
+              <use class="volume__button-icon-mute" href="images/sprite_auto.svg#icon-mute"></use>
+            </svg>
+          </button>
+        </div> -->
+          <div class="lang">
+            <a href="#" class="lang__link  lang__link--active">Рус</a>/ <a href="#" class="lang__link">Eng</a>
+          </div>
+          <button class="main-nav__button" type="button" aria-expanded="false" aria-controls="main-nav__list">
+            <svg class="main-nav__icon" aria-hidden="true" width="50" height="50">
+              <use class="main-nav__icon-menu" href="images/sprite_auto.svg#menu"></use>
+              <use class="main-nav__icon-cross" href="images/sprite_auto.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- BEGIN content -->
+    <div class="pagination">
+      <ul class="pagination__list">
+        <li class="pagination__item"><a href="index.html">На главную</a></li>
+        <li class="pagination__item"><a href="about.html">Триумф Надежды</a></li>
+        <li class="pagination__item"><a>Квест</a></li>
+      </ul>
+    </div>
+    <main class="page__content">
+      <div class="quiz" id="slickQuiz">
+        <div class="quiz__wrapper">
+          <h1 class="quizName">
+            <!-- where the quiz name goes -->
+          </h1>
+          <div class="quizArea">
+            <div class="quizHeader">
+              <!-- where the quiz main copy goes -->
+              <a class="quiz__button startQuiz" href="#">Начать квест</a>
+            </div>
+            <!-- where the quiz gets built -->
+          </div>
+          <div class="quizResults">
+            <h3 class="quizScore">You Scored: <span>
+                <!-- where the quiz score goes -->
+              </span></h3>
+            <h3 class="quizLevel"><strong>Ranking:</strong> <span>
+                <!-- where the quiz ranking level goes -->
+              </span></h3>
+            <div class="quizResultsCopy">
+              <!-- where the quiz result copy goes -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var quizJSON = {
+        info:
+        {
+          name: "Онлайн-квест для детей и подростков (10+)",
+          main: "<p>Небольшой вступительный текст. В конце можно вывести количество правильных ответов если нужно. Изображение объекта на шпалере (выделенное или фрагментированное) появляется вместе с вопросом. Подписи, выделенные курсивом, появляются вместе с изображениями и являются пояснениями к ответам.Правильные ответы выделены жирным шрифтом.Изображения муляжей, гербария, могут быть заменены авторскими фото.</p>",
+          results: `<p>Вы отлично справились! Форма пока ничего не отправляет</p>
+        <form action="#" class="quiz__form">
+          <label>
+            <p>Имя</p><input type="text" name="Имя">
+          </label>
+          <label>
+            <p>Фамилия</p><input type="text" name="Фамилия">
+          </label>
+          <label>
+            <p>Email</p><input type="text" name="Email">
+          </label>
+          <button type="submit">Получить приз</button>
+        </form>
+        `,
+        },
+        questions: [
+          {
+            // Question 1 - Multiple Choice, Single True Answer
+            q: `
+        <div class="question__wrapper">
+        <p>На шпалере «Иоанн Креститель» мы видим изображение плодов и листьев растения, которое по-научному называется Смоковница обыкновенная (Ficus carica L.). В христианстве она является образом мудрости, исцеления, благополучия, божьего благословения. Как ещё называют это растение? Выбери правильные ответы.</p>
+        <a class="textpage__img-popup" title="Описание для попапа" href="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg"><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg" alt="Изображение фрагмента шпалеры"></a>
+        </div>`,
+            a: [
+              {
+                option: "инжир",
+                correct: true
+              },
+              {
+                option: "финик",
+                correct: false
+              },
+              {
+                option: "винная ягода",
+                correct: true
+              },
+              {
+                option: "смо́ква",
+                correct: true
+              },
+              {
+                option: "фиговое дерево",
+                correct: true
+              },
+              {
+                option: "фикус каучуконосный",
+                correct: false
+              }, // no comma here
+            ],
+            correct: `<div class="quiz__answer">
+            <div class="quiz__answer-text">
+            <p>
+            <span>Верно!</span>
+            Смоковница обыкновенная – это фикус колхидский. Фикус каучуконосный относится к тому же роду и является ближайшим родственником смоковницы. Финик относится к другому семейству Пальмовые.</p>
+            </div>
+            <div class="quiz__answer-gallery">
+              <a class="img-popup" data-caption="Описание для попапа" href="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822"><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822"></a>
+              <a class="img-popup" data-caption="Описание для попапа" href="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822"><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822">
+              </a><a class="img-popup" data-caption="Описание для попапа" href="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822"><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822"></a>
+              <a class="img-popup" data-caption="Описание для попапа" href="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822"><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822"></a>
+            </div>
+          </div>
+          `,
+            incorrect: `<div class="quiz__answer  quiz__answer--incorrect">
+            <p>
+            <span>Не верно!</span></p>
+            </div>
+          </div>`,
+            select_any: false // no comma here
+          },
+          {
+            // Question 2 - Multiple Choice, Multiple True Answers, Select Any
+            q: `
+        <div class="question__wrapper">
+          <p>На шпалере «Иоанн Креститель» мы видим плоды дерева, по форме напоминающие женскую фигуру, расширенную книзу. Поэтому в античности она ассоциировалась с богиней красоты Афродитой (Венерой).</p>
+        </div>
+        `,
+            a: [
+              {
+                option: "Яблоко",
+                correct: false
+              },
+              {
+                option: "Груша",
+                correct: true
+              },
+              {
+                option: "Апельсин",
+                correct: false
+              },
+              {
+                option: "Ежевика",
+                correct: false
+              }, // no comma here
+            ],
+            select_any: false,
+            correct: `<div class="quiz__answer">
+            <div class="quiz__answer-text">
+            <p><span>Верно</span> Груша с её сладкими плодами часто появляется в изображениях Девы Марии с младенцем Иисусом. Она указывает на сладость добродетели.</p>
+            </div>
+          </div>`,
+            incorrect: `<div class="quiz__answer  quiz__answer--incorrect">
+            <p>
+            <span>Не верно!</span></p>
+            </div>
+          </div>`, // no comma here
+          },
+          {
+            // Question 3 - Multiple Choice, Multiple True Answers, Select All
+            q: `
+        <div class="question__wrapper">
+          <p>Плод этого дерева — аллегория церкви, способной объединять в вере много разных людей. К этому утверждению люди пришли в древности, изучив строение плода.</p>
+        </div>`,
+            a: [
+              {
+                option: "Гранат",
+                correct: true
+              },
+              {
+                option: "Груша",
+                correct: false
+              },
+              {
+                option: "Яблоко",
+                correct: false
+              },
+              {
+                option: "Мандарин",
+                correct: false
+              }, // no comma here
+            ],
+            correct: `<div class="quiz__answer">
+          <div class="quiz__answer-text">
+            <p><span>Верно</span> Плод граната содержит много семян, объединённых под одной оболочкой.</p>
+          </div>
+        </div>
+        `,
+            incorrect: `<div class="quiz__answer  quiz__answer--incorrect">
+            <p>
+            <span>Не верно!</span></p>
+            </div>
+          </div>`, // no comma here
+          },
+          {
+            // Question 4
+            q: `
+        <div class="question__wrapper">
+          <p>На шпалере «Иоанн Креститель» мы видим плод, который в разные времена в различных культурах являлся символом вечной молодости и красоты, раздора и любви, искушения и греха.</p>
+        </div>`,
+            a: [
+              {
+                option: "Яблоко",
+                correct: true
+              },
+              {
+                option: "Шиповник",
+                correct: false
+              },
+              {
+                option: "Клубника",
+                correct: false
+              },
+              {
+                option: "Ежевика",
+                correct: false
+              }, // no comma here
+            ],
+            correct: `<div class="quiz__answer">
+            <div class="quiz__answer-text">
+            <p><span>Верно</span> Яблоки Гесперид – символ вечной молодости. <br>Яблоко любви и раздора привело к Троянской войне.</p>
+            </div>
+            </div>`,
+            incorrect: `<div class="quiz__answer  quiz__answer--incorrect">
+            <p>
+            <span>Не верно!</span></p>
+            </div>
+          </div>`
+          },
+          {
+            // Question 5
+            q: `
+        <div class="question__wrapper">
+          <p>В христианской религии красная роза — символ милосердия и мученичества, она выросла из капель крови Христа на Голгофе, а её шипы — символ Страстей Господних. Какое ещё название розе дали учёные-ботаники?</p>
+        </div>`,
+            a: [
+              {
+                option: "Шиповник",
+                correct: true
+              },
+              {
+                option: "Клубника",
+                correct: false
+              },
+              {
+                option: "Ежевика",
+                correct: false
+              },
+              {
+                option: "Яблоко",
+                correct: false
+              }, // no comma here
+            ],
+            correct: "<p><span>Good Job!</span> You must be very observant!</p>",
+            incorrect: `<div class="quiz__answer  quiz__answer--incorrect">
+            <p>
+            <span>Не верно!</span></p>
+            </div>
+          </div>`
+          }, // no comma here
+          {
+            // Question 6
+            q: `
+        <div class="question__wrapper">
+          <p>По современным представлениям в христианстве несколько растений считают райским Древом познания Добра и Зла. Выбери правильные ответы.</p>
+          </div>`,
+            a: [
+              {
+                option: "Гранат",
+                correct: true
+              },
+              {
+                option: "Слива",
+                correct: false
+              },
+              {
+                option: "Яблоня",
+                correct: true
+              },
+              {
+                option: "Апельсин",
+                correct: true
+              },
+              {
+                option: "Груша",
+                correct: false
+              },
+              {
+                option: "Финик",
+                correct: false
+              }, // no comma here
+            ],
+            correct: `<div class="quiz__answer">
+            <div class="quiz__answer-text">
+            <p><span>Верное</span> Чаще всего считают, что это — яблоня. В латинском языке есть слово \"malum\", обозначающее одновременно \"зло\" и \"яблоко\". Средневековые богословы могли рассуждать так: вкусив от Древа познания, первые люди совершили зло, а значит, плод был плодом зла, то есть яблоком. Но филологи считают, что в слове \"malum\", обозначающем \"зло\", звук \"a\" короткий, а в случае с \"яблоком\" — долгий \"mālum\". В Библии также не уточняется, что это было за дерево. В разных культурах, почитающих Писание, сформировались различные представления на этот счёт. В иудаизме чаще всего считают, что это были смоквы (фиги); в исламе – персик. Некоторые богословы упоминаю гранат, апельсин и вишни. </p>
+            </div>
+            </div>
+        `,
+            incorrect: `<div class="quiz__answer  quiz__answer--incorrect">
+            <p>
+            <span>Не верно!</span></p>
+            </div>
+          </div>`
+          }, // no comma here
+        ],
+      };
+
+    </script>
+    <!-- END content -->
+    <div class="tooltip-content">
+    </div>
+    <!-- BEGIN scripts -->
+    <script>
+      const tooltipData = [
+      {
+        id: 1,
+        txt: `
+						<div class="tooptip-content__text">
+							<p>Шпале́ра (польск. szраlerа, нем. Spalier от итал. spalliera, из spalla «опора, плечо»):
+							<ul>
+								<li>
+									<p>Шпалера (садоводство) — решётка, служащая опорой для растений. Шпалера (ковёр) — безворсовый тканый
+										настенный ковёр с сюжетными и орнаментальными композициями. </p>
+								<li>
+									<p>Шпалера (военное дело) — шеренга войск по сторонам пути следования кого-нибудь.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="tooltip-content__image">
+							<img src="images/tooltip-thumb.jpg" alt="">
+						</div>
+					`,
+      },
+      {
+        id: 2,
+        txt: `
+						<div class="tooptip-content__text">
+							<p>Вторая половина XV века
+							<ul>
+								<li>
+									<p>Византийская империя (395—1453) прекратила существование после падения Константинополя (1453).</p>
+								<li>
+									<p>Тринадцатилетняя война (1454—1466). Польша покоряет Тевтонский орден и получает выход к Балтийскому морю.</p>
+								</li>
+								<li>
+									<p>Война Алой и Белой розы (1455—1487). Начало династии Тюдоров.</p>
+								</li>
+							</ul>
+						</div>
+					`,
+      },
+      {
+        id: 3,
+        txt: `
+						<div class="tooltip-content__image">
+							<img src="images/tooltip-thumb.jpg" alt="">
+						</div>
+					`,
+      }, ];
+
+    </script>
+    <script src="/js/main.min.js"></script>
+    <script>
+      let twenty = () =>
+      {
+        setTimeout(() =>
+        {
+          $(".before-after").twentytwenty();
+        }, 1000);
+      }
+      if (document.querySelector("#ssb-banner"))
+      {
+        var map = (function(me, $)
+        {
+          "use strict";
+          me.name = 'map';
+          var viewer, pad, $window, $ssb, $info, $controls;
+          pad = 1000;
+          viewer = new OpenSeadragon.Viewer(
+          {
+            id: "ssb-banner",
+            tileSources: "tiles/tapestry-1.dzi",
+            minZoomImageRatio: 1.0,
+            maxZoomPixelRatio: 1.0,
+            animationTime: 3,
+            minZoomLevel: 2,
+            maxZoomLevel: 6,
+            zoomPerClick: 1.0,
+            prefixUrl: "",
+            immediateRender: true,
+            showNavigationControl: false,
+            showNavigator: true,
+            navigatorAutoFade: false,
+            navigatorPosition: "BOTTOM_RIGHT",
+          });
+          $window = $(window);
+          $ssb = $(".ssb");
+          $info = $(".ssb__info", $ssb);
+          $controls = $(".ssb__controls", $ssb);
+          $info.find(".ssb__info-inner").toggleClass("scroll", !!("ontouchstart" in window));
+          var zoomIn = function()
+          {
+            viewer.viewport.zoomBy(2.5).applyConstraints();
+            //viewer.viewport.zoomBy(1.5).applyConstraints();
+          };
+          var zoomOut = function()
+          {
+            viewer.viewport.zoomBy(1 / 1.5).applyConstraints();
+          };
+          var reset = function()
+          {
+            viewer.viewport.goHome();
+          };
+          var toggleHotspots = function()
+          {
+            var $hotspots = $(".ssb-hotspot", $ssb),
+              $hotspotsToggleButton = $(this);
+            $hotspots.toggleClass("is-hidden");
+            if ($hotspots.is(".is-hidden"))
+            {
+              $hotspotsToggleButton.addClass("icon-show-hotspots").removeClass("icon-hide-hotspots").attr("title", "Включить метки");
+            }
+            else
+            {
+              $hotspotsToggleButton.addClass("icon-hide-hotspots").removeClass("icon-show-hotspots").attr("title", "Выключить метки");
+            }
+          };
+          var toggleControls = function()
+          {
+            var $controlsToggleButton = $(".ssb__controls-toggle", $controls);
+            $controls.toggleClass("is-expanded");
+            if ($controls.is(".is-expanded"))
+            {
+              $controlsToggleButton.addClass("ssb__controls-toggle--open").removeClass("ssb__controls-toggle--close").attr("title", "Close Tools");
+            }
+            else
+            {
+              $controlsToggleButton.addClass("ssb__controls-toggle--close").removeClass("ssb__controls-toggle--open").attr("title", "Открыть панель управления");
+            }
+          };
+          var reorient = function(e)
+          {
+            if ($window.width() <= 600)
+            {
+              toggleInfo();
+            }
+            return false;
+          };
+          var toggleInfo = function(event)
+          {
+            if (event) event.stopPropagation();
+            var $infoToggleButton = $(".ssb__info-toggle-button", $info);
+            $ssb.toggleClass("ssb__info-expanded");
+            if ($ssb.is(".ssb__info-expanded"))
+            {
+              $infoToggleButton.addClass("ssb__info-toggle-button--close").removeClass("ssb__info-toggle-button--open").attr("title", "Открыть панель");
+            }
+            else
+            {
+              $infoToggleButton.addClass("ssb__info-toggle-button--open").removeClass("ssb__info-toggle-button--close").attr("title", "Закрыть панель");
+            }
+            return false;
+          };
+          var showInfo = function()
+          {
+            $(".ssb__welcome", $info).hide();
+            $(".ssb__info-container").show();
+          };
+          var showWelcome = function()
+          {
+            $(".ssb__info-container").hide();
+            $(".volume__button").removeClass("volume__button--play");
+            $("audio")[0].pause();
+            var $welcome = $(".ssb__welcome");
+            if (!$welcome.is(":visible") && $ssb.is(".ssb__info-expanded"))
+            {
+              $welcome.show();
+            }
+            else
+            {
+              $welcome.show();
+              toggleInfo();
+            }
+          };
+          var activateHotspot = function(e)
+          {
+            var $hotspot = $(this),
+              $hotspotImg = $info.find(".ssb__info-img"),
+              $hotspotMainTitle = $info.find(".ssb__info-main-title"),
+              $hotspotTitle = $info.find(".ssb__info-title"),
+              $hotspotDescription = $info.find(".ssb__info-description"),
+              $hotspotLink = $info.find(".ssb__info-link"),
+              $hotspotAudio = $info.find(".ssb__info-audio");
+            $hotspotImg.attr("src", "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==").hide();
+            $hotspotMainTitle.hide();
+            $hotspotTitle.hide();
+            $hotspotDescription.hide();
+            $hotspotLink.hide();
+            $hotspotAudio.attr("src", "").hide();
+            $hotspot.addClass("is-active is-viewed").siblings().removeClass("is-active");
+            $(".volume__button").removeClass("volume__button--play");
+            showInfo();
+            $hotspotImg.attr("src", $hotspot.data("image")).show();
+            $hotspotMainTitle.html($hotspot.data("category")).show();
+            $hotspotTitle.html($hotspot.data("title")).show();
+            $hotspotDescription.html($hotspot.data("description")).show();
+            $hotspotLink.attr("href", $hotspot.data("link")).show();
+            $hotspotAudio.attr("src", $hotspot.data("audio")).show();
+            $(".ssb-hotspot").on("click", function()
+            {
+              $(".ssb__info-inner").scrollTop(0);
+            });
+            viewer.viewport.fitBounds($hotspot.data("zoomTo"));
+            setTimeout(function()
+            {
+              if (!$ssb.is(".ssb__info-expanded")) toggleInfo();
+            }, 2000);
+            twenty();
+            $(".ssb__gallery-popup-link").magnificPopup(
+            {
+              type: "image",
+              //delegate: "a",
+              gallery:
+              {
+                tCounter: '<span class="mfp-counter">%curr% / %total%</span>', // markup of counter
+                enabled: true,
+                tPrev: 'Предыдущее изображение', // Alt text on left arrow
+                tNext: 'Следущее изображение', // Alt text on right arrow
+                arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+              },
+              image:
+              {
+                titleSrc: 'data-caption'
+              },
+            });
+            return false;
+          };
+          viewer.addHandler("open", function()
+          {
+            var aspectRatio = viewer.source.width / viewer.source.height;
+            $info.on("click", "a:not(.ssb__gallery-popup-link)", function()
+            {
+              window.open(this.href);
+              return false;
+            });
+            $info.on("click", reorient);
+            $(".ssb__touch-to-begin", $ssb).on("click", toggleInfo);
+            $(".ssb__controls-zoom-in", $controls).on("click", zoomIn);
+            $(".ssb__controls-zoom-out", $controls).on("click", zoomOut);
+            $(".ssb__controls-reset", $controls).on("click", reset);
+            $(".ssb__controls-toggle-hotspots", $controls).on("click", toggleHotspots);
+            $(".ssb__controls-toggle", $controls).on("click", toggleControls);
+            $(".ssb__controls-toggle-info", $controls).on("click", showWelcome);
+            $(".ssb__info-toggle-button", $info).on("click", toggleInfo);
+            // Setup the hotspots...
+            $.each(me.hotspots, function(index, hotspot)
+            {
+              var $hotspot = $("<a/>").addClass("ssb-hotspot"),
+                x = hotspot.x,
+                y = hotspot.y,
+                w = hotspot.w, //выводит размеры из hotspots
+                h = hotspot.h, //выводит размеры из hotspots
+                center = new OpenSeadragon.Point(
+                  (x + w / 2) / viewer.source.width,
+                  (y + h / 2) / viewer.source.height / aspectRatio),
+                rect = new OpenSeadragon.Rect(x / viewer.source.width, y / viewer.source.height / aspectRatio, w / viewer.source.width, h / viewer.source.height / aspectRatio),
+                zoomTo = new OpenSeadragon.Rect(
+                  (x - pad / 2) / viewer.source.width,
+                  (y - pad / 2) / viewer.source.height / aspectRatio,
+                  (w + pad) / viewer.source.width,
+                  (h + pad) / viewer.source.height / aspectRatio),
+                hotspotPlacement = OpenSeadragon.OverlayPlacement.TOP_LEFT;
+              $hotspot.attr(
+              {
+                // title: hotspot.title,
+                // text: hotspot.description,
+                class: `ssb-hotspot  ${hotspot.data}`,
+                href: hotspot.link,
+                id: hotspot.id,
+              });
+              $hotspot.data(
+              {
+                index: index,
+                zoomTo: zoomTo,
+                image: hotspot.image,
+                category: hotspot.category,
+                title: hotspot.title,
+                description: hotspot.description,
+                link: hotspot.link,
+                audio: hotspot.audio
+              });
+              $hotspot.on("click touchend", activateHotspot);
+              viewer.drawer.addOverlay($hotspot[0], rect, hotspotPlacement);
+            });
+          });
+          return me;
+        })(map ||
+        {}, jQuery);
+      }
+
+    </script>
+    <!-- END scripts -->
+  </body>
+</html>

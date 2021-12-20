@@ -1,0 +1,202 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip-path: rect(0 0 0 0);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $s-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $m-color;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.back-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 1000;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//
+/* This block of CSS adds opacity transition to background */
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+/* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+  padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+  top: 0;
+  bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+  padding: 0;
+}
+
+.mfp-title,
+.mfp-counter {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.mfp-arrow {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin: 0;
+  margin-top: -20px;
+  &::before,
+  &::after {
+    border: none;
+    margin: 0;
+  }
+
+  &:active {
+    margin-top: -20px;
+  }
+
+  &::before {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background-image: url("../images/sprite/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: contrast(0.5) brightness(10);
+  }
+
+  &-left {
+    transform: rotate(90deg);
+
+    @media (max-width: 900px) {
+      left: 18px;
+    }
+  }
+
+  &-right {
+    transform: rotate(-90deg);
+
+    @media (max-width: 900px) {
+      right: 18px;
+    }
+  }
+}
+
+.mfp-close,
+.mfp-iframe-holder .mfp-close {
+  top: 0;
+  right: 0;
+  font-size: 60px;
+}
+
+.mfp-container {
+  padding: 0 40px;
+}
+
+// .twentytwenty-container {
+//   width: 90%;
+//   height: auto;
+//   margin: 0 auto;
+// }
+.twentytwenty-container {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.before-after img,
+.twentytwenty-container img {
+  width: 100%;
+  height: auto;
+}
+
+.twentytwenty-container img {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  display: block;
+}
+
+.mfp-close-btn-in .mfp-close {
+  width: 50px;
+  padding: 0;
+  font-size: 60px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}

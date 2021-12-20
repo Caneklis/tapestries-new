@@ -1,0 +1,44 @@
+.tooltip {
+  position: relative;
+}
+.tooltip-content {
+  width: 320px;
+  height: auto;
+  padding: 10px;
+  font-size: 14px;
+  background: $m-color;
+  box-shadow: 5px 5px 10px 2px rgba($m-color, 0.3);
+  position: absolute;
+  z-index: 10;
+  display: none;
+  opacity: 0;
+  color: $s-color;
+  font-family: $m-font;
+
+  p {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    color: $s-color;
+
+    li::marker {
+      color: $s-color;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.tooltip-content--fade-in {
+  display: block;
+  animation: fadein 0.2s linear forwards;
+}

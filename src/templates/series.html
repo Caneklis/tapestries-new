@@ -1,0 +1,44 @@
+---
+title: Квесты
+description: Description index
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<div class="pagination">
+  <ul class="pagination__list">
+    <li class="pagination__item"><a href="index.html">На главную</a></li>
+    <li class="pagination__item"><a href="about.html">Триумф Надежды</a></li>
+    <li class="pagination__item"><a>{% if title %}{{ title }}{% else %}Название страницы{% endif %}</a></li>
+  </ul>
+</div>
+
+<main class="page__content">
+
+  <section class="cards-section">
+
+    <div class="cards-section__wrapper">
+      <h1 class="cards-section__title">Квесты и викторины</h1>
+
+      <ul class="cards-section__list">
+        <li class="cards-section__item" style="background-image: url('images/main-slider-1/thumb-1.png');">
+          <h3>Заголовок квеста
+          </h3>
+        </li>
+        <li class="cards-section__item" style="background-image: url('images/main-slider-1/thumb-2.png');">
+          <h3>Заголовок квеста</h3>
+        </li>
+        <li class="cards-section__item" style="background-image: url('images/main-slider-1/thumb-3.png')">
+          <h3>Заголовок квеста</h3>
+        </li>
+        <li class="cards-section__item" style="background-image: url('images/main-slider-1/thumb-4.png');">
+          <h3>Заголовок квеста</h3>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+</main>
+{% endblock %}

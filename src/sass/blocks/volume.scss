@@ -1,0 +1,39 @@
+.volume {
+  position: relative;
+  z-index: 102;
+  margin-right: 30px;
+
+  @media (max-width: $mobile) {
+    margin-right: 15px;
+  }
+}
+
+.volume__button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  .volume__button-icon {
+    fill: $s-color;
+  }
+
+  .volume__button-icon-mute {
+    display: none;
+  }
+
+  &--play {
+    .volume__button-icon-play {
+      display: none;
+    }
+
+    .volume__button-icon-mute {
+      display: block;
+    }
+  }
+
+  &--active {
+    .volume__button-icon {
+      fill: $m-color;
+    }
+  }
+}

@@ -1,0 +1,417 @@
+{% import "partials/_mixins.html" as mixins %}
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Primary Meta Tags -->
+	<title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+	<meta name="description" content="{% if description %}{{ description }}{% else %}Description{% endif %}">
+	<link rel="stylesheet" media="all" href="{{ base_path }}css/style.min.css" />
+	<!-- BEGIN social data -->
+	{% include "../partials/_media-tags.html" %}
+	<!-- END social data -->
+	<link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
+		crossorigin="anonymous">
+	<link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff" as="font" type="font/woff"
+		crossorigin="anonymous">
+	<link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
+		crossorigin="anonymous">
+	<link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff" as="font" type="font/woff"
+		crossorigin="anonymous">
+	<link rel="icon" href="{{ base_path }}favicon/favicon.ico"><!-- 32×32 -->
+	<link rel="apple-touch-icon" href="{{ base_path }}favicon/apple-touch-icon.png"><!-- 180×180 -->
+	<link rel="manifest" href="{{ base_path }}favicon/manifest.webmanifest">
+</head>
+<!-- {% if pageInner %}
+
+<body>
+
+	{% else %} -->
+
+<body class="page__body">
+	<!-- {% endif %} -->
+
+
+	{% include "../partials/_header.html" %}
+
+	<!-- BEGIN content -->
+	{% block content %}{% endblock %}
+	<!-- END content -->
+
+	<div class="tooltip-content">
+	</div>
+
+	<!-- BEGIN scripts -->
+
+
+
+
+	<script>
+		const tooltipData = [
+			{
+				id: 1,
+				txt:
+					`
+						<div class="tooptip-content__text">
+							<p>Шпале́ра (польск. szраlerа, нем. Spalier от итал. spalliera, из spalla «опора, плечо»):
+							<ul>
+								<li>
+									<p>Шпалера (садоводство) — решётка, служащая опорой для растений. Шпалера (ковёр) — безворсовый тканый
+										настенный ковёр с сюжетными и орнаментальными композициями. </p>
+								<li>
+									<p>Шпалера (военное дело) — шеренга войск по сторонам пути следования кого-нибудь.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="tooltip-content__image">
+							<img src="images/tooltip-thumb.jpg" alt="">
+						</div>
+					`,
+			},
+			{
+				id: 2,
+				txt:
+					`
+						<div class="tooptip-content__text">
+							<p>Вторая половина XV века
+							<ul>
+								<li>
+									<p>Византийская империя (395—1453) прекратила существование после падения Константинополя (1453).</p>
+								<li>
+									<p>Тринадцатилетняя война (1454—1466). Польша покоряет Тевтонский орден и получает выход к Балтийскому морю.</p>
+								</li>
+								<li>
+									<p>Война Алой и Белой розы (1455—1487). Начало династии Тюдоров.</p>
+								</li>
+							</ul>
+						</div>
+					`,
+			},
+			{
+				id: 3,
+				txt:
+					`
+						<div class="tooltip-content__image">
+							<img src="images/tooltip-thumb.jpg" alt="">
+						</div>
+					`,
+			},
+		];
+	</script>
+
+	<script src="{{ base_path }}js/main.min.js"></script>
+
+
+	{% if fashion %}
+	<script src="js/data/fashion/hotspots.js"></script>
+	{% elif plants %}
+	<script src="js/data/plants/hotspots.js"></script>
+	{% elif research %}
+	<script src="js/data/research/hotspots.js"></script>
+	{% endif %}
+
+
+	<script>
+		let twenty = () => {
+			setTimeout(() => {
+				$(".before-after").twentytwenty();
+			}, 1000);
+
+		}
+
+		if (document.querySelector("#ssb-banner")) {
+
+			var map = (function (me, $) {
+				"use strict";
+
+				me.name = 'map';
+
+				var viewer, pad, $window, $ssb, $info, $controls;
+
+				pad = 1000;
+
+				viewer = new OpenSeadragon.Viewer({
+					id: "ssb-banner",
+					tileSources: "tiles/tapestry-1.dzi",
+					minZoomImageRatio: 1.0,
+					maxZoomPixelRatio: 1.0,
+					animationTime: 3,
+					minZoomLevel: 2,
+					maxZoomLevel: 6,
+					zoomPerClick: 1.0,
+					prefixUrl: "",
+					immediateRender: true,
+					showNavigationControl: false,
+					showNavigator: true,
+					navigatorAutoFade: false,
+					navigatorPosition: "BOTTOM_RIGHT",
+				});
+
+				$window = $(window);
+
+				$ssb = $(".ssb");
+				$info = $(".ssb__info", $ssb);
+				$controls = $(".ssb__controls", $ssb);
+
+				$info
+					.find(".ssb__info-inner")
+					.toggleClass("scroll", !!("ontouchstart" in window));
+
+				var zoomIn = function () {
+					viewer.viewport.zoomBy(2.5).applyConstraints();
+					//viewer.viewport.zoomBy(1.5).applyConstraints();
+				};
+
+				var zoomOut = function () {
+					viewer.viewport.zoomBy(1 / 1.5).applyConstraints();
+				};
+
+				var reset = function () {
+					viewer.viewport.goHome();
+				};
+
+				var toggleHotspots = function () {
+					var $hotspots = $(".ssb-hotspot", $ssb),
+						$hotspotsToggleButton = $(this);
+
+					$hotspots.toggleClass("is-hidden");
+
+					if ($hotspots.is(".is-hidden")) {
+						$hotspotsToggleButton
+							.addClass("icon-show-hotspots")
+							.removeClass("icon-hide-hotspots")
+							.attr("title", "Включить метки");
+					} else {
+						$hotspotsToggleButton
+							.addClass("icon-hide-hotspots")
+							.removeClass("icon-show-hotspots")
+							.attr("title", "Выключить метки");
+					}
+				};
+
+				var toggleControls = function () {
+					var $controlsToggleButton = $(".ssb__controls-toggle", $controls);
+
+					$controls.toggleClass("is-expanded");
+
+					if ($controls.is(".is-expanded")) {
+						$controlsToggleButton
+							.addClass("ssb__controls-toggle--open")
+							.removeClass("ssb__controls-toggle--close")
+							.attr("title", "Close Tools");
+					} else {
+						$controlsToggleButton
+							.addClass("ssb__controls-toggle--close")
+							.removeClass("ssb__controls-toggle--open")
+							.attr("title", "Открыть панель управления");
+					}
+				};
+
+				var reorient = function (e) {
+					if ($window.width() <= 600) {
+						toggleInfo();
+					}
+					return false;
+				};
+
+				var toggleInfo = function (event) {
+					if (event) event.stopPropagation();
+
+					var $infoToggleButton = $(".ssb__info-toggle-button", $info);
+
+					$ssb.toggleClass("ssb__info-expanded");
+
+					if ($ssb.is(".ssb__info-expanded")) {
+						$infoToggleButton
+							.addClass("ssb__info-toggle-button--close")
+							.removeClass("ssb__info-toggle-button--open")
+							.attr("title", "Открыть панель");
+					} else {
+						$infoToggleButton
+							.addClass("ssb__info-toggle-button--open")
+							.removeClass("ssb__info-toggle-button--close")
+							.attr("title", "Закрыть панель");
+					}
+
+					return false;
+				};
+
+				var showInfo = function () {
+					$(".ssb__welcome", $info).hide();
+					$(".ssb__info-container").show();
+				};
+
+				var showWelcome = function () {
+					$(".ssb__info-container").hide();
+
+
+					$(".volume__button").removeClass("volume__button--play");
+					$("audio")[0].pause();
+
+					var $welcome = $(".ssb__welcome");
+
+					if (!$welcome.is(":visible") && $ssb.is(".ssb__info-expanded")) {
+						$welcome.show();
+					} else {
+						$welcome.show();
+						toggleInfo();
+					}
+				};
+
+				var activateHotspot = function (e) {
+					var $hotspot = $(this),
+						$hotspotImg = $info.find(".ssb__info-img"),
+						$hotspotMainTitle = $info.find(".ssb__info-main-title"),
+						$hotspotTitle = $info.find(".ssb__info-title"),
+						$hotspotDescription = $info.find(".ssb__info-description"),
+						$hotspotLink = $info.find(".ssb__info-link"),
+						$hotspotAudio = $info.find(".ssb__info-audio");
+
+					$hotspotImg
+						.attr(
+							"src",
+							"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+						)
+						.hide();
+					$hotspotMainTitle.hide();
+					$hotspotTitle.hide();
+					$hotspotDescription.hide();
+					$hotspotLink.hide();
+					$hotspotAudio.attr("src", "").hide();
+
+					$hotspot
+						.addClass("is-active is-viewed")
+						.siblings()
+						.removeClass("is-active");
+
+					$(".volume__button").removeClass("volume__button--play");
+
+					showInfo();
+
+					$hotspotImg.attr("src", $hotspot.data("image")).show();
+					$hotspotMainTitle.html($hotspot.data("category")).show();
+					$hotspotTitle.html($hotspot.data("title")).show();
+					$hotspotDescription.html($hotspot.data("description")).show();
+					$hotspotLink.attr("href", $hotspot.data("link")).show();
+					$hotspotAudio.attr("src", $hotspot.data("audio")).show();
+					$(".ssb-hotspot").on("click", function () {
+						$(".ssb__info-inner").scrollTop(0);
+					});
+
+					viewer.viewport.fitBounds($hotspot.data("zoomTo"));
+
+					setTimeout(function () {
+						if (!$ssb.is(".ssb__info-expanded")) toggleInfo();
+					}, 2000);
+
+					twenty();
+
+					$(".ssb__gallery-popup-link").magnificPopup({
+						type: "image",
+						//delegate: "a",
+
+						gallery: {
+							tCounter: '<span class="mfp-counter">%curr% / %total%</span>', // markup of counter
+							enabled: true,
+							tPrev: 'Предыдущее изображение', // Alt text on left arrow
+							tNext: 'Следущее изображение', // Alt text on right arrow
+
+							arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+						},
+						image: {
+							titleSrc: 'data-caption'
+						},
+					});
+
+					return false;
+				};
+
+				viewer.addHandler("open", function () {
+					var aspectRatio = viewer.source.width / viewer.source.height;
+
+					$info.on("click", "a:not(.ssb__gallery-popup-link)", function () {
+						window.open(this.href);
+						return false;
+					});
+
+					$info.on("click", reorient);
+					$(".ssb__touch-to-begin", $ssb).on("click", toggleInfo);
+					$(".ssb__controls-zoom-in", $controls).on("click", zoomIn);
+					$(".ssb__controls-zoom-out", $controls).on("click", zoomOut);
+					$(".ssb__controls-reset", $controls).on("click", reset);
+					$(".ssb__controls-toggle-hotspots", $controls).on("click", toggleHotspots);
+					$(".ssb__controls-toggle", $controls).on("click", toggleControls);
+					$(".ssb__controls-toggle-info", $controls).on("click", showWelcome);
+					$(".ssb__info-toggle-button", $info).on("click", toggleInfo);
+
+					// Setup the hotspots...
+					$.each(me.hotspots, function (index, hotspot) {
+						var $hotspot = $("<a/>").addClass("ssb-hotspot"),
+							x = hotspot.x,
+							y = hotspot.y,
+							w = hotspot.w,//выводит размеры из hotspots
+							h = hotspot.h,//выводит размеры из hotspots
+							center = new OpenSeadragon.Point(
+								(x + w / 2) / viewer.source.width,
+								(y + h / 2) / viewer.source.height / aspectRatio
+							),
+							rect = new OpenSeadragon.Rect(
+								x / viewer.source.width,
+								y / viewer.source.height / aspectRatio,
+								w / viewer.source.width,
+								h / viewer.source.height / aspectRatio
+							),
+							zoomTo = new OpenSeadragon.Rect(
+								(x - pad / 2) / viewer.source.width,
+								(y - pad / 2) / viewer.source.height / aspectRatio,
+								(w + pad) / viewer.source.width,
+								(h + pad) / viewer.source.height / aspectRatio
+							),
+							hotspotPlacement = OpenSeadragon.OverlayPlacement.TOP_LEFT;
+
+						$hotspot.attr({
+							// title: hotspot.title,
+							// text: hotspot.description,
+							class: `ssb-hotspot  ${hotspot.data}`,
+							href: hotspot.link,
+							id: hotspot.id,
+						});
+
+						$hotspot.data({
+							index: index,
+							zoomTo: zoomTo,
+							image: hotspot.image,
+							category: hotspot.category,
+							title: hotspot.title,
+							description: hotspot.description,
+							link: hotspot.link,
+							audio: hotspot.audio
+						});
+
+						$hotspot.on("click touchend", activateHotspot);
+
+						viewer.drawer.addOverlay($hotspot[0], rect, hotspotPlacement);
+					});
+				});
+
+				return me;
+			})(map || {}, jQuery);
+
+
+		}
+	</script>
+
+
+
+
+
+
+
+	<!-- END scripts -->
+
+</body>
+
+</html>

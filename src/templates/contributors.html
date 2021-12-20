@@ -1,0 +1,80 @@
+---
+title: Над проектом работали
+description: Description index
+---
+{% set pageInner = true %}
+{% extends "layouts/_layout.html" %}
+
+
+{% block content %}
+
+
+<div class="pagination">
+  <ul class="pagination__list">
+    <li class="pagination__item"><a href="index.html">На главную</a></li>
+    <li class="pagination__item"><a>{{ title }}</a></li>
+  </ul>
+</div>
+
+<main class="page__content">
+
+  <section class="textpage">
+    <div class="textpage__wrapper">
+      <h1 class="textpage__title">{{ title }}</h1>
+      <article class="textpage__article">
+        <ol>
+          <li><a href="http://museumconservation.ru/data/people/babich_darya_mihaylovna/index.php?lang=ru"
+              target="_blank" rel="noopener noreferrer">Дарья Бабич</a> &mdash; перевод и редактура
+            английских текстов, диктор озвучки</li>
+          <li><a href="http://museumconservation.ru/data/people/kudryavitsky/index.php?lang=ru" target="_blank"
+              rel="noopener noreferrer">Андрей Кудрявицкий</a> &mdash; фотосъемка</li>
+          <li>Александр Лесухин &mdash; верстка, программирование</li>
+          <li>Полина Любимова &mdash; редактура русских текстов</li>
+          <li>Федор Ратников &mdash; оператор, режиссер</li>
+          <li>Игорь Ткачев &mdash; обработка изображений</li>
+          <li>Михаил Угольников &mdash; макет</li>
+          <li>Ричард Уиллсон &mdash; диктор озвучки</li>
+          <li>Анастасия Черток &mdash; Ведущий научный сотрудник Отдела музыкальной культуры ГМИИ им. А.С. Пушкина
+          </li>
+        </ol>
+
+        <h2>Реставраторы:</h2>
+        <ul>
+          <li><a href="http://www.museumconservation.ru/data/people/tutimova/index.php" target="_blank"
+              rel="noopener noreferrer">Светлана Войцехович</a> &mdash; художник-реставратор 3 категории</li>
+          <li>Наталья Газизова &mdash; художник-реставратор</li>
+          <li>Анна Маркитанова &mdash; художник-реставратор</li>
+          <li><a href="http://museumconservation.ru/data/people/popova/index.php?lang=ru" target="_blank"
+              rel="noopener noreferrer">Олеся Попова</a> &mdash; художник-реставратор высшей категории</li>
+          <li>Светлана Скрипник &mdash; художник-реставратор</li>
+          <li>Елена Синицына &mdash; художник-реставратор 1 категории</li>
+          <li>Ксения Чайковская &mdash; художник-реставратор 2 категории</li>
+        </ul>
+
+        <h2>Авторы текстов:</h2>
+        <ul>
+          <li><a href="http://museumconservation.ru/data/people/borodin/index.php?lang=ru" target="_blank"
+              rel="noopener noreferrer">Игорь Бородин</a> &mdash;
+            художник-реставратор высшей
+            категории</li>
+          <li>Ольга Поликарпова &mdash; художник по костюмам, доцент Школы-Студии МХАТ</li>
+          <li>Анна Пожидаева &mdash; кандидат искусствоведения,
+            доцент Школы исторических наук НИУ ВШЭ</li>
+          <li>Марина Куликова &mdash; кандидат биологических наук, ученый секретарь Государственного
+            биологического музея им. К.А. Тимирязева</li>
+        </ul>
+
+        <p>Отдел реставрации и консервации ГМИИ им. А.С. Пушкина выражает благодарность волонтерам музея
+          Медведевой Елене, Гадаловой Анне, Касьяновой Юлии, Сенниковой Светлане, Степановой Александре, Котляр
+          Анастасии, Корецкой Дарье, Урусовой Ирине, Сташиновой Дарье за помощь в подготовке материалов для
+          публикаций.</p>
+
+      </article>
+    </div>
+  </section>
+
+</main>
+
+
+
+{% endblock %}

@@ -1,0 +1,318 @@
+---
+title: О шпалере
+description: Description index
+---
+
+{% extends "layouts/_layout.html" %}
+
+
+{% block content %}
+{% include "./partials/_pagination.html" %}
+
+<main class="page__content">
+  <div data-scroll-container class="container" id="fixed-target">
+
+    <section class="section  section--hero" id="start">
+      <div class="section__wrapper">
+        <div class="section__text" data-scroll data-scroll-speed="3">
+          <blockquote data-scroll data-scroll-speed="2">
+            Изложение смысла естественной истории через изображение первоэлементов, времен года и планеты был одним из
+            главных источников назидательных тем и сюжетов для писателей и художников
+          </blockquote>
+          <h1 class="section__main-title">
+            Шпалера «Сад любви» <br> («Дети Венеры»)
+          </h1>
+          <div>
+            <div class="catalog-data">
+              <p>Из серии «Дети планет».</p>
+              <p>Южные Нидерланды, Брюгге (?). Конец XVI – начало XVII веков.</p>
+              <p>Шерсть, шелк; шпалерное ткачество.</p>
+              <p>Инв. II 2д-22. 345 × 455 см.</p>
+              <p>Фрагмент шпалеры «Сад любви»</p>
+            </div>
+          </div>
+        </div>
+        <div class="section__image-wrapper">
+          <img src="images/intro-venera.jpg" alt="Фрагмент шпалеры Дети Венеры" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section   section--dark">
+      <div class="section__wrapper">
+
+        <div class="section__text  section__text--full" id="section-story" data-scroll-speed="2" data-scroll>
+          <h2>Сюжеты и мотивы</h2>
+          <p>Астрологическое значение планет и их влияние на Землю, природные явления, политические события и, прежде
+            всего,
+            на характер, судьбу и род деятельности человека, были излюбленной темой в Позднем Средневековье и эпоху
+            Возрождения. В шпалере «Дети Венеры» композиция строится вокруг изображения летящей колесницы Венеры.
+            Всеобщий
+            праздник любви и веселое пиршество детей Венеры изображены в центральной части шпалеры.</p>
+        </div>
+
+        <div class="section__mask">
+          <a href="deepzoom.html">
+            <div class="section__image-mask" style="background-image: url(images/venera-bg.png);">
+            </div>
+            <p>Нажмите на изображение шпалеры внизу, чтобы узнать ее сюжет</p>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__wrapper">
+        <div class="section__text">
+          <h2 class="section__main-title">Шпалеры «Дети Венеры»</h2>
+          <p>Небольшой текст про серию шпалер</p>
+          <p>Серия шпалер «Триумф семи добродетелей», прославляющая теологические и кардинальные добродетели, была
+            создана
+            в одной из мастерских Брюсселя в 1520-е годы. Ее созданию предшествовало написание морально-дидактической
+            программы, ставшей иконологическим руководством для художников, создававших эскизы и картоны для шпалерной
+            серии. Литературная программа серии, вероятно, созданная одним из литераторов-гуманистов при дворе Маргариты
+            Австрийской, была призвана показать сложное представление об устройстве мира, религиозных и моральных
+            ценностях.</p>
+
+          <p>Аллегорические сюжеты средневековой дидактической литературы часто использовались в шпалерах XV–XVI веков,
+            преимущественно в сериях. Благодаря обстоятельному исследованию известного знатока средневековых и
+            ренессансных шпалер Женевьевы Сушаль серия шпалер «Триумф семи добродетелей» была реконструирована. И хотя
+            отсутствие документальных источников не позволило определить авторство литературной программы и имя
+            художника,
+            принимавшего участие в изготовлении эскизов, в работе известного специалиста по нидерландским шпалерам Ги
+            Делмарселя был реконструирован исторический контекст создания серии шпалер «Триумф семи добродетелей».</p>
+        </div>
+        <section class="promo-slider  section__slider">
+          <!-- Slider main container -->
+          <div class="swiper-gallery">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <div class="swiper-slide  swiper-slide--custom">
+                <a href="textpage.html">
+                  <img src="images/tapestries/06/series/06-series-1-thumb.png" loading="lazy"
+                    alt="Изображение шпалеры «название шпалеры»">
+                </a>
+                <p>Шпалера «название шпалеры»</p>
+                <p>Франция</p>
+              </div>
+              <div class="swiper-slide  swiper-slide--custom">
+                <a href="textpage.html">
+                  <img src="images/tapestries/06/series/06-series-2-thumb.png" loading="lazy"
+                    alt="Изображение шпалеры «название шпалеры»">
+                </a>
+                <p>Шпалера «название шпалеры»</p>
+                <p>Швейцария</p>
+              </div>
+              <div class="swiper-slide  swiper-slide--custom">
+                <a href="textpage.html">
+                  <img src="images/tapestries/06/series/06-series-3-thumb.png" loading="lazy"
+                    alt="Изображение шпалеры «название шпалеры»">
+                </a>
+                <p>Шпалера «название шпалеры»</p>
+                <p>Германия</p>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section  section--text-right   section--dark" id="section-research-conservation">
+      <div class="section__wrapper">
+        <div class="image-wrapper">
+          <div class="swiper-fade-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/research-thumb.jpg" width="460" height="1080"
+                  alt="Слайд для раздела Исследование и реставрация" loading="lazy">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/research-thumb-2.jpg" width="460" height="1080"
+                  alt="Слайд для раздела Исследование и реставрация" loading="lazy">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/research-thumb-3.jpg" width="460" height="1080"
+                  alt="Слайд для раздела Исследование и реставрация" loading="lazy">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/research-thumb-4.jpg" width="460" height="1080"
+                  alt="Слайд для раздела Исследование и реставрация" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section__text">
+          <div data-scroll-speed="2" data-scroll>
+            <h2>Исследование и реставрация</h2>
+            <p>Технико-технологические исследования являются обязательным этапом работ перед началом реставрации. В ходе
+              проведения микроскопических исследований, изучаются параметры отобранных образцов нитей, природа и степень
+              их сохранности. С помощью высокоэффективной жидкостной хроматографии и метода молекулярной спектроскопии
+              определяется природа красителей, использовавшихся при крашении волокон и нитей шпалер. Результаты
+              исследований учитываются при составлении программы реставрации.</p>
+            <div class="images-container">
+              <a class="section__image-deepzoom-link  section__card-video" href="deepzoom.html">
+                <img src="images/research-thumb-5.jpg" alt="Изображение исследовании" width="500" height="250"
+                  loading="lazy">
+                <video muted autoplay loop>
+                  <source src="video/research-video-thumb.mp4">
+                </video>
+                <div class="section__image-deepzoom-description">
+                  Узнать подробнее об исследовании
+                </div>
+              </a>
+              <a class="section__image-deepzoom-link  section__card-video" href="conservation.html">
+                <img src="images/conservation-thumb-1.jpg" alt="Изображение реставрации" width="500" height="250"
+                  loading="lazy">
+                <video muted autoplay loop>
+                  <source src="video/conservation-video-thumb.mp4">
+                </video>
+                <div class="section__image-deepzoom-description">
+                  Узнать подробнее о реставрации
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section  section--deepzoom">
+      <div class="section__wrapper">
+        <div class="section__text" id="section-plants" data-scroll-speed="2" data-scroll>
+          <h2>Растения и птицы</h2>
+          <p>Традиция изображать растения и животных, наделяя их символическим значением, появилась в Античности. В
+            эпоху
+            Позднего Средневековья и Ренессанса изображения растений и птиц воспроизводились на шпалерах с удивительно
+            точностью. И если изначально они служили только для украшения, то позднее в XVI–XVII веках, стали кладезью
+            символов и знаков, особенно в религиозных сюжетах. На протяжении многих веков разгадывание смысловой
+            многозначности, аллегории и символизма было интеллектуальной забавой любителей искусства.
+          </p>
+        </div>
+        <div class="images-container  images-container--center" data-scroll-speed="1" data-scroll>
+          <a href="plants.html" class="section__image-deepzoom-link">
+            <img src="images/type-thumb-1.jpg" width="500" height="750" alt="Изображение растения" loading="lazy">
+            <div class="section__image-deepzoom-description">
+              Узнать подробнее <br>
+              o растениях и птицах
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section  section--dark  section--deepzoom  section--deepzoom-text-right" id="section-clothes">
+      <div class="section__wrapper">
+        <div class="section__text" data-scroll-speed="2" data-scroll>
+          <h2>История костюма</h2>
+          <p>Как в живописных произведениях, так и в искусстве шпалерного ткачества, одежды изображенных на шпалерах
+            персонажей соответствовали моде того времени, когда создавалось художественное произведение. И хотя многие
+            детали костюма не освобождены от условной художественности, изучение деталей, образов и символов в одежде,
+            изображенных на шпалерах XVI в. является увлекательным занятием.
+          </p>
+        </div>
+
+        <div class="images-container  images-container--center" data-scroll-speed="1" data-scroll>
+          <a href="#" class="section__image-deepzoom-link">
+            <img src="images/type-thumb-0.jpg" width="500" height="750" alt="Изображение одежды" loading="lazy">
+            <div class="section__image-deepzoom-description">
+              Одежда и мода
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="section-2">
+      <div id="pinSection" class="pinned-quote">
+        <blockquote data-scroll data-scroll-sticky data-scroll-target="#pinSection">
+          “To me, photography is an art of observation.
+          It’s about finding something interesting in
+          an ordinary place… I’ve found it has little
+          to do with the things you see and everything
+          to do with the way you see them.”
+
+          <cite>
+            — Elliott Erwitt
+          </cite>
+        </blockquote>
+      </div>
+
+      <div class="images-container">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2F666238d6f903c8899fa76789ed59912d.jpg?alt=media&token=fed407c6-a469-43cd-af23-5d7bb36c0f0e"
+          alt="">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2Fbca413679414c189fdff16e15edd7726.jpg?alt=media&token=23dfcb96-b5b0-47ac-8105-e2c9a08c437b"
+          alt="">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2F24cf1a08cbaabf899d9d9872e20452b6.jpg?alt=media&token=7d44f884-e4dc-4775-b15d-001b9868de38"
+          alt="">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2F37ff280cdb9a9ff5a8aebb482a7c1b73.jpg?alt=media&token=611f6188-574c-4456-bdd1-c20b2e024b0a"
+          alt="">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2F81c20e1c1c9e380395bff6ff651fc2e7.jpg?alt=media&token=d0fa44b4-b518-4754-ae1d-929a08972c25"
+          alt="">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2Fb4a0ce2c6d0e9ffd4792561e122bfb1e.jpg?alt=media&token=d32ec2b6-0902-4cb5-ae28-d22c87858407"
+          alt="">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2Fd137584c758fd75b3191220df2934ce9.jpg?alt=media&token=34fcda56-27ea-43f5-a8c0-256783a053f8"
+          alt="">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2Fmonochrome-photo-of-woman-covering-her-eye-2928525.jpg?alt=media&token=34786a3f-935d-4465-9d86-f837967e07cb"
+          alt="">
+      </div>
+    </div> -->
+
+    <section class="section  section--deepzoom  section--fixed">
+      <div class="section__wrapper">
+
+        <div class="section__text">
+          <h2>Тема «детей Венеры» в разных видах искусств</h2>
+          <p>Добавить какой-нибудь текст.</p>
+        </div>
+
+        <div class="images-container">
+          <a href="series-1.html" class="section__image-deepzoom-link">
+            <img src="images/type-thumb-3.jpg" width="500" height="750" alt="Изображение одежды" loading="lazy">
+            <div class="section__image-deepzoom-description">
+              Серия гравюр Хемскерка-Мюллера
+            </div>
+          </a>
+          <a href="#" class="section__image-deepzoom-link">
+            <img src="images/type-thumb-4.jpg" width="500" height="750" alt="Изображение одежды" loading="lazy">
+            <div class="section__image-deepzoom-description">
+              Шпалеры «Дети Планет»
+            </div>
+          </a>
+          <a href="#" class="section__image-deepzoom-link">
+            <img src="images/type-thumb-5.jpg" width="500" height="750" alt="Изображение одежды" loading="lazy">
+            <div class="section__image-deepzoom-description">
+              «Дети Венеры» в гравюре
+            </div>
+          </a>
+          <a href="#" class="section__image-deepzoom-link">
+            <img src="images/type-thumb-4.jpg" width="500" height="750" alt="Изображение одежды" loading="lazy">
+            <div class="section__image-deepzoom-description">
+              «Дети Венеры» в книжной миниатюре и прикладном искусстве
+            </div>
+          </a>
+          <a href="#" class="section__image-deepzoom-link">
+            <img src="images/type-thumb-3.jpg" width="500" height="750" alt="Изображение одежды" loading="lazy">
+            <div class="section__image-deepzoom-description">
+              Астрологические сюжеты в монументальных искусствах
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+
+
+{% endblock %}

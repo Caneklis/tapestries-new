@@ -1,0 +1,46 @@
+.tab-section {
+  overflow: hidden;
+}
+
+.tab-section__control-list {
+  @include list-reset;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.tab-section__content-list {
+  @include list-reset;
+}
+
+.tab-section__control-item {
+  flex-grow: 1;
+  display: flex;
+}
+
+.tab-section__control-btn {
+  width: 100%;
+  padding: 1em 1em;
+  background-color: $s-color;
+  color: $m-color;
+  border: 1px solid $m-color;
+  cursor: pointer;
+  font-size: 20px;
+
+  &[aria-selected="true"] {
+    background-color: $m-color;
+    color: $s-color;
+  }
+}
+
+.tab-section__content-item {
+  display: none;
+  transition: all $transition;
+  opacity: 0;
+
+  &[aria-expanded="true"] {
+    display: block;
+    opacity: 1;
+  }
+}
