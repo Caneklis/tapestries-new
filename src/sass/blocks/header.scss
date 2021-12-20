@@ -5,12 +5,9 @@
   z-index: 11;
   // box-shadow: 0 2px 15px 0px $m-color;
 
-  // &--inner {
-  //   background-color: $m-color;
-  //   position: relative;
-  //   z-index: 11;
-  //   box-shadow: 0 2px 15px 0px $m-color;
-  // }
+  &--inner {
+    background-color: #a39c8d;
+  }
 
   @media ($desktop) {
     padding: 66px 0 34px;

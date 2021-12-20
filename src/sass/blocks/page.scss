@@ -36,6 +36,10 @@
   // &--inner {
   //   display: block;
   // }
+
+  &--fixed {
+    overflow: hidden;
+  }
 }
 
 .page__content {

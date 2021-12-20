@@ -4,30 +4,21 @@
   display: flex;
   align-items: center;
   margin-right: 30px;
-
-  &--active {
-    .lang__link {
-      color: $m-color;
-    }
-  }
-
-  @media (max-width: $mobile) {
-    margin-right: 15px;
-  }
+  color: #dcd4c2;
 }
 
 .lang__link {
   margin: 0 3px;
   color: #fff;
   font-family: $s-font;
-  font-size: 30px;
-  line-height: 42px;
+  font-size: 15px;
+  line-height: 21px;
 
   &--active {
     color: #dcd4c2;
   }
 
   @media (max-width: $mobile) {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
