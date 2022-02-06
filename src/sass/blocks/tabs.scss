@@ -1,86 +1,73 @@
-.tab-section {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 50px;
-  padding-bottom: 80px;
-  overflow: hidden;
-  background-image: url("../images/long-line.svg");
-  background-size: 83.4%;
-  background-repeat: no-repeat;
-  background-position-x: left;
-  background-position-y: 20px;
-
-  @media (min-width: 768px) {
-    padding-top: 170px;
-    padding-bottom: 100px;
-  }
+.tabs {
+  max-width: 100%;
+  margin-top: 45px;
 }
 
-.tab-section__wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.tab-section__control-list {
-  @include list-reset;
+.tabs__controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-  row-gap: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  p {
+    width: 100%;
+    margin: 0;
+    margin-top: 18px;
+    text-align: center;
+    font-family: $s-font;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
   }
 }
 
-.tab-section__content-list {
-  @include list-reset;
-}
-
-.tab-section__control-btn {
-  font-size: 16px;
-  line-height: 1;
-  text-align: center;
-  color: #21201e;
+.tabs__control {
+  text-transform: uppercase;
   cursor: pointer;
-  transition: color 0.3s ease;
-  border: none;
-  background: transparent;
+  min-width: 300px;
+  margin: 0 10px;
+  border: 1px solid #a28c62;
+  color: #a28c62;
+  background-color: transparent;
 
-  &[aria-selected="true"] {
-    color: #a28c62;
+  &--circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+    border-width: 2px;
+    border-radius: 50%;
+    border-color: transparent;
+    min-width: unset;
 
-    img {
-      outline: 4px solid #a28c62;
-      outline-offset: -4px;
+    @media (max-width: 767px) {
+      svg {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+      }
     }
   }
 
-  img {
-    margin-bottom: 20px;
-  }
+  &.is-active {
+    opacity: 1;
+    pointer-events: none;
+    background-color: #a28c62;
+    color: #fff;
 
-  @media ($desktop) {
-    font-size: 24px;
+    &.tabs__control--circle {
+      background-color: transparent;
+      border-color: #a28c62;
+    }
   }
 }
 
-.tab-section__content-item {
-  display: none;
-  transition: all $transition;
-  opacity: 0;
+.tabs__content {
+  margin-bottom: 40px;
+  transition: height 0.3s;
+}
 
-  &[aria-expanded="true"] {
-    display: block;
-    opacity: 1;
-  }
-
-  p {
-    max-width: 618px;
-    margin: 0 auto 30px;
-    font-size: 20px;
-    line-height: 30px;
-  }
+.tabs__element {
+  width: 100%;
 }

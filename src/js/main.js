@@ -16,58 +16,23 @@ window.$ = $;
 // require("../js/libs/three.min");
 // require("../js/libs/panolens.min");
 import Swiper from "swiper/bundle";
+import { Tabs } from "./modules/tabs";
+
+let tabs;
+
+const initTabs = () => {
+  tabs = new Tabs();
+  // Используйте в разработке экспортируемую переменную tabs, window сделан для бэкэнда
+  window.tabs = tabs;
+};
+
+export { initTabs, tabs };
+initTabs();
+
 require("../js/modules/read-more");
 
-const menuButton = document.querySelector(".main-nav__button");
-const menuList = document.querySelector(".main-nav__list");
-const body = document.querySelector("body");
-const lang = document.querySelector(".lang");
-const playBtn = document.querySelector(".volume__button");
-
-if (menuButton) {
-  menuButton.addEventListener("click", () => {
-    let expanded = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", !expanded);
-    menuButton.classList.toggle("main-nav__button--open");
-    menuList.classList.toggle("main-nav__list--open");
-    lang.classList.toggle("lang--active");
-    // playBtn.classList.toggle("volume__button--active");
-    body.classList.toggle("page__body--fixed");
-  });
-
-  document.onkeydown = function (evt) {
-    evt = evt || window.event;
-    if (evt.keyCode == 27) {
-      menuButton.classList.remove("main-nav__button--open");
-      menuList.classList.remove("main-nav__list--open");
-      lang.classList.remove("lang--active");
-    }
-  };
-}
-
-if (playBtn) {
-  setTimeout(() => {
-    playBtn.addEventListener("click", (e) => {
-      if (playBtn.classList.contains("volume__button--play")) {
-        document.querySelector("audio").pause();
-        playBtn.classList.remove("volume__button--play"); // changing icon for button
-      } else {
-        document.querySelector("audio").play();
-        playBtn.classList.add("volume__button--play");
-      }
-      //playBtn.classList.toggle("volume__button--play");
-    });
-  }, 500);
-}
-
-if (document.querySelector("audio")) {
-  document.querySelector("audio").addEventListener("ended", (e) => {
-    playBtn.classList.remove("volume__button--play");
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  require("/js/modules/tab-section");
+  // require("/js/modules/tab-section");
   // Слайдер на главной
   const mainSlider = new Swiper(".promo-slider .swiper", {
     effect: "coverflow",
@@ -136,26 +101,84 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  let mapTabs = document.querySelectorAll(".map [role=tab]");
+  const menuButton = document.querySelector(".main-nav__button");
+  const menuList = document.querySelector(".main-nav__list");
+  const body = document.querySelector("body");
+  const lang = document.querySelector(".lang");
+  const playBtn = document.querySelector(".volume__button");
 
-  if (mapTabs) {
-    mapTabs.forEach((tab) => {
-      tab.addEventListener("click", function () {
-        //Слайдр для карт
-        const swiperMap = new Swiper(".map__slider", {
-          effect: "fade",
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        });
+  if (menuButton) {
+    menuButton.addEventListener("click", () => {
+      let expanded = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", !expanded);
+      menuButton.classList.toggle("main-nav__button--open");
+      menuList.classList.toggle("main-nav__list--open");
+      lang.classList.toggle("lang--active");
+      // playBtn.classList.toggle("volume__button--active");
+      body.classList.toggle("page__body--fixed");
+    });
+
+    document.onkeydown = function (evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) {
+        menuButton.classList.remove("main-nav__button--open");
+        menuList.classList.remove("main-nav__list--open");
+        lang.classList.remove("lang--active");
+      }
+    };
+  }
+
+  if (playBtn) {
+    setTimeout(() => {
+      playBtn.addEventListener("click", (e) => {
+        if (playBtn.classList.contains("volume__button--play")) {
+          document.querySelector("audio").pause();
+          playBtn.classList.remove("volume__button--play"); // changing icon for button
+        } else {
+          document.querySelector("audio").play();
+          playBtn.classList.add("volume__button--play");
+        }
+        //playBtn.classList.toggle("volume__button--play");
       });
+    }, 500);
+  }
+
+  if (document.querySelector("audio")) {
+    document.querySelector("audio").addEventListener("ended", (e) => {
+      playBtn.classList.remove("volume__button--play");
     });
   }
+
+  //Слайдр для карт
+  const swiperMap = new Swiper(".map__slider", {
+    slidesPerView: 1,
+    autoHeight: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // let mapTabs = document.querySelectorAll(".map [role=tab]");
+
+  // if (mapTabs) {
+  //   mapTabs.forEach((tab) => {
+  //     tab.addEventListener("click", function () {
+  //       //Слайдр для карт
+  //       const swiperMap = new Swiper(".map__slider", {
+  //         effect: "fade",
+  //         navigation: {
+  //           nextEl: ".swiper-button-next",
+  //           prevEl: ".swiper-button-prev",
+  //         },
+  //         pagination: {
+  //           el: ".swiper-pagination",
+  //           clickable: true,
+  //         },
+  //       });
+  //     });
+  //   });
+  // }
 
   const swiperGallery = new Swiper(".swiper-gallery", {
     effect: "coverflow",

@@ -29,6 +29,15 @@ const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
 
 const manageEnvironment = function (env) {
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    gfm: false,
+    tables: true,
+    breaks: true,
+    pedantic: false,
+    smartLists: true,
+    smartypants: true,
+  });
   markdown.register(env, marked);
 };
 
@@ -115,7 +124,7 @@ const server = () => {
     ui: false,
   });
 
-  watch("src/sass/**/*.{scss,sass}", series(styles));
+  watch("src/sass/**/*.{scss,sass}", styles);
   watch(
     "src/templates/**/*.+(html|nunjucks|md)",
     parallel("nunjucks", refresh)
