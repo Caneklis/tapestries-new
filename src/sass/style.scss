@@ -1,9 +1,11 @@
 @import "../../node_modules/normalize.css/normalize";
 @import "../../node_modules/swiper/swiper-bundle";
+@import "../../node_modules/tippy.js/dist/tippy";
+@import "../../node_modules/@fancyapps/ui/dist/fancybox";
 // @import "../../node_modules/swiper/components/effect-coverflow/effect-coverflow.scss";
 // @import "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
-// @import "libs/twentytwenty";
-// @import "../../node_modules/magnific-popup/dist/magnific-popup";
+@import "libs/twentytwenty";
+@import "libs/magnific-popup";
 @import "global/mixins";
 @import "global/variables";
 @import "global/fonts";
@@ -26,6 +28,7 @@
 @import "blocks/volume";
 @import "blocks/data-tabs";
 @import "blocks/tabs";
+@import "blocks/tab-section";
 @import "blocks/map";
 @import "blocks/cards-section";
 @import "blocks/read-more";

@@ -41,6 +41,10 @@
 .map__slider {
   position: relative;
 
+  &.swiper-container {
+    overflow: hidden;
+  }
+
   .swiper-slide {
     img {
       filter: none;

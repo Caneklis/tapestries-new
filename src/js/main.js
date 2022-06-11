@@ -1,22 +1,25 @@
 import $ from "jquery";
 window.jQuery = $;
 window.$ = $;
+import { Fancybox } from "@fancyapps/ui";
 // import Swiper from "swiper/bundle";
 // import { gsap } from "../../node_modules/gsap/dist/gsap";
 // import { ScrollTrigger } from "../../node_modules/gsap/ScrollTrigger";
 
 // import LocomotiveScroll from "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
-// require("./libs/jquery.event.move");
-// require("./libs/jquery.twentytwenty");
-// require("/js/openseadragon/openseadragon");
-// require("../../node_modules/magnific-popup/dist/jquery.magnific-popup");
+require("./libs/jquery.event.move");
+require("./libs/jquery.twentytwenty");
+require("./openseadragon/openseadragon");
+require("./modules/tab-section");
+require("./libs/jquery.magnific-popup.min");
 // require("./slickQuiz");
 // require("./master");
 // require("../js/libs/three.min");
 // require("../js/libs/panolens.min");
 import Swiper from "swiper/bundle";
 import { Tabs } from "./modules/tabs";
+import tippy, { followCursor } from "tippy.js";
 
 let tabs;
 
@@ -309,57 +312,57 @@ document.addEventListener("DOMContentLoaded", () => {
     return false;
   }
 
-  // $(".textpage__img-popup").magnificPopup({
-  //   type: "image",
-  //   closeOnContentClick: true,
-  //   closeBtnInside: false,
-  //   mainClass: "mfp-with-zoom mfp-img-mobile",
-  //   tCounter: '<span class="mfp-counter">%curr% / %total%</span>', // markup of counter
-  //   image: {
-  //     verticalFit: true,
-  //     titleSrc: function (item) {
-  //       return item.el.attr("data-caption");
-  //     },
-  //   },
-  //   zoom: {
-  //     enabled: true,
-  //   },
-  // });
+  $(".textpage__img-popup").magnificPopup({
+    type: "image",
+    closeOnContentClick: true,
+    closeBtnInside: false,
+    mainClass: "mfp-with-zoom mfp-img-mobile",
+    tCounter: '<span class="mfp-counter">%curr% / %total%</span>', // markup of counter
+    image: {
+      verticalFit: true,
+      titleSrc: function (item) {
+        return item.el.attr("data-caption");
+      },
+    },
+    zoom: {
+      enabled: true,
+    },
+  });
 
-  // $(".textpage__iframe-popup").magnificPopup({
-  //   disableOn: 700,
-  //   type: "iframe",
-  //   mainClass: "mfp-with-zoom mfp-img-mobile",
-  //   removalDelay: 160,
-  //   preloader: false,
+  $(".textpage__iframe-popup").magnificPopup({
+    disableOn: 700,
+    type: "iframe",
+    mainClass: "mfp-with-zoom mfp-img-mobile",
+    removalDelay: 160,
+    preloader: false,
 
-  //   fixedContentPos: false,
-  // });
+    fixedContentPos: false,
+  });
 
-  // $(".popup-inline").magnificPopup({
-  //   type: "inline",
-  //   preloader: false,
-  //   mainClass: "mfp-img-mobile  mfp-fade",
-  //   // closeBtnInside: false,
-  //   // fixedContentPos: true,
-  //   // gallery: {
-  //   // 	enabled: true
-  //   // },
+  $(".popup-inline").magnificPopup({
+    type: "inline",
+    preloader: false,
+    mainClass: "mfp-img-mobile  mfp-fade",
+    // closeBtnInside: false,
+    // fixedContentPos: true,
+    // gallery: {
+    // 	enabled: true
+    // },
 
-  //   callbacks: {
-  //     open: function () {
-  //       $(".before-after").twentytwenty({
-  //         before_label: "До реставрации",
-  //         after_label: "После реставрации",
-  //       });
+    callbacks: {
+      open: function () {
+        $(".before-after").twentytwenty({
+          before_label: "До реставрации",
+          after_label: "После реставрации",
+        });
 
-  //       $(".before-after-eng").twentytwenty({
-  //         before_label: "Before restoration",
-  //         after_label: "Digital reconstruction",
-  //       });
-  //     },
-  //   },
-  // });
+        $(".before-after-eng").twentytwenty({
+          before_label: "Before restoration",
+          after_label: "Digital reconstruction",
+        });
+      },
+    },
+  });
 
   // var $items = $('path');
   var $items = $(".map__img");
@@ -408,6 +411,79 @@ document.addEventListener("DOMContentLoaded", () => {
       slide.classList.remove("active");
     });
   }
+  // const template = document.getElementById("template");
+  // const tip = tippy("[data-tippy-content]", {
+  //   // animation: "fade", // 'shift-toward', 'fade', 'scale', 'perspective'
+  //   // flipBehavior: "counterclockwise", // 'clockwise', 'counterclockwise', Array
+  //   // inertia: true,
+  //   // placement: "left",
+  //   // html: "#template",
+  //   // distance: 30,
+  //   content: template.innerHTML,
+  //   allowHTML: true,
+  //   onShow(instance) {
+  //     const content = $(this).find(".tippy-content");
+  //     console.log(content);
+  //     let new_src = instance.reference.getAttribute("data-src");
+  //     console.log(new_src);
+  //     if (tip.loading) return;
+
+  //     tip.loading = true;
+
+  //     let img = new Image();
+  //     img.onload = function () {
+  //       tip.loading = false;
+  //     };
+  //     img.src = new_src;
+  //     img.width = 200;
+  //     img.height = 200;
+  //     content.html(img);
+  //   },
+  // });
+
+  tippy("[data-tippy-content]", {
+    arrow: false,
+    placement: "bottom-start",
+    maxWidth: "1000px",
+    theme: "custom",
+    offset: [0, 10],
+    plugins: [followCursor],
+    followCursor: true,
+
+    // trigger: "click",
+    onShow(instance) {
+      let urlSrc = instance.reference.getAttribute("data-src");
+      fetch(urlSrc)
+        .then((response) => response.blob())
+        .then((blob) => {
+          // Convert the blob into a URL
+          const url = URL.createObjectURL(blob);
+          // Create an image
+          const image = new Image();
+          // image.width = 200;
+          // image.height = 200;
+          image.style.display = "block";
+          image.src = url;
+          // Update the tippy content with the image
+          instance.setContent(image);
+        })
+        .catch((error) => {
+          // Fallback if the network request failed
+          instance.setContent(`Request failed. ${error}`);
+        });
+    },
+  });
+
+  Fancybox.bind("[data-fancybox]", {
+    Toolbar: {
+      display: [
+        { id: "prev", position: "center" },
+        { id: "counter", position: "center" },
+        { id: "next", position: "center" },
+        "close",
+      ],
+    },
+  });
 });
 
 // $(function () {
