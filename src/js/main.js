@@ -8,11 +8,11 @@ import { Fancybox } from "@fancyapps/ui";
 
 // import LocomotiveScroll from "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
-require("./libs/jquery.event.move");
-require("./libs/jquery.twentytwenty");
-require("./openseadragon/openseadragon");
-require("./modules/tab-section");
-require("./libs/jquery.magnific-popup.min");
+import "./libs/jquery.event.move";
+import "./libs/jquery.twentytwenty";
+import "./openseadragon/openseadragon";
+import "./modules/tab-section";
+import "./libs/jquery.magnific-popup.min";
 // require("./slickQuiz");
 // require("./master");
 // require("../js/libs/three.min");
@@ -32,7 +32,7 @@ const initTabs = () => {
 export { initTabs, tabs };
 initTabs();
 
-require("../js/modules/read-more");
+import "../js/modules/read-more";
 
 document.addEventListener("DOMContentLoaded", () => {
   // require("/js/modules/tab-section");
