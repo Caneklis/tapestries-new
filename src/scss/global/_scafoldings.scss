@@ -247,3 +247,7 @@ img {
     height: 40px;
   }
 }
+
+.fancybox__thumbs .carousel__slide .fancybox__thumb::after {
+  border-color: $s-color;
+}

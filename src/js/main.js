@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tippy("[data-tippy-content]", {
     arrow: false,
     placement: "bottom-start",
-    maxWidth: "1000px",
+    maxWidth: "800px",
     theme: "custom",
     offset: [0, 10],
     plugins: [followCursor],
@@ -475,6 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   Fancybox.bind("[data-fancybox]", {
+    lockAxis: "y",
     Toolbar: {
       display: [
         { id: "prev", position: "center" },
