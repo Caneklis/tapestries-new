@@ -19,7 +19,7 @@
 
 .textpage__dark-section {
   padding-top: 62px;
-  padding-bottom: 270px;
+  padding-bottom: 200px;
   background-color: #21201e;
   background-image: url("../images/bg.svg");
 
@@ -400,7 +400,10 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: -270px;
+  max-width: 1270px;
+  margin-top: -170px;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
 
