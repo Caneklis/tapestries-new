@@ -20,6 +20,7 @@ import "./libs/jquery.magnific-popup.min";
 import Swiper from "swiper/bundle";
 import { Tabs } from "./modules/tabs";
 import tippy, { followCursor } from "tippy.js";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl";
 
 let tabs;
 
@@ -411,35 +412,6 @@ document.addEventListener("DOMContentLoaded", () => {
       slide.classList.remove("active");
     });
   }
-  // const template = document.getElementById("template");
-  // const tip = tippy("[data-tippy-content]", {
-  //   // animation: "fade", // 'shift-toward', 'fade', 'scale', 'perspective'
-  //   // flipBehavior: "counterclockwise", // 'clockwise', 'counterclockwise', Array
-  //   // inertia: true,
-  //   // placement: "left",
-  //   // html: "#template",
-  //   // distance: 30,
-  //   content: template.innerHTML,
-  //   allowHTML: true,
-  //   onShow(instance) {
-  //     const content = $(this).find(".tippy-content");
-  //     console.log(content);
-  //     let new_src = instance.reference.getAttribute("data-src");
-  //     console.log(new_src);
-  //     if (tip.loading) return;
-
-  //     tip.loading = true;
-
-  //     let img = new Image();
-  //     img.onload = function () {
-  //       tip.loading = false;
-  //     };
-  //     img.src = new_src;
-  //     img.width = 200;
-  //     img.height = 200;
-  //     content.html(img);
-  //   },
-  // });
 
   tippy("[data-tippy-content]", {
     arrow: false,
@@ -485,6 +457,191 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
   });
+
+  const MAPBOXGLCONF = {
+    accessToken:
+      "pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg",
+    style: "mapbox://styles/caneklis/cl4gpg4fw000j14ogfk525oi0",
+  };
+
+  // mapboxgl.accessToken = 'pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg';
+  mapboxgl.accessToken = MAPBOXGLCONF.accessToken;
+
+  if (document.querySelector("#poimapbox-map")) {
+    var map = new mapboxgl.Map({
+      container: "poimapbox-map",
+      // style: 'mapbox://styles/mapbox/streets-v11',
+      style: MAPBOXGLCONF.style,
+      center: [37.61270240042472, 55.77190807654196],
+      // initial zoom
+      zoom: 10,
+      scrollZoom: false,
+      bearing: 0,
+      // pitch: 15
+    });
+
+    map.on("load", function (e) {
+      map.addSource("places", {
+        type: "geojson",
+        data: places,
+      });
+      buildLocationList(places);
+    });
+
+    places.features.forEach(function (marker, i) {
+      // Create an img element for the marker
+      const el = document.createElement("div");
+      el.id = "poimapbox-marker-" + i;
+      el.className = "poimapbox-marker";
+      // Add markers to the map at all points
+      new mapboxgl.Marker(el, { offset: [0, 0] })
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+
+      el.addEventListener("click", function (e) {
+        // 1. Fly to the point
+        flyToPark(marker);
+
+        // 2. Close all other popups and display popup for clicked Park
+        createPopUp(marker);
+
+        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+        const activeItem = document.getElementsByClassName("active");
+
+        e.stopPropagation();
+        if (activeItem[0]) {
+          activeItem[0].classList.remove("active");
+        }
+
+        const listing = document.getElementById("listing-" + i);
+        listing.classList.add("active");
+      });
+    });
+
+    function flyToPark(currentFeature) {
+      map.flyTo({
+        center: currentFeature.geometry.coordinates,
+        zoom: 12,
+      });
+    }
+
+    const setAttributes = (el, attrs) => {
+      for (const key in attrs) {
+        el.setAttribute(key, attrs[key]);
+      }
+    };
+
+    function createPopUp(currentFeature) {
+      var popUps = document.getElementsByClassName("mapboxgl-popup");
+      if (popUps[0]) popUps[0].remove();
+
+      const generateGallery = (galleryImg, galleryLink, modClass, type) => {
+        if (galleryImg.length > 0) {
+          const photosContainer = document.createElement("div");
+          photosContainer.classList.add("mapbox__gallery-list");
+          photosContainer.classList.add(modClass);
+          for (let i = 0; i < galleryImg.length; i++) {
+            const photoLink = document.createElement("a");
+            if (type === "iframe") {
+              setAttributes(photoLink, {
+                href: galleryLink[i].link,
+                "data-fancybox": "3d",
+                "data-type": "iframe",
+                "data-caption": galleryLink[i].caption,
+              });
+            } else {
+              setAttributes(photoLink, {
+                href: galleryLink[i].link,
+                "data-fancybox": "mapbox-gallery",
+                "data-caption": galleryLink[i].caption,
+              });
+            }
+
+            const photo = document.createElement("img");
+            photo.classList.add("mapbox__gallery-pic");
+            setAttributes(photo, {
+              src: galleryImg[i],
+              alt: "Фотография интерьера",
+            });
+            photoLink.appendChild(photo);
+            photosContainer.appendChild(photoLink);
+          }
+
+          return photosContainer;
+        }
+      };
+
+      const tpl = `<a class="mapbox__preview-pic" href="${
+        currentFeature.properties.image
+      }" data-fancybox="mapbox-gallery"><img src="${
+        currentFeature.properties.image
+      }"></a>
+      <div class="mapbox__popup-text">
+        <h3>${currentFeature.properties.name}</h3>
+        ${currentFeature.properties.info}
+      </div>
+      <div class="mapbox__gallery">
+        ${
+          generateGallery(
+            currentFeature.properties.galleryTmbDesktop,
+            currentFeature.properties.gallery3dLink,
+            "mapbox__gallery-list--desktop",
+            "iframe"
+          ).outerHTML
+        } ${
+        generateGallery(
+          currentFeature.properties.galleryTmb,
+          currentFeature.properties.gallery,
+          "mapbox__gallery-list--mobile"
+        ).outerHTML
+      }
+      </div>`;
+
+      const popup = new mapboxgl.Popup({ closeOnClick: false })
+        .setLngLat(currentFeature.geometry.coordinates)
+        .setHTML(tpl)
+        .addTo(map);
+    }
+
+    function buildLocationList(data) {
+      for (let i = 0; i < data.features.length; i++) {
+        const currentFeature = data.features[i];
+        const prop = currentFeature.properties;
+
+        const listings = document.getElementById("poimapbox-listings");
+        const listing = listings.appendChild(document.createElement("div"));
+        listing.className = "amenity-poi";
+        listing.id = "listing-" + i;
+
+        const link = listing.appendChild(document.createElement("a"));
+        link.href = "#";
+        link.className = "name";
+        link.dataPosition = i;
+        link.innerHTML = `
+        <img src="${currentFeature.properties.imagetmb}" alt="Фотография ${currentFeature.properties.name}">
+        <h3>${currentFeature.properties.name}</h3>
+      `;
+
+        link.addEventListener("click", function (e) {
+          const clickedListing = data.features[this.dataPosition];
+
+          flyToPark(clickedListing);
+
+          createPopUp(clickedListing);
+
+          const activeItem =
+            document.getElementsByClassName("amenity-poi active");
+
+          if (activeItem[0]) {
+            activeItem[0].classList.remove("active");
+          }
+          this.parentNode.classList.add("active");
+        });
+      }
+    }
+
+    map.addControl(new mapboxgl.NavigationControl());
+  }
 });
 
 // $(function () {

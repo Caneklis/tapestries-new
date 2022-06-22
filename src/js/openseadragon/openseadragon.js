@@ -154,7 +154,7 @@
           imageLoaderLimit: 0,
           maxImageCacheCount: 200,
           timeout: 3e4,
-          prefixUrl: "/images/",
+          prefixUrl: "/img/",
           navImages: {
             zoomIn: {
               REST: "zoomin_rest.png",
@@ -600,12 +600,13 @@
             (void 0 !== b.async || !1 !== b.async) && (c.async = "async"),
             b.scriptCharset && (c.charset = b.scriptCharset),
             (c.src = d),
-            (c.onload = c.onreadystatechange = function (a, b) {
-              (b || !c.readyState || /loaded|complete/.test(c.readyState)) &&
-                ((c.onload = c.onreadystatechange = null),
-                e && c.parentNode && e.removeChild(c),
-                (c = void 0));
-            }),
+            (c.onload = c.onreadystatechange =
+              function (a, b) {
+                (b || !c.readyState || /loaded|complete/.test(c.readyState)) &&
+                  ((c.onload = c.onreadystatechange = null),
+                  e && c.parentNode && e.removeChild(c),
+                  (c = void 0));
+              }),
             e.insertBefore(c, e.firstChild);
         },
         createFromDZI: function () {
@@ -2255,9 +2256,8 @@
                     THIS[this.hash].prevElementParent = this.element.parentNode,
                     THIS[this.hash].prevNextSibling = this.element.nextSibling,
                     THIS[this.hash].prevElementWidth = this.element.style.width,
-                    THIS[
-                      this.hash
-                    ].prevElementHeight = this.element.style.height,
+                    THIS[this.hash].prevElementHeight =
+                      this.element.style.height,
                     f = h.childNodes.length,
                     g = 0;
                   f > g;
@@ -3763,18 +3763,26 @@
             this.element.appendChild(this.imgGroup),
             this.element.appendChild(this.imgHover),
             this.element.appendChild(this.imgDown),
-            (this.imgGroup.style.position = this.imgHover.style.position = this.imgDown.style.position =
-              "absolute"),
-            (this.imgGroup.style.top = this.imgHover.style.top = this.imgDown.style.top =
-              "0px"),
-            (this.imgGroup.style.left = this.imgHover.style.left = this.imgDown.style.left =
-              "0px"),
+            (this.imgGroup.style.position =
+              this.imgHover.style.position =
+              this.imgDown.style.position =
+                "absolute"),
+            (this.imgGroup.style.top =
+              this.imgHover.style.top =
+              this.imgDown.style.top =
+                "0px"),
+            (this.imgGroup.style.left =
+              this.imgHover.style.left =
+              this.imgDown.style.left =
+                "0px"),
             (this.imgHover.style.visibility = this.imgDown.style.visibility =
               "hidden"),
             a.Browser.vendor == a.BROWSERS.FIREFOX &&
               a.Browser.version < 3 &&
-              (this.imgGroup.style.top = this.imgHover.style.top = this.imgDown.style.top =
-                "")),
+              (this.imgGroup.style.top =
+                this.imgHover.style.top =
+                this.imgDown.style.top =
+                  "")),
           this.addHandler("onPress", this.onPress),
           this.addHandler("onRelease", this.onRelease),
           this.addHandler("onClick", this.onClick),
@@ -4690,8 +4698,10 @@
         for (e = y; e >= x; e--) {
           if (
             ((B = !1),
-            (f = b.viewport.deltaPixelsFromPoints(b.source.getPixelRatio(e), !0)
-              .x),
+            (f = b.viewport.deltaPixelsFromPoints(
+              b.source.getPixelRatio(e),
+              !0
+            ).x),
             (!o && f >= b.minPixelRatio) || e == x)
           )
             (B = !0), (o = !0);
@@ -4992,14 +5002,15 @@
                       : e.x + e.y * k.rows),
                   (j = i < k.tileSources.length ? k.tileSources[i] : null),
                   j &&
-                    ((b.collectionOverlays[f] = g = new a.Viewer({
-                      element: a.makeNeutralElement("div"),
-                      mouseNavEnabled: !1,
-                      showNavigator: !1,
-                      showSequenceControl: !1,
-                      showNavigationControl: !1,
-                      tileSources: [j],
-                    })),
+                    ((b.collectionOverlays[f] = g =
+                      new a.Viewer({
+                        element: a.makeNeutralElement("div"),
+                        mouseNavEnabled: !1,
+                        showNavigator: !1,
+                        showSequenceControl: !1,
+                        showNavigationControl: !1,
+                        tileSources: [j],
+                      })),
                     B &&
                       ((g.element.style.border =
                         "1px solid rgba(255,255,255,0.38)"),
@@ -5292,9 +5303,10 @@
               (d.onload = function () {
                 r(d, f, !0, e);
               }),
-              (d.onabort = d.onerror = function () {
-                r(d, f, !1, e);
-              }),
+              (d.onabort = d.onerror =
+                function () {
+                  r(d, f, !1, e);
+                }),
               (e = window.setTimeout(function () {
                 r(d, f, !1, e);
               }, this.timeout)),

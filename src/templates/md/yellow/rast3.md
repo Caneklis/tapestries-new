@@ -1,13 +1,13 @@
 <header class="map__article-header">
   <h2>Сумах дубильный</h2>
-  <img src="images/map-plant-thumb.jpg" alt="">
+  <img src="img/map-plant-thumb.jpg" alt="">
 </header>
 
 ### Ареал
 
 Средний Восток, откуда распространился по всему Средиземноморью. Произрастает в предгорьях и горных районах на высоте до 1500 м над уровнем моря, предпочитая открытые сухие склоны.
 
-<img src="images/map/rast3.svg" alt="">
+<img src="img/map/rast3.svg" alt="">
 
 ### Выращивание
 

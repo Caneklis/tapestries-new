@@ -1,13 +1,13 @@
 <header class="map__article-header">
   <h2>Cкумпия кожевенная</h2>
-  <img src="images/map-plant-thumb.jpg" alt="">
+  <img src="img/map-plant-thumb.jpg" alt="">
 </header>
 
 ### Ареал
 
 Средиземноморье, Передняя Азия. Произрастает в предгорьях и горнолесных районах, доходя до 1000 м над уровнем моря.
 
-<img src="images/map/rast2.svg" alt="">
+<img src="img/map/rast2.svg" alt="">
 
 ### Выращивание
 

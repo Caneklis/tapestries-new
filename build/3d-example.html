@@ -1,108 +1,13 @@
-<!DOCTYPE html>
-<html class="page" lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Primary Meta Tags -->
-    <title>Название шпалеры</title>
-    <meta name="description" content="Description index">
-    <link rel="stylesheet" media="all" href="/css/style.min.css" />
-    <!-- BEGIN social data -->
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">
-    <!-- Twitter -->
-    <meta property="twitter:card" content="">
-    <meta property="twitter:url" content="">
-    <meta property="twitter:title" content="">
-    <meta property="twitter:description" content="">
-    <meta property="twitter:image" content="">
-    <!-- END social data -->
-    <link rel="preload" href="fonts/playfair-display-v22-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/playfair-display-v22-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
-    <link rel="preload" href="fonts/montserrat-v15-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/montserrat-v15-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
-    <link rel="icon" href="/favicon/favicon.ico"><!-- 32×32 -->
-    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"><!-- 180×180 -->
-    <link rel="manifest" href="/favicon/manifest.webmanifest">
-  </head>
-  <!--  -->
-  <body class="page__body">
-    <!--  -->
-    <header class="header">
-      <nav class="header__wrapper  main-nav">
-        <div class="logo"><a class="logo__link" href="index.html"><img src="images/gmii-logo.svg" width="156" alt="Логотип ГМИИ им. А.С. Пушкина"></a></div>
-        <ul class="main-nav__list" id="main-nav__list">
-          <li class="main-nav__item"><a href="#">История</a></li>
-          <li class="main-nav__item">
-            <a>Шпалеры</a>
-            <ul class="main-nav__sublist">
-              <li class="main-nav__sublist-item"><a href="about.html">Триумф Славы</a></li>
-              <li class="main-nav__sublist-item"><a href="about.html">Триумф Надежды</a></li>
-              <li class="main-nav__sublist-item"><a href="about.html">Иоанн Креститель</a></li>
-              <li class="main-nav__sublist-item"><a href="about.html">Триумф Помпея</a></li>
-              <li class="main-nav__sublist-item"><a href="about.html">Дети Венеры</a></li>
-              <li class="main-nav__sublist-item"><a href="about.html">Встреча Исава и Иакова</a></li>
-            </ul>
-          </li>
-          <li class="main-nav__item">
-            <a>искусство крашения</a>
-            <ul class="main-nav__sublist">
-              <li class="main-nav__sublist-item"><a href="history.html">История крашения</a></li>
-              <li class="main-nav__sublist-item"><a href="semantic.html">Семантика цвета и карта растений</a></li>
-            </ul>
-          </li>
-          <li class="main-nav__item"><a href="tapestries-on-map.html">шпалеры в москве</a></li>
-          <li class="main-nav__item"><a href="#">Квиз</a></li>
-          <li class="main-nav__item"><a href="glossary.html">Глоссарий</a></li>
-          <li class="main-nav__item"><a href="#">Партнеры</a></li>
-        </ul>
-        <div class="header__user-block">
-          <!-- <div class="volume">
-          <button class="volume__button" type="button">
-            <svg class="volume__button-icon" aria-hidden="true" width="30" height="30">
-              <use class="volume__button-icon-play" href="images/sprite_auto.svg#icon-volume"></use>
-              <use class="volume__button-icon-mute" href="images/sprite_auto.svg#icon-mute"></use>
-            </svg>
-          </button>
-        </div> -->
-          <div class="lang">
-            <a href="#" class="lang__link  lang__link--active">Рус</a>/ <a href="#" class="lang__link">Eng</a>
-          </div>
-          <button class="main-nav__button" type="button" aria-expanded="false" aria-controls="main-nav__list">
-            <svg class="main-nav__icon" aria-hidden="true" width="50" height="50">
-              <use class="main-nav__icon-menu" href="images/sprite_auto.svg#menu"></use>
-              <use class="main-nav__icon-cross" href="images/sprite_auto.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-      </nav>
-    </header>
-    <!-- BEGIN content -->
-    <div class="pagination">
-      <ul class="pagination__list">
-        <li class="pagination__item"><a href="index.html">На главную</a></li>
-        <li class="pagination__item"><a href="tapestries-on-map.html">Шпалеры в Москве и МО</a></li>
-        <li class="pagination__item"><a>Название шпалеры</a></li>
-      </ul>
-    </div>
-    <main class="page__content">
-      <script src="js/three.min.js"></script>
-      <script src="js/panolens.min.js"></script>
-      <script>
-        const panorama = new PANOLENS.ImagePanorama('images/03-mini.jpg');
-        const viewer = new PANOLENS.Viewer();
-        const control = viewer.getControl();
-        // control.panUp(-0.1); // move camera up
-        control.rotateLeft(-190 * Math.PI / 180);
-        viewer.add(panorama);
+<main class="page__content">
+  <script src="js/three.min.js"></script>
+  <script src="js/panolens.min.js"></script>
+  <script>
+    const panorama = new PANOLENS.ImagePanorama('img/moscow-map/dom-igumova/panorama/03_panorama_cube_equi.jpg');
+    const viewer = new PANOLENS.Viewer();
+    const control = viewer.getControl();
+    // control.panUp(-0.1); // move camera up
+    control.rotateLeft(-190 * Math.PI / 180);
+    viewer.add(panorama);
 
-      </script>
-    </main>
-    <!-- END content -->
-  </body>
-</html>
+  </script>
+</main>

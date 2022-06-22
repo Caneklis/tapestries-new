@@ -37,6 +37,10 @@ export const webpackConfig = {
           fullySpecified: false,
         },
       },
+      {
+        test: /\bmapbox-gl-csp-worker.js\b/i,
+        use: { loader: "worker-loader" },
+      },
     ],
   },
   plugins: [

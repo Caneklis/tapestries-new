@@ -3,24 +3,14 @@ title: Название шпалеры
 description: Description index
 ---
 
-{% extends "layouts/_layout-for-3d.html" %}
-
-
 {% block content %}
-<div class="pagination">
-  <ul class="pagination__list">
-    <li class="pagination__item"><a href="index.html">На главную</a></li>
-    <li class="pagination__item"><a href="tapestries-on-map.html">Шпалеры в Москве и МО</a></li>
-    <li class="pagination__item"><a>{% if title %}{{ title }}{% else %}Название страницы{% endif %}</a></li>
-  </ul>
-</div>
 
 <main class="page__content">
 
   <script src="js/three.min.js"></script>
   <script src="js/panolens.min.js"></script>
   <script>
-    const panorama = new PANOLENS.ImagePanorama('images/03-mini.jpg');
+    const panorama = new PANOLENS.ImagePanorama('img/moscow-map/dom-igumova/panorama/03_panorama_cube_equi.jpg');
     const viewer = new PANOLENS.Viewer();
     const control = viewer.getControl();
     // control.panUp(-0.1); // move camera up
@@ -29,6 +19,5 @@ description: Description index
   </script>
 
 </main>
-
 
 {% endblock %}

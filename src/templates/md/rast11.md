@@ -5,7 +5,7 @@
 
 ### Ареал
 
-<img src="images/map/rast11.svg" alt="">
+<img src="img/map/rast11.svg" alt="">
 
 ### Биологическое описание
 

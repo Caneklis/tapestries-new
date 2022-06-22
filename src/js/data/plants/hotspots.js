@@ -18,16 +18,16 @@ var map = (function (me, undefined) {
           <!-- Изображение до/после на пк и планшете -->
           <div class="ssb__before-after">
             <!-- Изображение до -->
-            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="images/birds-full.jpg">
-              <img src="images/birds-full.jpg" />
+            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="img/birds-full.jpg">
+              <img src="img/birds-full.jpg" />
             </a>
           </div>
 
           <div class="before-after  ssb__before-after-slider">
             <!-- Изображение до -->
-            <img src="images/bird-1.jpg" />
+            <img src="img/bird-1.jpg" />
             <!-- Изображение после -->
-            <img src="images/bird-1b.jpg" />
+            <img src="img/bird-1b.jpg" />
           </div>
         </div>`,
     },
@@ -50,16 +50,16 @@ var map = (function (me, undefined) {
         <!-- Изображение до/после на пк и планшете -->
         <div class="ssb__before-after">
           <!-- Изображение до -->
-          <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="images/birds-full.jpg">
-            <img src="images/birds-full.jpg" />
+          <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="img/birds-full.jpg">
+            <img src="img/birds-full.jpg" />
           </a>
         </div>
 
         <div class="before-after  ssb__before-after-slider">
           <!-- Изображение до -->
-          <img src="images/bird-1.jpg" />
+          <img src="img/bird-1.jpg" />
           <!-- Изображение после -->
-          <img src="images/bird-1b.jpg" />
+          <img src="img/bird-1b.jpg" />
         </div>
       </div>
       `,
@@ -83,16 +83,16 @@ var map = (function (me, undefined) {
           <!-- Изображение до/после на пк и планшете -->
           <div class="ssb__before-after">
             <!-- Изображение до -->
-            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="images/birds-full.jpg">
-              <img src="images/birds-full.jpg" />
+            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="img/birds-full.jpg">
+              <img src="img/birds-full.jpg" />
             </a>
           </div>
 
           <div class="before-after  ssb__before-after-slider">
             <!-- Изображение до -->
-            <img src="images/bird-1.jpg" />
+            <img src="img/bird-1.jpg" />
             <!-- Изображение после -->
-            <img src="images/bird-1b.jpg" />
+            <img src="img/bird-1b.jpg" />
           </div>
         </div>
       `,
@@ -115,16 +115,16 @@ var map = (function (me, undefined) {
           <!-- Изображение до/после на пк и планшете -->
           <div class="ssb__before-after">
           <!-- Изображение до -->
-            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="images/birds-full.jpg">
-            <img src="images/birds-full.jpg" />
+            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="img/birds-full.jpg">
+            <img src="img/birds-full.jpg" />
             </a>
           </div>
 
           <div class="before-after  ssb__before-after-slider">
             <!-- Изображение до -->
-            <img src="images/bird-1.jpg" />
+            <img src="img/bird-1.jpg" />
             <!-- Изображение после -->
-            <img src="images/bird-1b.jpg" />
+            <img src="img/bird-1b.jpg" />
           </div>
         </div>
       `,
@@ -147,16 +147,16 @@ var map = (function (me, undefined) {
           <!-- Изображение до/после на пк и планшете -->
           <div class="ssb__before-after">
           <!-- Изображение до -->
-            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="images/birds-full.jpg">
-            <img src="images/birds-full.jpg" />
+            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="img/birds-full.jpg">
+            <img src="img/birds-full.jpg" />
             </a>
           </div>
 
           <div class="before-after  ssb__before-after-slider">
             <!-- Изображение до -->
-            <img src="images/bird-1.jpg" />
+            <img src="img/bird-1.jpg" />
             <!-- Изображение после -->
-            <img src="images/bird-1b.jpg" />
+            <img src="img/bird-1b.jpg" />
           </div>
         </div>
       `,
@@ -180,16 +180,16 @@ var map = (function (me, undefined) {
           <!-- Изображение до/после на пк и планшете -->
           <div class="ssb__before-after">
           <!-- Изображение до -->
-            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="images/birds-full.jpg">
-            <img src="images/birds-full.jpg" />
+            <a class="ssb__before-after  ssb__before-after--split-image  ssb__gallery-popup-link" href="img/birds-full.jpg">
+            <img src="img/birds-full.jpg" />
             </a>
           </div>
 
           <div class="before-after  ssb__before-after-slider">
             <!-- Изображение до -->
-            <img src="images/bird-1.jpg" />
+            <img src="img/bird-1.jpg" />
             <!-- Изображение после -->
-            <img src="images/bird-1b.jpg" />
+            <img src="img/bird-1b.jpg" />
           </div>
         </div>
       `,

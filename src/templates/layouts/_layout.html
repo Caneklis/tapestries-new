@@ -9,28 +9,26 @@
 	<!-- Primary Meta Tags -->
 	<title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
 	<meta name="description" content="{% if description %}{{ description }}{% else %}Description{% endif %}">
-	<link rel="stylesheet" media="all" href="{{ base_path }}css/style.min.css" />
-	<!-- BEGIN social data -->
-	{% include "../partials/_media-tags.html" %}
-	<!-- END social data -->
-	<link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
+	<link rel="stylesheet" media="all" href="/css/style.min.css" />
+	<link rel="preload" href="/fonts/viaoda-libre-v5-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
 		crossorigin="anonymous">
-	<link rel="preload" href="fonts/viaoda-libre-v5-latin_cyrillic-regular.woff" as="font" type="font/woff"
+	<link rel="preload" href="/fonts/viaoda-libre-v5-latin_cyrillic-regular.woff" as="font" type="font/woff"
 		crossorigin="anonymous">
-	<link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
+	<link rel="preload" href="/fonts/montserrat-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
 		crossorigin="anonymous">
-	<link rel="preload" href="fonts/montserrat-v18-latin_cyrillic-regular.woff" as="font" type="font/woff"
+	<link rel="preload" href="/fonts/montserrat-v18-latin_cyrillic-regular.woff" as="font" type="font/woff"
 		crossorigin="anonymous">
-	<link rel="icon" href="{{ base_path }}favicon/favicon.ico"><!-- 32×32 -->
-	<link rel="apple-touch-icon" href="{{ base_path }}favicon/apple-touch-icon.png"><!-- 180×180 -->
-	<link rel="manifest" href="{{ base_path }}favicon/manifest.webmanifest">
+	<link rel="icon" href="/favicon/favicon.ico"><!-- 32×32 -->
+	<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"><!-- 180×180 -->
+	<link rel="manifest" href="/favicon/manifest.webmanifest">
 </head>
 
 
 <body class="page__body">
 
-
+	{% if not iframepopup %}
 	{% include "../partials/_header.html" %}
+	{% endif %}
 
 	<!-- BEGIN content -->
 	{% block content %}{% endblock %}
@@ -40,9 +38,6 @@
 	</div>
 
 	<!-- BEGIN scripts -->
-
-
-
 
 	<script>
 		const tooltipData = [
@@ -62,7 +57,7 @@
 							</ul>
 						</div>
 						<div class="tooltip-content__image">
-							<img src="images/tooltip-thumb.jpg" alt="">
+							<img src="img/tooltip-thumb.jpg" alt="">
 						</div>
 					`,
 			},
@@ -90,15 +85,102 @@
 				txt:
 					`
 						<div class="tooltip-content__image">
-							<img src="images/tooltip-thumb.jpg" alt="">
+							<img src="img/tooltip-thumb.jpg" alt="">
 						</div>
 					`,
 			},
 		];
 	</script>
 
-	<script src="{{ base_path }}js/main.min.js"></script>
+	{% if map %}
+	<script>
 
+		if (!('remove' in Element.prototype)) {
+			Element.prototype.remove = function () {
+				if (this.parentNode) {
+					this.parentNode.removeChild(this);
+				}
+			};
+		}
+
+		var places = {
+			type: "FeatureCollection",
+			features: [
+				{
+					type: "Feature",
+					properties: {
+						// Заголовок для попапа и для списка
+						name: "Дом Игумнова. Резиденция посла Французской республики. ",
+						// Адрес для попап
+						address: "г. Москва, ул. Б. Якиманка, д. 43, стр. 1",
+						// Текст внутри попапа
+						info: `
+	            <p>К каждой точке, будет подготовлен текст (не более 1800-2000 знаков) и аннотация к фотографиям. Ниже текст на 2000 знаков для примера.</p>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestib</p>
+							`,
+						// Превью изображения для списка  и для попапа
+						imagetmb: "img/moscow-map/dom-igumova/gallery/01-thumb.jpg",
+						// Ссылка на превью изображения для открытия этого изображения в попапе.
+						image: "img/moscow-map/dom-igumova/gallery/01.jpg",
+						"marker-color": "#7e7e7e",
+						"marker-size": "medium",
+						"marker-symbol": "park",
+						// Превью изображения для мобильной версии попапа
+						galleryTmb: ['img/moscow-map/dom-igumova/gallery/02-thumb.jpg', 'img/moscow-map/dom-igumova/gallery/03-thumb.jpg', 'img/moscow-map/dom-igumova/gallery/04-thumb.jpg', 'img/moscow-map/dom-igumova/gallery/05-thumb.jpg', 'img/moscow-map/dom-igumova/gallery/06-thumb.jpg'],
+						// Изображения для мобильной версии попапа полный размер
+						gallery: [
+							{
+								link: 'img/moscow-map/dom-igumova/gallery/02.jpg',
+								caption: "Описание фотографии"
+							},
+							{
+								link: 'img/moscow-map/dom-igumova/gallery/03.jpg',
+								caption: "Описание фотографии"
+							},
+							{
+								link: 'img/moscow-map/dom-igumova/gallery/04.jpg',
+								caption: "Описание фотографии"
+							},
+							{
+								link: 'img/moscow-map/dom-igumova/gallery/05.jpg',
+								caption: "Описание фотографии"
+							},
+							{
+								link: 'img/moscow-map/dom-igumova/gallery/06.jpg',
+								caption: "Описание фотографии"
+							}
+						],
+						// Превью изображения для десктопной версии попапа
+						galleryTmbDesktop: ['img/moscow-map/dom-igumova/gallery/05-thumb.jpg', 'img/moscow-map/dom-igumova/gallery/03-thumb.jpg', 'img/moscow-map/dom-igumova/gallery/04-thumb.jpg'],
+						// Ссылки и описание на страницу с панорамой которая будет открываться как iframe
+						gallery3dLink: [
+							{
+								link: '3d/dom-igumova/3d-1.html',
+								caption: 'Описание 1'
+							},
+							{
+								link: '3d/dom-igumova/3d-2.html',
+								caption: 'Описание 2'
+							},
+							{
+								link: '3d/dom-igumova/3d-3.html',
+								caption: 'Описание 3'
+							},
+						]
+					},
+					geometry: {
+						type: "Point",
+						// Координаты на карте
+						coordinates: [37.6136, 55.7328]
+					}
+				},
+			]
+		};
+
+	</script>
+	{% endif %}
+
+	<script src="/js/main.min.js"></script>
 
 	{% if fashion %}
 	<script src="js/data/fashion/hotspots.js"></script>
@@ -108,13 +190,12 @@
 	<script src="js/data/research/hotspots.js"></script>
 	{% endif %}
 
-
+	{% if pageDeepzoom %}
 	<script>
 		let twenty = () => {
 			setTimeout(() => {
 				$(".before-after").twentytwenty();
 			}, 1000);
-
 		}
 
 		if (document.querySelector("#ssb-banner")) {
@@ -394,17 +475,9 @@
 
 				return me;
 			})(map || {}, jQuery);
-
-
 		}
 	</script>
-
-
-
-
-
-
-
+	{% endif %}
 	<!-- END scripts -->
 
 </body>

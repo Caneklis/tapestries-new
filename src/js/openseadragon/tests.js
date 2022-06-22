@@ -22,20 +22,20 @@ var map = (function (me, undefined) {
       <!-- Изображение до/после на пк и планшете -->
       <div class="ssb__before-after">
         <!-- Изображение до -->
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1.jpg">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1.jpg">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
         <!-- Изображение после -->
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1b.jpg">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1b.jpg">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
       </div>
 
       <div class="before-after  ssb__before-after-slider">
         <!-- Изображение до -->
-        <img src="images/before-after/before-after-thumb-1.jpg" />
+        <img src="img/before-after/before-after-thumb-1.jpg" />
         <!-- Изображение после -->
-        <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <img src="img/before-after/before-after-thumb-1b.jpg" />
       </div>
 			`,
       data: "research",
@@ -61,12 +61,12 @@ var map = (function (me, undefined) {
       <!-- Изображение до/после на пк и планшете -->
       <div class="ssb__before-after">
         <!-- Изображение до -->
-        <a class="ssb__gallery-popup-link" href="images/test.png">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/test.png">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
         <!-- Изображение после -->
-        <a class="ssb__gallery-popup-link" href="images/test.png">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/test.png">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
 
       </div>
@@ -75,20 +75,20 @@ var map = (function (me, undefined) {
 
       <div class="ssb__before-after">
         <!-- Изображение до -->
-        <a class="ssb__gallery-popup-link" href="images/test.png">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/test.png">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
         <!-- Изображение после -->
-        <a class="ssb__gallery-popup-link" href="images/test.png">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/test.png">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
       </div>
 
       <div class="before-after  ssb__before-after-slider">
         <!-- Изображение до -->
-        <img src="images/before-after/before-after-thumb-1.jpg" />
+        <img src="img/before-after/before-after-thumb-1.jpg" />
         <!-- Изображение после -->
-        <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <img src="img/before-after/before-after-thumb-1b.jpg" />
       </div>
 			`,
       data: "bird",
@@ -113,16 +113,16 @@ var map = (function (me, undefined) {
       </div>
       <div class="ssb__before-after">
         <!-- Изображение до -->
-        <a class="ssb__gallery-popup-link" href="images/fashion-1.jpg">
-          <img src="images/fashion-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/fashion-1.jpg">
+          <img src="img/fashion-1.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/fashion-1b.jpg">
-          <img src="images/fashion-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/fashion-1b.jpg">
+          <img src="img/fashion-1b.jpg" />
         </a>
       </div>
       <div class="before-after  ssb__before-after-slider">
-        <img src="images/fashion-1.jpg" />
-        <img src="images/fashion-1b.jpg" />
+        <img src="img/fashion-1.jpg" />
+        <img src="img/fashion-1b.jpg" />
       </div>
 			`,
       data: "plants",
@@ -134,7 +134,7 @@ var map = (function (me, undefined) {
       h: 250,
       id: "2",
       link: "2",
-      image: "images/intro-venera.jpg",
+      image: "img/intro-venera.jpg",
       audio: "",
       // checkResize: false,
       category: "",
@@ -167,41 +167,41 @@ var map = (function (me, undefined) {
       </div>
 
       <div class="ssb__gallery">
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1.jpg">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1.jpg">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1b.jpg">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1b.jpg">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2.jpg">
-          <img src="images/before-after/before-after-thumb-2.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2.jpg">
+          <img src="img/before-after/before-after-thumb-2.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2b.jpg">
-          <img src="images/before-after/before-after-thumb-2b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2b.jpg">
+          <img src="img/before-after/before-after-thumb-2b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1.jpg">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1.jpg">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1b.jpg">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1b.jpg">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2.jpg">
-          <img src="images/before-after/before-after-thumb-2.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2.jpg">
+          <img src="img/before-after/before-after-thumb-2.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2b.jpg">
-          <img src="images/before-after/before-after-thumb-2b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2b.jpg">
+          <img src="img/before-after/before-after-thumb-2b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1.jpg">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1.jpg">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1b.jpg">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1b.jpg">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2.jpg">
-          <img src="images/before-after/before-after-thumb-2.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2.jpg">
+          <img src="img/before-after/before-after-thumb-2.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2b.jpg">
-          <img src="images/before-after/before-after-thumb-2b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2b.jpg">
+          <img src="img/before-after/before-after-thumb-2b.jpg" />
         </a>
       </div>
 			`,
@@ -220,46 +220,46 @@ var map = (function (me, undefined) {
       category: "",
       title: "История костюма",
       description: `
-      <a class="ssb__gallery-popup-link" href="images/fashion-thumb-1.jpg"><img src="images/fashion-thumb-1.jpg"></a>
+      <a class="ssb__gallery-popup-link" href="img/fashion-thumb-1.jpg"><img src="img/fashion-thumb-1.jpg"></a>
       <div class="ssb__full-text">
         <p>В произведениях живописи и графики</p>
       </div>
       <div class="ssb__gallery">
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1.jpg">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1.jpg">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1b.jpg">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1b.jpg">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2.jpg">
-          <img src="images/before-after/before-after-thumb-2.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2.jpg">
+          <img src="img/before-after/before-after-thumb-2.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2b.jpg">
-          <img src="images/before-after/before-after-thumb-2b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2b.jpg">
+          <img src="img/before-after/before-after-thumb-2b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1.jpg">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1.jpg">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1b.jpg">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1b.jpg">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2.jpg">
-          <img src="images/before-after/before-after-thumb-2.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2.jpg">
+          <img src="img/before-after/before-after-thumb-2.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2b.jpg">
-          <img src="images/before-after/before-after-thumb-2b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2b.jpg">
+          <img src="img/before-after/before-after-thumb-2b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1.jpg">
-          <img src="images/before-after/before-after-thumb-1.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1.jpg">
+          <img src="img/before-after/before-after-thumb-1.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-1b.jpg">
-          <img src="images/before-after/before-after-thumb-1b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-1b.jpg">
+          <img src="img/before-after/before-after-thumb-1b.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2.jpg">
-          <img src="images/before-after/before-after-thumb-2.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2.jpg">
+          <img src="img/before-after/before-after-thumb-2.jpg" />
         </a>
-        <a class="ssb__gallery-popup-link" href="images/before-after/before-after-thumb-2b.jpg">
-          <img src="images/before-after/before-after-thumb-2b.jpg" />
+        <a class="ssb__gallery-popup-link" href="img/before-after/before-after-thumb-2b.jpg">
+          <img src="img/before-after/before-after-thumb-2b.jpg" />
         </a>
       </div>
 			`,

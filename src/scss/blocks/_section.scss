@@ -13,7 +13,7 @@
 .section {
   background-color: $s-color;
   color: $m-color;
-  background: #e2dac7 url("../images/bg-light.svg") repeat-y top center;
+  background: #e2dac7 url("../img/bg-light.svg") repeat-y top center;
   background-size: 100%;
 
   // &--hero {
@@ -26,7 +26,7 @@
   //     margin-top: 20px;
   //     width: 100%;
   //     height: 60px;
-  //     background-image: url("../images/line.svg");
+  //     background-image: url("../img/line.svg");
   //     background-repeat: no-repeat;
   //     background-position: center center;
 
@@ -214,7 +214,7 @@
       margin-top: 20px;
       width: 100%;
       height: 60px;
-      background-image: url("../images/line.svg");
+      background-image: url("../img/line.svg");
       background-repeat: no-repeat;
       background-position: center center;
 

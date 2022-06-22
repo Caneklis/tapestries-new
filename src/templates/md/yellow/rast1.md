@@ -1,11 +1,11 @@
 <header class="map__article-header">
   <h2>РЕЗЕДА</h2>
-  <img src="images/map-plant-thumb.jpg" alt="">
+  <img src="img/map-plant-thumb.jpg" alt="">
 </header>
 
 ### Ареал
 
-<img src="images/map/rast1.svg" alt="">
+<img src="img/map/rast1.svg" alt="">
 
 ### Выращивание
 
