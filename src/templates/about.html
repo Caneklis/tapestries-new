@@ -233,7 +233,33 @@ description: Description index
                 вместо отдельных сцен занятий,- цельные, единомоментные зарисовки из жизни, как в случае детей Солнца
                 (городское
                 состязание) или Венеры (отдых на природе).</p>
+            </section>
 
+            <section class="swiper  section__slider">
+              <div class="swiper-wrapper">
+                {% for i in range(1, 8) -%}
+                <div class="swiper-slide  swiper-slide--custom">
+                  <a href="/series/harmen-muller/0{{i}}/index.html">
+                    <img src="img/series/harmen-muller/{{i}}-thumb.jpg" loading="lazy" alt="Изображение гравюры">
+                  </a>
+                </div>
+                {%- endfor %}
+              </div>
+
+              <button class="section__slider-button-prev">
+                <svg width="148" height="18" viewBox="0 0 148 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 9L15 17.6603V0.339746L0 9ZM13.5 10.5H147.003V7.5H13.5V10.5Z" fill="#A28C62" />
+                </svg>
+              </button>
+              <button class="section__slider-button-next">
+                <svg width="148" height="18" viewBox="0 0 148 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M147.003 9L132.003 0.339746V17.6603L147.003 9ZM0 10.5H133.503V7.5H0L0 10.5Z"
+                    fill="#A28C62" />
+                </svg>
+              </button>
+            </section>
+
+            <section class="tab-section__content-text">
               <p><b>Мартин ван Хемскерк (нидерл. Maarten van Heemskerck) (1 июня 1498, Хемскерк – 1 октября 1574,
                   Харлем)</b> – нидерландский
                 художник, мастер портретной и религиозной живописи, представитель нидерландского романизма. Учился и
@@ -274,30 +300,7 @@ description: Description index
                 пр.). Многие знаменитые гравюры были созданы по заказу Кока.</p>
             </section>
 
-            <section class="swiper  section__slider">
-              <div class="swiper-wrapper">
-                {% for i in range(1, 8) -%}
-                <div class="swiper-slide  swiper-slide--custom">
-                  <a href="/series/harmen-muller/0{{i}}/index.html" data-fancybox data-type="iframe"
-                    data-preload="false">
-                    <img src="img/series/harmen-muller/{{i}}-thumb.jpg" loading="lazy" alt="Изображение гравюры">
-                  </a>
-                </div>
-                {%- endfor %}
-              </div>
 
-              <button class="section__slider-button-prev">
-                <svg width="148" height="18" viewBox="0 0 148 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 9L15 17.6603V0.339746L0 9ZM13.5 10.5H147.003V7.5H13.5V10.5Z" fill="#A28C62" />
-                </svg>
-              </button>
-              <button class="section__slider-button-next">
-                <svg width="148" height="18" viewBox="0 0 148 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M147.003 9L132.003 0.339746V17.6603L147.003 9ZM0 10.5H133.503V7.5H0L0 10.5Z"
-                    fill="#A28C62" />
-                </svg>
-              </button>
-            </section>
           </li>
           <!-- <li class="tab-section__content-item" data-id="tab-2" role="tabpanel" aria-expanded="false">
             <p>Как в живописных произведениях, так и в искусстве шпалерного ткачества, одежды изображенных на шпалерах
