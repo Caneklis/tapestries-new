@@ -41,19 +41,11 @@
             </ul>
           </li>
           <li class="main-nav__item"><a href="/tapestries-on-map.html">шпалеры в москве</a></li>
-          <li class="main-nav__item"><a href="#">Квиз</a></li>
+          <li class="main-nav__item"><a href="/quiz.html">Квиз</a></li>
           <li class="main-nav__item"><a href="/glossary.html">Глоссарий</a></li>
           <li class="main-nav__item"><a href="#">Партнеры</a></li>
         </ul>
         <div class="header__user-block">
-          <!-- <div class="volume">
-          <button class="volume__button" type="button">
-            <svg class="volume__button-icon" aria-hidden="true" width="30" height="30">
-              <use class="volume__button-icon-play" href="img/sprite_auto.svg#icon-volume"></use>
-              <use class="volume__button-icon-mute" href="img/sprite_auto.svg#icon-mute"></use>
-            </svg>
-          </button>
-        </div> -->
           <div class="lang">
             <a href="#" class="lang__link  lang__link--active">Рус</a>/ <a href="#" class="lang__link">Eng</a>
           </div>
@@ -67,13 +59,13 @@
       </nav>
     </header>
     <!-- BEGIN content -->
-    <div class="pagination">
-      <ul class="pagination__list">
-        <li class="pagination__item"><a href="index.html">На главную</a></li>
-        <li class="pagination__item"><a href="about.html">Триумф Надежды</a></li>
-        <li class="pagination__item"><a>Квест</a></li>
-      </ul>
-    </div>
+    <!-- <div class="pagination">
+  <ul class="pagination__list">
+    <li class="pagination__item"><a href="index.html">На главную</a></li>
+    <li class="pagination__item"><a href="about.html">Триумф Надежды</a></li>
+    <li class="pagination__item"><a>Квест</a></li>
+  </ul>
+</div> -->
     <main class="page__content">
       <section class="quiz">
         <div class="quiz-start">
@@ -82,7 +74,7 @@
               <div class="quiz-start-text">
                 <h2>Онлайн-квест для детей и подростков (10+).</h2>
                 <p>Небольшой вступительный текст. В конце можно вывести количество правильных ответов если нужно. Изображение объекта на шпалере (выделенное или фрагментированное) появляется вместе с вопросом. Подписи, выделенные курсивом, появляются вместе с изображениями и являются пояснениями к ответам.Правильные ответы выделены жирным шрифтом.Изображения муляжей, гербария, могут быть заменены авторскими фото.</p>
-                <button class="start-btn " id="start-btn" type="button"> Старт Викторины </button>
+                <button class="start-btn " id="start-btn" type="button">Начать квиз </button>
               </div>
             </div>
           </div>
@@ -98,22 +90,22 @@
               </div>
               <div id="app"></div>
             </div>
+            <button class="finish-quiz" type="button" onclick="document.location.reload();">закончить тест</button>
           </div>
           <div class="quiz__wrapper">
             <div class="quiz-header">
               <div class="question-theme">
                 <div class="question-theme-main">
                   <h1 class="question-theme-title"></h1>
-                  <span class="question-theme-year"></span>
+                  <!-- <span class="question-theme-year"></span> -->
                 </div>
                 <h2 class="question-theme-subtitle"><span>тема вопроса</span></h2>
               </div>
-              <button class="finish-quiz" type="button" onclick="document.location.reload();">закончить тест</button>
             </div>
             <article class="quiz-box  custom-box">
               <!-- <img class="bg" src="img/bottom-triangle.svg" alt=""> -->
               <!-- <img src="img/map.svg" alt="" class="map" width="773"> -->
-              <img class="bg" src="" alt="">
+              <!-- <img class="bg" src="" alt=""> -->
               <div class="question-text"></div>
               <div class="option-container"></div>
               <div class="next-question-btn">
@@ -124,9 +116,9 @@
                   <h3 class="answer-popup__title"></h3>
                   <div class="answer-popup__content">
                     <!-- <img class="answer-popup__line  answer-popup__line--top" src="img/answer-top.svg" alt=""> -->
-                    <div class="answer-popup__video">
-                      <video muted></video>
-                    </div>
+                    <!-- <div class="answer-popup__video">
+                  <video muted></video>
+                </div> -->
                     <div class="answer-popup__text"></div>
                     <button class="answer-popup__btn" type="button" onclick="next()">Следующий вопрос</button>
                     <!-- <img class="answer-popup__line  answer-popup__line--bottom" src="img/answer-bottom.svg" alt=""> -->
@@ -141,32 +133,41 @@
                   <div class="results-box-popup__content  submit-form" id="certificate_form">
                     <!-- <img class="results-box-popup__line  results-box-popup__line--top" src="img/answer-top.svg" alt=""> -->
                     <div class="results-box-popup__text">
-                      <p>Поздравляем, Вы показали глубокие знания истории Атомной промышленности! <br> Сертификат о прохождении викторины будет отправлен Вам на электронную почту.</p>
-                      <div class="results-box-popup__field"><input type="text" placeholder="Фамилия" class="form-control input" type="text" id="certificate_last_name" name="certificate_last_name" required=""></div>
-                      <div class="results-box-popup__field"><input type="text" placeholder="Имя" class="form-control input" type="text" id="certificate_first_name" name="certificate_first_name" required=""></div>
-                      <div class="results-box-popup__field"><input type="text" placeholder="Отчество" class="form-control input" type="text" id="certificate_middle_name" name="certificate_middle_name">
-                      </div>
-                      <div class="results-box-popup__field"><input type="text" placeholder="email" id="certificate_email" name="certificate_email"></div>
-                      <div class="certificate-wrapper  hide">
-                        <div id="certificateExample">
-                          <img src="img/sertificate.jpg" alt="">
-                          <p style="top: 45%; left: 50%;"><b class="field-0"></b></p>
-                          <p style="top: 53%;"><b class="field-1"></b></p>
-                          <p style="top: 60%;"><b class="field-2"></b></p>
-                        </div>
-                      </div>
+                      <p>Поздравляем, Вы показали глубокие знания.</p>
+                      <!--
+                  <div class="results-box-popup__field"><input type="text" placeholder="Фамилия"
+                      class="form-control input" type="text" id="certificate_last_name" name="certificate_last_name"
+                      required=""></div>
+                  <div class="results-box-popup__field"><input type="text" placeholder="Имя" class="form-control input"
+                      type="text" id="certificate_first_name" name="certificate_first_name" required=""></div>
+                  <div class="results-box-popup__field"><input type="text" placeholder="Отчество"
+                      class="form-control input" type="text" id="certificate_middle_name"
+                      name="certificate_middle_name">
+                  </div>
+                  <div class="results-box-popup__field"><input type="text" placeholder="email" id="certificate_email"
+                      name="certificate_email"></div> -->
+                      <!--
+                  <div class="certificate-wrapper  hide">
+                    <div id="certificateExample">
+                      <img src="img/sertificate.jpg" alt="">
+                      <p style="top: 45%; left: 50%;"><b class="field-0"></b></p>
+                      <p style="top: 53%;"><b class="field-1"></b></p>
+                      <p style="top: 60%;"><b class="field-2"></b></p>
+                    </div>
+                  </div> -->
                     </div>
                     <button class="results-box-popup__btn  results-box-popup__btn--left" type="button" onclick="document.location.reload();">В НАЧАЛО</button>
-                    <button class="results-box-popup__btn  btnSend">ОТПРАВИТЬ</button>
-                    <img class="results-box-popup__line  results-box-popup__line--bottom" src="img/answer-bottom.svg" alt="">
+                    <!-- <button class="results-box-popup__btn  btnSend">ОТПРАВИТЬ</button> -->
+                    <!-- <img class="results-box-popup__line  results-box-popup__line--bottom" src="img/answer-bottom.svg"
+                  alt=""> -->
                   </div>
                 </div>
               </div>
             </div>
-            <div class="quiz-footer">
-              <div class="question-number"></div>
-              <div class="answers-indicator"></div>
-            </div>
+          </div>
+          <div class="quiz-footer">
+            <div class="question-number"></div>
+            <div class="answers-indicator"></div>
           </div>
         </section>
       </section>
@@ -212,7 +213,7 @@
       const answerPopup = document.querySelector(".answer-popup");
       const count = document.querySelector(".count");
       const animateLogo = document.querySelector(".logo");
-      const animeteBg = document.querySelector(".bg");
+      // const animeteBg = document.querySelector(".bg");
       let questionCounter = 0;
       let currentQuestion;
       let availableQuestions = [];
@@ -222,6 +223,7 @@
       let intervalId;
       let timer;
       let timeerInterval = 60;
+      // let timeerInterval = 6000;
       let circleLeft = document.querySelector(".circle__left");
       let circleRight = document.querySelector(".circle__right");
 
@@ -286,6 +288,8 @@
         //set question number
         count.classList.remove("fadeOut");
         count.classList.add("fadeIn");
+        document.querySelector(".quiz-footer").classList.remove("fadeOut");
+        document.querySelector(".quiz-footer").classList.add("fadeIn");
         // if (questionCounter === 1) {
         //   playVideo("#v1");
         // }
@@ -358,11 +362,10 @@
         count.classList.add("fadeOut");
         document.querySelector(".question-text").classList.add("scale-out");
         document.querySelector(".option-container").classList.add("scale-out");
-        animateLogo.classList.add("fadetoright");
-        setTimeout(() =>
-        {
-          animeteBg.classList.add("fadetoright");
-        }, 200);
+        // animateLogo.classList.add("fadetoright");
+        // setTimeout(() => {
+        //   animeteBg.classList.add("fadetoright");
+        // }, 200);
         circleLeft.classList.add("paused");
         circleRight.classList.add("paused");
         circleLeft.classList.remove("circleLeftAnim");
@@ -451,17 +454,18 @@
           circleRight.classList.remove("circleRightAnim");
           count.classList.remove("fadeIn");
           count.classList.add("fadeOut");
+          document.querySelector(".quiz-footer").classList.remove("fadeIn");
+          document.querySelector(".quiz-footer").classList.add("fadeOut");
         }, 800);
         setTimeout(() =>
         {
           document.querySelector(".quiz-footer").style.overflowY = "hidden";
         }, 800);
         // quizBox.style.backgroundImage = "none";
-        setTimeout(() =>
-        {
-          animateLogo.classList.add("fadetoright");
-          animeteBg.classList.add("fadetoright");
-        }, 800);
+        // setTimeout(() => {
+        //   animateLogo.classList.add("fadetoright");
+        //   animeteBg.classList.add("fadetoright");
+        // }, 800);
         // setTimeout(function () {
         //   if (questionCounter === quiz.length) {
         //     console.log("quiz over");
@@ -508,16 +512,17 @@
           quizOver();
           count.classList.add("fadeOut");
           document.querySelector(".quiz-footer").style.overflowY = "hidden";
+          document.querySelector(".quiz-footer").classList.add("fadeOut");
+          document.querySelector('.question-theme-subtitle').remove()
         }
         else
         {
           answerPopup.classList.add("hide");
           answerPopup.classList.remove("show");
-          setTimeout(() =>
-          {
-            animateLogo.classList.remove("fadetoright");
-            animeteBg.classList.remove("fadetoright");
-          }, 800);
+          // setTimeout(() => {
+          //   animateLogo.classList.remove("fadetoright");
+          //   animeteBg.classList.remove("fadetoright");
+          // }, 800);
           setTimeout(function()
           {
             document.querySelector(".question-text").classList.remove("scale-out");
@@ -541,6 +546,7 @@
           getNewQuestion();
           count.classList.add("fadeOut");
           document.querySelector(".quiz-footer").style.overflowY = "visible";
+          document.querySelector(".quiz-footer").classList.add("fadeOut");
           myTimer();
         }
       }

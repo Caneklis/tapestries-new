@@ -132,17 +132,23 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  const playAudio = () => {
+    if (playBtn.classList.contains("volume__button--play")) {
+      document.querySelector("audio").pause();
+      console.log("pause!");
+      playBtn.classList.remove("volume__button--play"); // changing icon for button
+    } else {
+      document.querySelector("audio").play();
+      console.log("play!");
+      playBtn.classList.add("volume__button--play");
+    }
+  };
+
   if (playBtn) {
     setTimeout(() => {
       playBtn.addEventListener("click", (e) => {
-        if (playBtn.classList.contains("volume__button--play")) {
-          document.querySelector("audio").pause();
-          playBtn.classList.remove("volume__button--play"); // changing icon for button
-        } else {
-          document.querySelector("audio").play();
-          playBtn.classList.add("volume__button--play");
-        }
-        //playBtn.classList.toggle("volume__button--play");
+        // playBtn.classList.toggle("volume__button--play");
+        playAudio();
       });
     }, 500);
   }
@@ -458,6 +464,16 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  Fancybox.bind("[data-fancybox='3d']", {
+    Toolbar: {
+      autoEnable: false,
+      display: ["counter", "close"],
+    },
+    Thumbs: {
+      autoStart: false,
+    },
+  });
+
   const MAPBOXGLCONF = {
     accessToken:
       "pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg",
@@ -542,11 +558,23 @@ document.addEventListener("DOMContentLoaded", () => {
           photosContainer.classList.add(modClass);
           for (let i = 0; i < galleryImg.length; i++) {
             const photoLink = document.createElement("a");
-            if (type === "iframe") {
+            if (modClass === "mapbox__gallery-list--desktop-3d") {
               setAttributes(photoLink, {
                 href: galleryLink[i].link,
                 "data-fancybox": "3d",
                 "data-type": "iframe",
+                "data-caption": galleryLink[i].caption,
+              });
+            } else if (modClass === "mapbox__gallery-list--desktop") {
+              setAttributes(photoLink, {
+                href: galleryLink[i].link,
+                "data-fancybox": "mapbox-gallery-desktop",
+                "data-caption": galleryLink[i].caption,
+              });
+            } else if (modClass === "mapbox__gallery-list--mobile") {
+              setAttributes(photoLink, {
+                href: galleryLink[i].link,
+                "data-fancybox": "mapbox-gallery-mobile",
                 "data-caption": galleryLink[i].caption,
               });
             } else {
@@ -571,6 +599,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
 
+      const galleryTpl = (el) => {
+        if (el.gallery3dLink.length > 0) {
+          return generateGallery(
+            el.galleryTmbDesktop,
+            el.gallery3dLink,
+            "mapbox__gallery-list--desktop-3d",
+            "iframe"
+          ).outerHTML;
+        }
+
+        return generateGallery(
+          el.galleryTmb,
+          el.gallery,
+          "mapbox__gallery-list--desktop"
+        ).outerHTML;
+      };
+
       const tpl = `<a class="mapbox__preview-pic" href="${
         currentFeature.properties.image
       }" data-fancybox="mapbox-gallery"><img src="${
@@ -578,23 +623,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }"></a>
       <div class="mapbox__popup-text">
         <h3>${currentFeature.properties.name}</h3>
+        <p><small>${currentFeature.properties.address}</small></p>
         ${currentFeature.properties.info}
       </div>
       <div class="mapbox__gallery">
+        ${galleryTpl(currentFeature.properties)}
         ${
           generateGallery(
-            currentFeature.properties.galleryTmbDesktop,
-            currentFeature.properties.gallery3dLink,
-            "mapbox__gallery-list--desktop",
-            "iframe"
+            currentFeature.properties.galleryTmb,
+            currentFeature.properties.gallery,
+            "mapbox__gallery-list--mobile"
           ).outerHTML
-        } ${
-        generateGallery(
-          currentFeature.properties.galleryTmb,
-          currentFeature.properties.gallery,
-          "mapbox__gallery-list--mobile"
-        ).outerHTML
-      }
+        }
       </div>`;
 
       const popup = new mapboxgl.Popup({ closeOnClick: false })

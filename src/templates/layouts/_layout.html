@@ -173,6 +173,48 @@
 						// Координаты на карте
 						coordinates: [37.6136, 55.7328]
 					}
+				}, {
+					type: "Feature",
+					properties: {
+						// Заголовок для попапа и для списка
+						name: "Дом Игумнова. Резиденция посла Французской республики. ",
+						// Адрес для попап
+						address: "г. Москва, ул. Б. Якиманка, д. 43, стр. 1",
+						// Текст внутри попапа
+						info: `
+	            <p>К каждой точке, будет подготовлен текст (не более 1800-2000 знаков) и аннотация к фотографиям. Ниже текст на 2000 знаков для примера.</p>	`,
+						// Превью изображения для списка  и для попапа
+						imagetmb: "img/moscow-map/arhangelskoe/gallery/01-thumb.jpg",
+						// Ссылка на превью изображения для открытия этого изображения в попапе.
+						image: "img/moscow-map/arhangelskoe/gallery/01.jpg",
+						"marker-color": "#7e7e7e",
+						"marker-size": "medium",
+						"marker-symbol": "park",
+						// Превью изображения для мобильной версии попапа
+						galleryTmb: ['img/moscow-map/arhangelskoe/gallery/02-thumb.jpg', 'img/moscow-map/arhangelskoe/gallery/03-thumb.png'],
+						// Изображения для мобильной версии попапа полный размер
+						gallery: [
+							{
+								link: 'img/moscow-map/arhangelskoe/gallery/02.jpg',
+								caption: `Государственный музей-усадьба «Архангельское» <br>Фотографии из архива Музея- усадьба "Архангельское".<br>	Фото: Алексей Досаев`
+							},
+							{
+								link: 'img/moscow-map/arhangelskoe/gallery/03.png',
+								caption: `Шпалера «Цыганка». Франция. Мастерская Обюссона. <br>
+								Шелк, шпалерное ткачество. 300 × 430 см. Инв. ГМУА КП 1144/П1294. <br>
+								Фото: Андрей Кудрявицкий - 05`
+							},
+						],
+						// Превью изображения для десктопной версии попапа
+						galleryTmbDesktop: ['img/moscow-map/arhangelskoe/gallery/02-thumb.jpg', 'img/moscow-map/arhangelskoe/gallery/03-thumb.png',],
+						// Ссылки и описание на страницу с панорамой которая будет открываться как iframe
+						gallery3dLink: []
+					},
+					geometry: {
+						type: "Point",
+						// Координаты на карте
+						coordinates: [37.2864, 55.7863]
+					}
 				},
 			]
 		};

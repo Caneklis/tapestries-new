@@ -283,7 +283,7 @@
   display: flex;
   position: absolute;
   color: #fff;
-  left: -200px;
+  left: -240px;
   z-index: 2;
   bottom: 16px;
   transition: all 0.2s;
@@ -298,7 +298,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 200px;
+  width: 240px;
   height: 60px;
   padding: 12px 5px 15px 14px;
   background-color: $s-color;
@@ -333,21 +333,21 @@
   margin-right: 0;
 }
 
-.ssb .ssb__controls .ssb__controls-button:active,
-.ssb .ssb__controls .ssb__controls-button:hover {
-  color: #336b6f;
-}
-
-// .ssb .ssb__controls .ssb__controls-button-large {
-//   width: 42px;
-//   /* font-size: 30px; */
-//   color: #000;
+// .ssb .ssb__controls .ssb__controls-button:active,
+// .ssb .ssb__controls .ssb__controls-button:hover {
+//   // color: #336b6f;
 // }
 
-.ssb .ssb__controls .ssb__controls-button-large:active,
-.ssb .ssb__controls .ssb__controls-button-large:hover {
-  color: #336b6f;
-}
+// // .ssb .ssb__controls .ssb__controls-button-large {
+// //   width: 42px;
+// //   /* font-size: 30px; */
+// //   color: #000;
+// // }
+
+// .ssb .ssb__controls .ssb__controls-button-large:active,
+// .ssb .ssb__controls .ssb__controls-button-large:hover {
+//   // color: #336b6f;
+// }
 
 .ssb__controls .ssb__controls-toggle {
   display: flex;

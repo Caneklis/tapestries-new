@@ -108,7 +108,7 @@
   cursor: pointer;
   height: 30px;
   width: 50px;
-  background-image: url("../img/marker.svg");
+  background-image: url("../marker.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0);
@@ -349,7 +349,8 @@ a.mapboxgl-ctrl-logo {
   flex-wrap: wrap;
   gap: 20px;
 
-  &--desktop {
+  &--desktop,
+  &--desktop-3d {
     display: none;
   }
   &--mobile {
@@ -363,7 +364,8 @@ a.mapboxgl-ctrl-logo {
   }
 
   @media (min-width: 768px) {
-    &--desktop {
+    &--desktop,
+    &--desktop-3d {
       display: flex;
       gap: 30px;
     }

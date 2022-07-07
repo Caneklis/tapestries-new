@@ -21,7 +21,7 @@
   width: 35%;
   padding-left: 40px;
   -webkit-box-shadow: 0 0 12px 3px #333;
-          box-shadow: 0 0 12px 3px #333;
+  box-shadow: 0 0 12px 3px #333;
   background-color: #fff;
 }
 
@@ -42,7 +42,7 @@
   display: block;
   height: 5px;
   -webkit-box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
-          box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
 }
 
 .ssb.ssb__info-expanded .ssb__info {
@@ -54,7 +54,7 @@
 
 .ssb .ssb__info-inner {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   max-height: 100%;
   padding-right: 20px;
   padding-top: 40px;
@@ -144,7 +144,7 @@
 
 .ssb .ssb-hotspot:hover {
   -webkit-animation: pulse 2s ease-in-out infinite;
-          animation: pulse 2s ease-in-out infinite;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .ssb .ssb-hotspot::before {
@@ -153,7 +153,7 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   display: block;
   width: 20%;
   height: 20%;
@@ -179,7 +179,7 @@
 .ssb .ssb-hotspot.fashion {
   border-radius: 0;
   -webkit-transform: scaleX(0.5) translateX(-50%) rotate(45deg);
-          transform: scaleX(0.5) translateX(-50%) rotate(45deg);
+  transform: scaleX(0.5) translateX(-50%) rotate(45deg);
   background-color: rgba(255, 255, 255, 0.8);
   border-color: #fff !important;
 }
@@ -210,7 +210,7 @@
 
 .ssb .ssb-hotspot.research {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   border-radius: 0;
   border-width: 2px;
   border-color: #fff;
@@ -219,7 +219,7 @@
 
 .ssb .ssb-hotspot.research:hover {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .ssb .ssb-hotspot.research::before {
@@ -245,7 +245,7 @@
 
 .ssb__info-toggle-button svg {
   -webkit-transform: rotate(-90deg) translateX(50%);
-          transform: rotate(-90deg) translateX(50%);
+  transform: rotate(-90deg) translateX(50%);
   border-radius: 3px;
 }
 
@@ -256,7 +256,7 @@
 
 .ssb__info-toggle-button--open svg {
   -webkit-transform: rotate(90deg) translateX(-50%);
-          transform: rotate(90deg) translateX(-50%);
+  transform: rotate(90deg) translateX(-50%);
   border-radius: 3px;
 }
 
@@ -301,10 +301,10 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 200px;
   height: 60px;
   padding: 12px 5px 15px 14px;
@@ -316,13 +316,13 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 25px;
   margin-right: 12px;
   font-size: 26px;
@@ -357,11 +357,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0 5px;
   font-size: 11px;
   height: 60px;
@@ -373,12 +373,12 @@
 
 .ssb__controls .ssb__controls-toggle--open .ssb__controls-button-icon {
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .ssb__controls .ssb__controls-toggle--close .ssb__controls-button-icon {
   -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 .ssb__welcome h2,
@@ -419,7 +419,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -444,7 +444,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -456,30 +456,36 @@
 @-webkit-keyframes pulse {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
   }
+
   70% {
     -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
   }
+
   100% {
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
 
 @keyframes pulse {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
   }
+
   70% {
     -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
   }
+
   100% {
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
+
+
 /*# sourceMappingURL=deepzoom.css.map */
