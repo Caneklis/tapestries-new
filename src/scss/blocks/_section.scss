@@ -756,10 +756,10 @@
   }
 
   p {
-    margin: 0 auto;
+    margin: 0 auto !important;
     max-width: 626px;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 20px !important;
+    line-height: 30px !important;
     color: #dcd4c2;
   }
 }

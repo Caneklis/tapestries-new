@@ -81,6 +81,14 @@
   max-width: 1290px;
   margin: 30px auto 30px;
   padding: 0 20px;
+
+  @media (min-width: 1300px) {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
 }
 
 .btn-group {

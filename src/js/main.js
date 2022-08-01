@@ -514,6 +514,33 @@ document.addEventListener("DOMContentLoaded", () => {
         .setLngLat(marker.geometry.coordinates)
         .addTo(map);
 
+      const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false,
+      });
+
+      el.addEventListener("mouseover", function (e) {
+        const description = marker.properties.name;
+        const address = marker.properties.address;
+        const innerContent = description + "<br> " + address;
+
+        const pinDescription = document.createElement("div");
+        pinDescription.classList.add("mapboxgl-pin-description");
+        pinDescription.innerHTML = innerContent;
+
+        const map = document.querySelector("#poimapbox-map");
+
+        map.appendChild(pinDescription);
+      });
+
+      el.addEventListener("mouseleave", function (e) {
+        const pinDescription = document.querySelector(
+          ".mapboxgl-pin-description"
+        );
+
+        pinDescription.remove();
+      });
+
       el.addEventListener("click", function (e) {
         // 1. Fly to the point
         flyToPark(marker);
@@ -548,8 +575,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     function createPopUp(currentFeature) {
-      var popUps = document.getElementsByClassName("mapboxgl-popup");
-      if (popUps[0]) popUps[0].remove();
+      const popUps = document.getElementsByClassName("mapboxgl-popup");
+      if (popUps[0]) {
+        popUps[0].remove();
+      }
 
       const generateGallery = (galleryImg, galleryLink, modClass, type) => {
         if (galleryImg.length > 0) {
