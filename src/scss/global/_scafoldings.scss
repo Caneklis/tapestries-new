@@ -145,6 +145,7 @@ img {
     height: 40px;
     display: flex;
     background-image: url("../img/sprite/arrow-down.svg");
+    // background-image: url("img/sprite/arrow-down.svg");
     background-size: contain;
     background-repeat: no-repeat;
     filter: contrast(0.5) brightness(10);
@@ -236,6 +237,7 @@ img {
     height: 23px;
     margin-left: 2px;
     background-image: url("../img/sprite/tippy-icon.svg");
+    // background-image: url("img/sprite/tippy-icon.svg");
     background-repeat: no-repeat;
     background-size: contain;
   }
