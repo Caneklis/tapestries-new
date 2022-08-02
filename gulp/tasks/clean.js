@@ -1,5 +1,5 @@
-import del from "del";
+import { deleteAsync } from "del";
 
 export const clean = () => {
-  return del(app.path.clean);
+  return deleteAsync(app.path.clean);
 };
