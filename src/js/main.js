@@ -251,6 +251,22 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  const textpageImagesSlider = new Swiper(".textpage__images-slider", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        centeredSlides: true,
+      },
+    },
+  });
+
   const tooltips = Array.from(document.querySelectorAll(".tooltip"));
   const tooltipContainer = document.querySelector(".tooltip-content");
 

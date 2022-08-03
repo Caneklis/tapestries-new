@@ -7,6 +7,7 @@
   background-repeat: repeat-y;
   color: $m-color;
   font-family: $s-font;
+  overflow: hidden;
 
   figure {
     margin: 0 auto;
@@ -19,6 +20,10 @@
 
 .textpage__wrapper {
   @include wrapper;
+
+  &--pb {
+    padding-bottom: 400px;
+  }
 
   @media (max-width: $mobile) {
     padding: 0 20px;
@@ -38,12 +43,17 @@
       color: #dcd4c2;
     }
 
+    h2,
     h3 {
       color: #dcd4c2;
     }
 
     figcaption {
-      font-weight: 700;
+      font-weight: 300;
+      font-size: 8px;
+      line-height: 10px;
+      /* or 125% */
+
       color: #dcd4c2;
     }
   }
@@ -56,6 +66,26 @@
     padding-top: 40px;
     padding-bottom: 50px;
   }
+
+  &--pb30 {
+    padding-bottom: 30px;
+  }
+
+  &--negative-mb {
+    margin-bottom: -420px;
+    padding-bottom: 460px;
+  }
+
+  &--negative-mb-smaller {
+    margin-bottom: -260px;
+    padding-bottom: 260px;
+  }
+
+  .textpage__images-slider {
+    p {
+      color: #dcd4c2;
+    }
+  }
 }
 
 .textpage__gold-section {
@@ -63,6 +93,11 @@
   padding-bottom: 440px;
   margin-bottom: -420px;
   background-color: #a28c62;
+
+  &--no-pb {
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+  }
 
   .textpage__article {
     h3 {
@@ -108,6 +143,10 @@
 .textpage__article {
   margin-bottom: 45px;
 
+  &--pt30 {
+    padding-top: 30px;
+  }
+
   h1,
   h2,
   h3,
@@ -150,7 +189,8 @@
   }
 
   h2 {
-    font-size: 45px;
+    font-size: 60px;
+    line-height: 85px;
 
     @media (max-width: $mobile) {
       font-size: 20px;
@@ -183,6 +223,10 @@
     line-height: 30px;
     color: #21201e;
     font-family: $m-font;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @media (max-width: $mobile) {
       width: 100%;
@@ -278,6 +322,14 @@
 
       color: #21201e;
 
+      small {
+        font-family: $m-font;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 8px;
+        line-height: 10px;
+      }
+
       @media (max-width: $mobile) {
         font-size: 22px;
         line-height: 140%;
@@ -293,13 +345,13 @@
     margin: 0 auto;
 
     figcaption {
-      font-family: $m-font;
-      font-weight: 300;
-      font-size: 10px;
-      line-height: 14px;
-      /* identical to box height, or 300% */
-
-      color: #000000;
+      p {
+        font-family: $m-font;
+        font-weight: 300;
+        font-size: 10px;
+        line-height: 14px;
+        color: #21201e;
+      }
     }
   }
 }
@@ -584,10 +636,30 @@
     }
   }
 
+  &--mt-minus-50per {
+    margin-top: -460px;
+
+    @media (max-width: 767px) {
+      margin-top: -20px;
+    }
+  }
+
   figure {
     width: max-content;
     max-width: max-content;
     margin: 0;
+  }
+
+  figcaption {
+    p {
+      max-width: 620px;
+      margin: 10px auto 0;
+      font-family: $m-font;
+      font-weight: 300;
+      font-size: 8px;
+      line-height: 10px;
+      color: #21201e;
+    }
   }
 
   @media (max-width: 767px) {
@@ -595,4 +667,67 @@
       max-width: 200px;
     }
   }
+}
+
+.textpage__images-slider {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .swiper-wrapper {
+    align-items: center;
+  }
+  .swiper-slide {
+    width: auto;
+    height: auto;
+
+    img {
+      filter: brightness(1);
+    }
+  }
+
+  p {
+    max-width: 620px;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 8px;
+    line-height: 10px;
+  }
+
+  .swiper-pagination {
+    position: static;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .swiper-pagination-bullet {
+      width: 18px;
+      height: 18px;
+      background-color: #fff;
+      opacity: 1;
+      border: 1px solid #a28c62;
+
+      &-active {
+        background-color: #a28c62;
+      }
+    }
+  }
+}
+
+a.textpage__read-more-btn {
+  display: flex;
+  justify-content: center;
+  min-width: 310px;
+  max-width: max-content;
+  margin: 60px auto 0;
+  padding: 13px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-family: $m-font;
+  color: #ffffff;
+
+  text-decoration: none;
+  background: #a28c62;
+  border: 1px solid #a28c62;
 }
