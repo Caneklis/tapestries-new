@@ -40,6 +40,8 @@
 
 .map__slider {
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   &.swiper-container {
     overflow: hidden;
@@ -193,6 +195,8 @@ svg path {
 .map__slider-dots {
   position: static;
   margin-top: 50px;
+  margin-bottom: 50px;
+  order: -1;
 
   .swiper-pagination-bullet {
     width: 16px;
