@@ -620,10 +620,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 href: galleryLink[i].link,
                 "data-fancybox": "mapbox-gallery-desktop",
                 "data-caption": galleryLink[i].caption,
-                // "data-fancybox": "responsive",
-                // "data-src": galleryLink[i].link,
-                // "data-srcset": `${galleryLink[i].linkDesktop} 1200w, ${galleryLink[i].link4kDesktop} 2000w`,
-                // "data-sizes": "(max-width: 600px) 1200px, 2000px",
+                // для адаптивный картинок
+                "data-fancybox": "responsive",
+                "data-src": galleryLink[i].link,
+                "data-srcset": `${galleryLink[i].linkDesktop} 1200w, ${galleryLink[i].link4kDesktop} 2000w`,
+                "data-sizes": "(max-width: 600px) 1200px, 2000px",
               });
             } else if (modClass === "mapbox__gallery-list--mobile") {
               setAttributes(photoLink, {
