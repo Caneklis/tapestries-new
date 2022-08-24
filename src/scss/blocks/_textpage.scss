@@ -3,7 +3,7 @@
   min-height: 100%;
   padding-bottom: 100px;
   background-color: $s-color;
-  background-image: url("../bg-light.svg");
+  background-image: url('../bg-light.svg');
   background-repeat: repeat-y;
   color: $m-color;
   font-family: $s-font;
@@ -20,6 +20,7 @@
 
 .textpage__wrapper {
   @include wrapper;
+  padding-bottom: 100px;
 
   &--pb {
     padding-bottom: 400px;
@@ -27,6 +28,7 @@
 
   @media (max-width: $mobile) {
     padding: 0 20px;
+    padding-bottom: 50px;
   }
 }
 
@@ -34,7 +36,7 @@
   padding-top: 62px;
   padding-bottom: 200px;
   background-color: #21201e;
-  background-image: url("../bg.svg");
+  background-image: url('../bg.svg');
 
   .textpage__article {
     color: #dcd4c2;
@@ -289,12 +291,12 @@
     margin-bottom: 20px;
 
     &::after {
-      content: "";
+      content: '';
       display: block;
       width: 818px;
       height: 65px;
       margin: 40px auto;
-      background-image: url("../img/line.svg");
+      background-image: url('../img/line.svg');
       // background-image: url("img/line.svg");
       background-repeat: no-repeat;
       background-size: contain;
