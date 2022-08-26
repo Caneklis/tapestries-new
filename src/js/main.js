@@ -1,26 +1,26 @@
-import $ from "jquery";
+import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
-import { Fancybox } from "@fancyapps/ui";
+import { Fancybox } from '@fancyapps/ui';
 // import Swiper from "swiper/bundle";
 // import { gsap } from "../../node_modules/gsap/dist/gsap";
 // import { ScrollTrigger } from "../../node_modules/gsap/ScrollTrigger";
 
 // import LocomotiveScroll from "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
-import "./libs/jquery.event.move";
-import "./libs/jquery.twentytwenty";
-import "./openseadragon/openseadragon";
-import "./modules/tab-section";
-import "./libs/jquery.magnific-popup.min";
+import './libs/jquery.event.move';
+import './libs/jquery.twentytwenty';
+import './openseadragon/openseadragon';
+import './modules/tab-section';
+import './libs/jquery.magnific-popup.min';
 // require("./slickQuiz");
 // require("./master");
 // require("../js/libs/three.min");
 // require("../js/libs/panolens.min");
-import Swiper from "swiper/bundle";
-import { Tabs } from "./modules/tabs";
-import tippy, { followCursor } from "tippy.js";
-import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+import Swiper from 'swiper/bundle';
+import { Tabs } from './modules/tabs';
+import tippy, { followCursor } from 'tippy.js';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 
 let tabs;
 
@@ -33,16 +33,16 @@ const initTabs = () => {
 export { initTabs, tabs };
 initTabs();
 
-import "../js/modules/read-more";
+import '../js/modules/read-more';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // require("/js/modules/tab-section");
   // Слайдер на главной
-  const mainSlider = new Swiper(".promo-slider .swiper", {
-    effect: "coverflow",
+  const mainSlider = new Swiper('.promo-slider .swiper', {
+    effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: "auto",
+    slidesPerView: 'auto',
     mousewheelControl: true,
     slidesPerView: 1.5,
     initialSlide: 2,
@@ -68,108 +68,115 @@ document.addEventListener("DOMContentLoaded", () => {
     //   prevEl: ".promo-slider__button-prev",
     // },
     pagination: {
-      el: ".promo-slider__pagination",
-      type: "bullets",
+      el: '.promo-slider__pagination',
+      type: 'bullets',
       clickable: true,
     },
   });
 
   //Слайдер карусель на лендинге
-  const sectionSlider = new Swiper(".section__slider.swiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    mousewheelControl: true,
-    slidesPerView: 1,
-    initialSlide: 1,
-    coverflowEffect: {
-      rotate: 1,
-      stretch: 500,
-      depth: 50,
-      modifier: 2,
-      slideShadows: false,
-      scale: 0.9,
-    },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
-    },
-    mousewheel: {
-      sensitivity: 1,
-    },
-    slideToClickedSlide: true,
-    navigation: {
-      nextEl: ".section__slider-button-next",
-      prevEl: ".section__slider-button-prev",
-    },
+  document.querySelectorAll('.section__slider.swiper').forEach((element) => {
+    const sectionSlider = new Swiper(element, {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      mousewheelControl: true,
+      slidesPerView: 1,
+      initialSlide: 1,
+      coverflowEffect: {
+        rotate: 1,
+        stretch: 500,
+        depth: 50,
+        modifier: 2,
+        slideShadows: false,
+        scale: 0.9,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+      },
+      mousewheel: {
+        sensitivity: 1,
+      },
+      slideToClickedSlide: true,
+      navigation: {
+        nextEl: element.querySelector('.section__slider-button-next'),
+        prevEl: element.querySelector('.section__slider-button-prev'),
+      },
+      pagination: {
+        el: element.querySelector('.section__slider-pagination'),
+        type: 'bullets',
+        clickable: true,
+      },
+    });
   });
 
-  const menuButton = document.querySelector(".main-nav__button");
-  const menuList = document.querySelector(".main-nav__list");
-  const body = document.querySelector("body");
-  const lang = document.querySelector(".lang");
-  const playBtn = document.querySelector(".volume__button");
+  const menuButton = document.querySelector('.main-nav__button');
+  const menuList = document.querySelector('.main-nav__list');
+  const body = document.querySelector('body');
+  const lang = document.querySelector('.lang');
+  const playBtn = document.querySelector('.volume__button');
 
   if (menuButton) {
-    menuButton.addEventListener("click", () => {
-      let expanded = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", !expanded);
-      menuButton.classList.toggle("main-nav__button--open");
-      menuList.classList.toggle("main-nav__list--open");
-      lang.classList.toggle("lang--active");
+    menuButton.addEventListener('click', () => {
+      let expanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', !expanded);
+      menuButton.classList.toggle('main-nav__button--open');
+      menuList.classList.toggle('main-nav__list--open');
+      lang.classList.toggle('lang--active');
       // playBtn.classList.toggle("volume__button--active");
-      body.classList.toggle("page__body--fixed");
+      body.classList.toggle('page__body--fixed');
     });
 
     document.onkeydown = function (evt) {
       evt = evt || window.event;
       if (evt.keyCode == 27) {
-        menuButton.classList.remove("main-nav__button--open");
-        menuList.classList.remove("main-nav__list--open");
-        lang.classList.remove("lang--active");
+        menuButton.classList.remove('main-nav__button--open');
+        menuList.classList.remove('main-nav__list--open');
+        lang.classList.remove('lang--active');
       }
     };
   }
 
   const playAudio = () => {
-    if (playBtn.classList.contains("volume__button--play")) {
-      document.querySelector("audio").pause();
-      console.log("pause!");
-      playBtn.classList.remove("volume__button--play"); // changing icon for button
+    if (playBtn.classList.contains('volume__button--play')) {
+      document.querySelector('audio').pause();
+      console.log('pause!');
+      playBtn.classList.remove('volume__button--play'); // changing icon for button
     } else {
-      document.querySelector("audio").play();
-      console.log("play!");
-      playBtn.classList.add("volume__button--play");
+      document.querySelector('audio').play();
+      console.log('play!');
+      playBtn.classList.add('volume__button--play');
     }
   };
 
   if (playBtn) {
     setTimeout(() => {
-      playBtn.addEventListener("click", (e) => {
+      playBtn.addEventListener('click', (e) => {
         // playBtn.classList.toggle("volume__button--play");
         playAudio();
       });
     }, 500);
   }
 
-  if (document.querySelector("audio")) {
-    document.querySelector("audio").addEventListener("ended", (e) => {
-      playBtn.classList.remove("volume__button--play");
+  if (document.querySelector('audio')) {
+    document.querySelector('audio').addEventListener('ended', (e) => {
+      playBtn.classList.remove('volume__button--play');
     });
   }
 
   //Слайдр для карт
-  const swiperMap = new Swiper(".map__slider", {
+  const swiperMap = new Swiper('.map__slider', {
     slidesPerView: 1,
     autoHeight: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
+      el: '.swiper-pagination',
+      type: 'bullets',
       clickable: true,
     },
   });
@@ -195,12 +202,12 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
   // }
 
-  const swiperGallery = new Swiper(".swiper-gallery", {
-    effect: "coverflow",
+  const swiperGallery = new Swiper('.swiper-gallery', {
+    effect: 'coverflow',
     spaceBetween: 10,
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: "auto",
+    slidesPerView: 'auto',
     mousewheelControl: false,
     initialSlide: 0,
     coverflowEffect: {
@@ -222,8 +229,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //Слайдр с фейдом на лендиге
-  const sectionFadeSlider = new Swiper(".swiper-fade-slider", {
-    effect: "fade",
+  const sectionFadeSlider = new Swiper('.swiper-fade-slider', {
+    effect: 'fade',
     fadeEffect: {
       crossFade: true,
     },
@@ -237,63 +244,63 @@ document.addEventListener("DOMContentLoaded", () => {
     simulateTouch: false,
   });
 
-  const swiper = new Swiper(".textpage__slider", {
-    slidesPerView: "auto",
+  const swiper = new Swiper('.textpage__slider', {
+    slidesPerView: 'auto',
     centeredSlides: true,
     spaceBetween: 30,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 
-  const textpageImagesSlider = new Swiper(".textpage__images-slider", {
+  const textpageImagesSlider = new Swiper('.textpage__images-slider', {
     slidesPerView: 1,
     spaceBetween: 20,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     breakpoints: {
       768: {
-        slidesPerView: "auto",
+        slidesPerView: 'auto',
         spaceBetween: 30,
         centeredSlides: true,
       },
     },
   });
 
-  const tooltips = Array.from(document.querySelectorAll(".tooltip"));
-  const tooltipContainer = document.querySelector(".tooltip-content");
+  const tooltips = Array.from(document.querySelectorAll('.tooltip'));
+  const tooltipContainer = document.querySelector('.tooltip-content');
 
   let tooltipID;
   tooltips.forEach((tooltip) => {
     if (tooltip) {
-      tooltip.addEventListener("mouseenter", (e) => {
-        console.log("check");
-        tooltipID = e.target.getAttribute("data-id");
-        tooltipContainer.classList.add("tooltip-content--fade-in");
+      tooltip.addEventListener('mouseenter', (e) => {
+        console.log('check');
+        tooltipID = e.target.getAttribute('data-id');
+        tooltipContainer.classList.add('tooltip-content--fade-in');
         tooltipContainer.style.left = `${e.pageX}px`;
         tooltipContainer.style.top = `${e.pageY}px`;
         tooltipContainer.innerHTML = tooltipData[tooltipID - 1].txt;
       });
 
-      tooltip.addEventListener("mouseout", (e) => {
-        tooltipContainer.classList.remove("tooltip-content--fade-in");
+      tooltip.addEventListener('mouseout', (e) => {
+        tooltipContainer.classList.remove('tooltip-content--fade-in');
       });
     }
   });
 
   if (tooltipContainer) {
-    tooltipContainer.addEventListener("mouseenter", () => {
-      tooltipContainer.classList.add("tooltip-content--fade-in");
+    tooltipContainer.addEventListener('mouseenter', () => {
+      tooltipContainer.classList.add('tooltip-content--fade-in');
     });
-    tooltipContainer.addEventListener("mouseout", () => {
-      tooltipContainer.classList.remove("tooltip-content--fade-in");
+    tooltipContainer.addEventListener('mouseout', () => {
+      tooltipContainer.classList.remove('tooltip-content--fade-in');
     });
   }
 
@@ -340,16 +347,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return false;
   }
 
-  $(".textpage__img-popup").magnificPopup({
-    type: "image",
+  $('.textpage__img-popup').magnificPopup({
+    type: 'image',
     closeOnContentClick: true,
     closeBtnInside: false,
-    mainClass: "mfp-with-zoom mfp-img-mobile",
+    mainClass: 'mfp-with-zoom mfp-img-mobile',
     tCounter: '<span class="mfp-counter">%curr% / %total%</span>', // markup of counter
     image: {
       verticalFit: true,
       titleSrc: function (item) {
-        return item.el.attr("data-caption");
+        return item.el.attr('data-caption');
       },
     },
     zoom: {
@@ -357,20 +364,24 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  $(".textpage__iframe-popup").magnificPopup({
-    disableOn: 700,
-    type: "iframe",
-    mainClass: "mfp-with-zoom mfp-img-mobile",
-    removalDelay: 160,
-    preloader: false,
+  // $('.textpage__iframe-popup').magnificPopup({
+  //   disableOn: 700,
+  //   type: 'iframe',
+  //   mainClass: 'mfp-with-zoom mfp-img-mobile',
+  //   removalDelay: 160,
+  //   preloader: false,
 
-    fixedContentPos: false,
+  //   fixedContentPos: false,
+  // });
+
+  Fancybox.bind('.textpage__iframe-popup', {
+    // Your options go here
   });
 
-  $(".popup-inline").magnificPopup({
-    type: "inline",
+  $('.popup-inline').magnificPopup({
+    type: 'inline',
     preloader: false,
-    mainClass: "mfp-img-mobile  mfp-fade",
+    mainClass: 'mfp-img-mobile  mfp-fade',
     // closeBtnInside: false,
     // fixedContentPos: true,
     // gallery: {
@@ -379,24 +390,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     callbacks: {
       open: function () {
-        $(".before-after").twentytwenty({
-          before_label: "До реставрации",
-          after_label: "После реставрации",
+        $('.before-after').twentytwenty({
+          before_label: 'До реставрации',
+          after_label: 'После реставрации',
         });
 
-        $(".before-after-eng").twentytwenty({
-          before_label: "Before restoration",
-          after_label: "Digital reconstruction",
+        $('.before-after-eng').twentytwenty({
+          before_label: 'Before restoration',
+          after_label: 'Digital reconstruction',
         });
       },
     },
   });
 
   // var $items = $('path');
-  var $items = $(".map__img");
-  var $description = $(".description__item");
+  var $items = $('.map__img');
+  var $description = $('.description__item');
 
-  $(".btn-group").on("click", ".filter", function () {
+  $('.btn-group').on('click', '.filter', function () {
     // var value = $(this).data('filter');
     // $items.removeClass();
     // $items.not($selected).removeClass(value);
@@ -405,53 +416,53 @@ document.addEventListener("DOMContentLoaded", () => {
     //   return $(this).data('filter').indexOf(value) != -1;
     // }).addClass(value);
 
-    var value = $(this).data("filter");
-    $items.removeClass("active");
-    $items.not($selected).removeClass("active");
+    var value = $(this).data('filter');
+    $items.removeClass('active');
+    $items.not($selected).removeClass('active');
 
     var $selected = $items
       .filter(function () {
-        return $(this).data("filter").indexOf(value) != -1;
+        return $(this).data('filter').indexOf(value) != -1;
       })
-      .addClass("active");
-    $(this).addClass("active").siblings().removeClass("active");
+      .addClass('active');
+    $(this).addClass('active').siblings().removeClass('active');
 
-    $description.removeClass("active");
+    $description.removeClass('active');
     var $selectedDescr = $description
       .filter(function () {
-        return $(this).data("filter").indexOf(value) != -1;
+        return $(this).data('filter').indexOf(value) != -1;
       })
       .fadeIn();
     $description.not($selectedDescr).fadeOut(10);
   });
 
-  const slides = document.querySelectorAll(".cards-section__item");
+  const slides = document.querySelectorAll('.cards-section__item');
 
   for (const slide of slides) {
-    slide.addEventListener("click", () => {
+    slide.addEventListener('click', () => {
       clearActiveClasses();
-      slide.classList.add("active");
+      slide.classList.add('active');
     });
   }
 
   function clearActiveClasses() {
     slides.forEach((slide) => {
-      slide.classList.remove("active");
+      slide.classList.remove('active');
     });
   }
 
-  tippy("[data-tippy-content]", {
+  tippy('[data-tippy-content]', {
     arrow: false,
-    placement: "bottom-start",
-    maxWidth: "800px",
-    theme: "custom",
+    placement: 'bottom-start',
+    maxWidth: '800px',
+    theme: 'custom',
     offset: [0, 10],
     plugins: [followCursor],
     followCursor: true,
 
     // trigger: "click",
     onShow(instance) {
-      let urlSrc = instance.reference.getAttribute("data-src");
+      let urlSrc = instance.reference.getAttribute('data-src');
       fetch(urlSrc)
         .then((response) => response.blob())
         .then((blob) => {
@@ -461,7 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const image = new Image();
           // image.width = 200;
           // image.height = 200;
-          image.style.display = "block";
+          image.style.display = 'block';
           image.src = url;
           // Update the tippy content with the image
           instance.setContent(image);
@@ -473,14 +484,14 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  Fancybox.bind("[data-fancybox]", {
-    lockAxis: "y",
+  Fancybox.bind('[data-fancybox]', {
+    lockAxis: 'y',
     Toolbar: {
       display: [
-        { id: "prev", position: "center" },
-        { id: "counter", position: "center" },
-        { id: "next", position: "center" },
-        "close",
+        { id: 'prev', position: 'center' },
+        { id: 'counter', position: 'center' },
+        { id: 'next', position: 'center' },
+        'close',
       ],
     },
   });
@@ -488,7 +499,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Fancybox.bind("[data-fancybox='3d']", {
     Toolbar: {
       autoEnable: false,
-      display: ["counter", "close"],
+      display: ['counter', 'close'],
     },
     Thumbs: {
       autoStart: false,
@@ -497,16 +508,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const MAPBOXGLCONF = {
     accessToken:
-      "pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg",
-    style: "mapbox://styles/caneklis/cl4gpg4fw000j14ogfk525oi0",
+      'pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg',
+    style: 'mapbox://styles/caneklis/cl4gpg4fw000j14ogfk525oi0',
   };
 
   // mapboxgl.accessToken = 'pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg';
   mapboxgl.accessToken = MAPBOXGLCONF.accessToken;
 
-  if (document.querySelector("#poimapbox-map")) {
+  if (document.querySelector('#poimapbox-map')) {
     var map = new mapboxgl.Map({
-      container: "poimapbox-map",
+      container: 'poimapbox-map',
       // style: 'mapbox://styles/mapbox/streets-v11',
       style: MAPBOXGLCONF.style,
       center: [37.61270240042472, 55.77190807654196],
@@ -517,9 +528,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // pitch: 15
     });
 
-    map.on("load", function (e) {
-      map.addSource("places", {
-        type: "geojson",
+    map.on('load', function (e) {
+      map.addSource('places', {
+        type: 'geojson',
         data: places,
       });
       buildLocationList(places);
@@ -527,9 +538,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     places.features.forEach(function (marker, i) {
       // Create an img element for the marker
-      const el = document.createElement("div");
-      el.id = "poimapbox-marker-" + i;
-      el.className = "poimapbox-marker";
+      const el = document.createElement('div');
+      el.id = 'poimapbox-marker-' + i;
+      el.className = 'poimapbox-marker';
       // Add markers to the map at all points
       new mapboxgl.Marker(el, { offset: [0, 0] })
         .setLngLat(marker.geometry.coordinates)
@@ -540,29 +551,29 @@ document.addEventListener("DOMContentLoaded", () => {
         closeOnClick: false,
       });
 
-      el.addEventListener("mouseover", function (e) {
+      el.addEventListener('mouseover', function (e) {
         const description = marker.properties.name;
         const address = marker.properties.address;
-        const innerContent = description + "<br> " + address;
+        const innerContent = description + '<br> ' + address;
 
-        const pinDescription = document.createElement("div");
-        pinDescription.classList.add("mapboxgl-pin-description");
+        const pinDescription = document.createElement('div');
+        pinDescription.classList.add('mapboxgl-pin-description');
         pinDescription.innerHTML = innerContent;
 
-        const map = document.querySelector("#poimapbox-map");
+        const map = document.querySelector('#poimapbox-map');
 
         map.appendChild(pinDescription);
       });
 
-      el.addEventListener("mouseleave", function (e) {
+      el.addEventListener('mouseleave', function (e) {
         const pinDescription = document.querySelector(
-          ".mapboxgl-pin-description"
+          '.mapboxgl-pin-description'
         );
 
         pinDescription.remove();
       });
 
-      el.addEventListener("click", function (e) {
+      el.addEventListener('click', function (e) {
         // 1. Fly to the point
         flyToPark(marker);
 
@@ -570,15 +581,15 @@ document.addEventListener("DOMContentLoaded", () => {
         createPopUp(marker);
 
         // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-        const activeItem = document.getElementsByClassName("active");
+        const activeItem = document.getElementsByClassName('active');
 
         e.stopPropagation();
         if (activeItem[0]) {
-          activeItem[0].classList.remove("active");
+          activeItem[0].classList.remove('active');
         }
 
-        const listing = document.getElementById("listing-" + i);
-        listing.classList.add("active");
+        const listing = document.getElementById('listing-' + i);
+        listing.classList.add('active');
       });
     });
 
@@ -596,55 +607,55 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     function createPopUp(currentFeature) {
-      const popUps = document.getElementsByClassName("mapboxgl-popup");
+      const popUps = document.getElementsByClassName('mapboxgl-popup');
       if (popUps[0]) {
         popUps[0].remove();
       }
 
       const generateGallery = (galleryImg, galleryLink, modClass, type) => {
         if (galleryImg.length > 0) {
-          const photosContainer = document.createElement("div");
-          photosContainer.classList.add("mapbox__gallery-list");
+          const photosContainer = document.createElement('div');
+          photosContainer.classList.add('mapbox__gallery-list');
           photosContainer.classList.add(modClass);
           for (let i = 0; i < galleryImg.length; i++) {
-            const photoLink = document.createElement("a");
-            if (modClass === "mapbox__gallery-list--desktop-3d") {
+            const photoLink = document.createElement('a');
+            if (modClass === 'mapbox__gallery-list--desktop-3d') {
               setAttributes(photoLink, {
                 href: galleryLink[i].link,
-                "data-fancybox": "3d",
-                "data-type": "iframe",
-                "data-caption": galleryLink[i].caption,
+                'data-fancybox': '3d',
+                'data-type': 'iframe',
+                'data-caption': galleryLink[i].caption,
               });
-            } else if (modClass === "mapbox__gallery-list--desktop") {
+            } else if (modClass === 'mapbox__gallery-list--desktop') {
               setAttributes(photoLink, {
                 href: galleryLink[i].link,
-                "data-fancybox": "mapbox-gallery-desktop",
-                "data-caption": galleryLink[i].caption,
+                'data-fancybox': 'mapbox-gallery-desktop',
+                'data-caption': galleryLink[i].caption,
                 // для адаптивный картинок
-                "data-fancybox": "responsive",
-                "data-src": galleryLink[i].link,
-                "data-srcset": `${galleryLink[i].linkDesktop} 1200w, ${galleryLink[i].link4kDesktop} 2000w`,
-                "data-sizes": "(max-width: 600px) 1200px, 2000px",
+                'data-fancybox': 'responsive',
+                'data-src': galleryLink[i].link,
+                'data-srcset': `${galleryLink[i].linkDesktop} 1200w, ${galleryLink[i].link4kDesktop} 2000w`,
+                'data-sizes': '(max-width: 600px) 1200px, 2000px',
               });
-            } else if (modClass === "mapbox__gallery-list--mobile") {
+            } else if (modClass === 'mapbox__gallery-list--mobile') {
               setAttributes(photoLink, {
                 href: galleryLink[i].link,
-                "data-fancybox": "mapbox-gallery-mobile",
-                "data-caption": galleryLink[i].caption,
+                'data-fancybox': 'mapbox-gallery-mobile',
+                'data-caption': galleryLink[i].caption,
               });
             } else {
               setAttributes(photoLink, {
                 href: galleryLink[i].link,
-                "data-fancybox": "mapbox-gallery",
-                "data-caption": galleryLink[i].caption,
+                'data-fancybox': 'mapbox-gallery',
+                'data-caption': galleryLink[i].caption,
               });
             }
 
-            const photo = document.createElement("img");
-            photo.classList.add("mapbox__gallery-pic");
+            const photo = document.createElement('img');
+            photo.classList.add('mapbox__gallery-pic');
             setAttributes(photo, {
               src: galleryImg[i],
-              alt: "Фотография интерьера",
+              alt: 'Фотография интерьера',
             });
             photoLink.appendChild(photo);
             photosContainer.appendChild(photoLink);
@@ -659,15 +670,15 @@ document.addEventListener("DOMContentLoaded", () => {
           return generateGallery(
             el.galleryTmbDesktop,
             el.gallery3dLink,
-            "mapbox__gallery-list--desktop-3d",
-            "iframe"
+            'mapbox__gallery-list--desktop-3d',
+            'iframe'
           ).outerHTML;
         }
 
         return generateGallery(
           el.galleryTmb,
           el.gallery,
-          "mapbox__gallery-list--desktop"
+          'mapbox__gallery-list--desktop'
         ).outerHTML;
       };
 
@@ -687,7 +698,7 @@ document.addEventListener("DOMContentLoaded", () => {
           generateGallery(
             currentFeature.properties.galleryTmb,
             currentFeature.properties.gallery,
-            "mapbox__gallery-list--mobile"
+            'mapbox__gallery-list--mobile'
           ).outerHTML
         }
       </div>`;
@@ -703,21 +714,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentFeature = data.features[i];
         const prop = currentFeature.properties;
 
-        const listings = document.getElementById("poimapbox-listings");
-        const listing = listings.appendChild(document.createElement("div"));
-        listing.className = "amenity-poi";
-        listing.id = "listing-" + i;
+        const listings = document.getElementById('poimapbox-listings');
+        const listing = listings.appendChild(document.createElement('div'));
+        listing.className = 'amenity-poi';
+        listing.id = 'listing-' + i;
 
-        const link = listing.appendChild(document.createElement("a"));
-        link.href = "#";
-        link.className = "name";
+        const link = listing.appendChild(document.createElement('a'));
+        link.href = '#';
+        link.className = 'name';
         link.dataPosition = i;
         link.innerHTML = `
         <img src="${currentFeature.properties.imagetmb}" alt="Фотография ${currentFeature.properties.name}">
         <h3>${currentFeature.properties.name}</h3>
       `;
 
-        link.addEventListener("click", function (e) {
+        link.addEventListener('click', function (e) {
           const clickedListing = data.features[this.dataPosition];
 
           flyToPark(clickedListing);
@@ -725,12 +736,12 @@ document.addEventListener("DOMContentLoaded", () => {
           createPopUp(clickedListing);
 
           const activeItem =
-            document.getElementsByClassName("amenity-poi active");
+            document.getElementsByClassName('amenity-poi active');
 
           if (activeItem[0]) {
-            activeItem[0].classList.remove("active");
+            activeItem[0].classList.remove('active');
           }
-          this.parentNode.classList.add("active");
+          this.parentNode.classList.add('active');
         });
       }
     }

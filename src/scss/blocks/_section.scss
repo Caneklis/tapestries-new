@@ -13,7 +13,7 @@
 .section {
   background-color: $s-color;
   color: $m-color;
-  background: #e2dac7 url("../img/bg-light.svg") repeat-y top center;
+  background: #e2dac7 url('../img/bg-light.svg') repeat-y top center;
   // background: #e2dac7 url("img/bg-light.svg") repeat-y top center;
   background-size: 100%;
 
@@ -209,13 +209,13 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       display: flex;
       justify-content: center;
       margin-top: 20px;
       width: 100%;
       height: 60px;
-      background-image: url("../img/line.svg");
+      background-image: url('../img/line.svg');
       background-repeat: no-repeat;
       background-position: center center;
 
@@ -325,7 +325,7 @@
     align-items: center;
 
     &::before {
-      content: "";
+      content: '';
       display: block;
       width: 75px;
       height: 75px;
@@ -405,7 +405,7 @@
   width: 90vw;
   height: 90vh;
   margin: auto;
-  background: url("https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2Ftumblr_n92tblyC8d1s3sziio1_1280.jpg?alt=media&token=c5d75884-4bc3-46bb-815d-414d2ec68e4b");
+  background: url('https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/bwimages%2Ftumblr_n92tblyC8d1s3sziio1_1280.jpg?alt=media&token=c5d75884-4bc3-46bb-815d-414d2ec68e4b');
   // background-attachment: fixed;
   background-size: contain;
   background-position-x: 50%;
@@ -450,7 +450,7 @@
     padding-bottom: 5px;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -574,6 +574,7 @@
     p {
       margin-bottom: 10px;
       font-size: 25px;
+      color: $m-color;
     }
   }
 }
@@ -596,6 +597,24 @@
 
   @media (max-width: $mobile) {
     padding: 0 20px;
+  }
+}
+
+.section__slider-pagination {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  .swiper-pagination-bullet {
+    width: 13px;
+    height: 13px;
+    border: 1px solid #a28c61;
+    background-color: transparent;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #a28c61;
   }
 }
 
