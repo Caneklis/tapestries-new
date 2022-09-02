@@ -34,7 +34,7 @@
 }
 
 .ssb .ssb__info::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -5px;
   left: 0;
@@ -108,7 +108,7 @@
   width: 30px;
   height: 30px;
   margin-right: 10px;
-  background-image: url("../img/home-solid.svg");
+  background-image: url('../img/home-solid.svg');
   background-repeat: no-repeat;
 }
 
@@ -148,7 +148,7 @@
 }
 
 .ssb .ssb-hotspot::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -437,6 +437,12 @@
   .ssb__before-after {
     display: none;
   }
+
+  .plants {
+    .ssb__before-after {
+      display: block;
+    }
+  }
 }
 
 .ssb__gallery {
@@ -486,6 +492,5 @@
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
-
 
 /*# sourceMappingURL=deepzoom.css.map */
