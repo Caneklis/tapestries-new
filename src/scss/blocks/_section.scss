@@ -351,8 +351,8 @@
 
 .section__main-title {
   margin: 0;
-  font-size: 140px;
-  line-height: 168px;
+  font-size: 100px;
+  line-height: 128px;
   color: #21201e;
   font-weight: 400;
   font-family: $s-font;
@@ -435,6 +435,10 @@
   }
 
   a {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 25px;
+
     &:hover {
       img {
         filter: grayscale(0);
@@ -737,9 +741,14 @@
       display: flex;
       flex-direction: column;
 
+      h2 {
+        text-align: left;
+      }
+
       p {
         max-width: 618px;
         margin: 0;
+        text-align: left;
       }
     }
   }

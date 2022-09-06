@@ -75,7 +75,7 @@ ul.responses li {
 .quizArea:after,
 .quizResults:before,
 .quizResults:after {
-  content: "\0020";
+  content: '\0020';
   display: block;
   height: 0;
   visibility: hidden;
@@ -174,7 +174,7 @@ ul.responses li.incorrect p span {
   height: 100%;
   padding-top: 60px;
   background-color: $s-color;
-  background-image: url("../img/bg-light.svg");
+  background-image: url('../img/bg-light.svg');
   // background-image: url("img/bg-light.svg");
   background-repeat: repeat-y;
   background-size: cover;
@@ -210,7 +210,7 @@ ul.responses li.incorrect p span {
       cursor: pointer;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 50%;
         left: 0;
@@ -222,7 +222,7 @@ ul.responses li.incorrect p span {
       }
     }
 
-    input[type="radio"] + label {
+    input[type='radio'] + label {
       &::before {
         border-radius: 50%;
       }
@@ -544,6 +544,7 @@ ul.responses li.incorrect p span {
   line-height: 30px;
   color: #21201e;
   font-family: $m-font;
+  font-weight: 500;
 
   @media (max-width: $mobile) {
     width: 100%;
@@ -571,7 +572,7 @@ ul.responses li.incorrect p span {
 }
 
 .answer-popup {
-  position: absolute;
+  // position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -582,6 +583,15 @@ ul.responses li.incorrect p span {
   z-index: 100;
   background-color: $s-color;
   padding: 60px 30px;
+}
+
+.popup__photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 620px;
+  margin: 0 auto 60px;
+  gap: 20px;
 }
 
 .fadeOut {
@@ -634,7 +644,7 @@ ul.responses li.incorrect p span {
 }
 
 .answer-popup__text {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 
   p {
     max-width: 620px;
@@ -907,7 +917,7 @@ ul.responses li.incorrect p span {
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -7px;
     left: 0;
@@ -919,7 +929,7 @@ ul.responses li.incorrect p span {
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -7px;
     left: 0;
@@ -939,7 +949,7 @@ ul.responses li.incorrect p span {
     margin-right: 6px;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: -7px;
       left: 0;
@@ -951,7 +961,7 @@ ul.responses li.incorrect p span {
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: -7px;
       left: 0;

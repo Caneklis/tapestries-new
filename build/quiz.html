@@ -103,10 +103,10 @@
             <div class="quiz-header">
               <div class="question-theme">
                 <div class="question-theme-main">
-                  <h1 class="question-theme-title"></h1>
+                  <h1 class="question-theme-title">Онлайн-квест для детей и подростков (10+)</h1>
                   <!-- <span class="question-theme-year"></span> -->
                 </div>
-                <h2 class="question-theme-subtitle"><span>тема вопроса</span></h2>
+                <!-- <h2 class="question-theme-subtitle"><span>тема вопроса</span></h2> -->
               </div>
             </div>
             <article class="quiz-box  custom-box">
@@ -127,6 +127,7 @@
                   <video muted></video>
                 </div> -->
                     <div class="answer-popup__text"></div>
+                    <div class="popup__photos"></div>
                     <button class="answer-popup__btn" type="button" onclick="next()">Следующий вопрос</button>
                     <!-- <img class="answer-popup__line  answer-popup__line--bottom" src="img/answer-bottom.svg" alt=""> -->
                   </div>
@@ -182,24 +183,273 @@
     <script>
       const quiz = [
       {
-        q: "На шпалере «Иоанн Креститель» мы видим изображение плодов и листьев растения, которое по-научному называется Смоковница обыкновенная (Ficus carica L.). В христианстве она является образом мудрости, исцеления, благополучия, божьего благословения. Как ещё называют это растение? Выбери правильный ответ.",
+        q: "На шпалере «Иоанн Креститель» мы видим изображение плодов и листьев растения, которое по-научному называется Смоковница обыкновенная (<i>Ficus carica L.</i>). В христианстве она является образом мудрости, исцеления, благополучия, божьего благословения. Как ещё называют это растение? Выбери правильный ответ.",
         options: ["Финик", "Инжир", "Фикус каучуконосный", "Ежевика"],
         answer: 1,
         theme: "Сюда можно добавить тему квиза",
         // year: "1922–1942",
-        pic: "img/q-bg/01.jpg",
+        pic: "img/quiz/quiz-bg-1.png",
         correct: `<p>Смоковница обыкновенная – это фикус колхидский. Фикус каучуконосный относится к тому же роду и является ближайшим родственником смоковницы. Финик относится к другому семейству Пальмовые.</p> `,
-        answer_pic: "https://inaturalist-open-data.s3.amazonaws.com/photos/3069933/large.jpg?1456595822",
+        answer_pic: [
+        {
+          thumb: "img/quiz/01/01-1.jpg",
+          popup: "img/quiz/01/01-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/01/01-2.jpg",
+          popup: "img/quiz/01/01-2-full.jpg"
+        }],
       },
       {
-        q: "На шпалере «Иоанн креститель» мы видим плоды дерева, по форме напоминающие женскую фигуру, расширенную книзу. Поэтому в античности она ассоциировалась с богиней красоты Афродитой (Венерой). ",
+        q: "На шпалере «Иоанн креститель» мы видим плоды дерева, по форме напоминающие женскую фигуру, расширенную книзу. Поэтому в античности она ассоциировалась с богиней красоты Афродитой (Венерой).",
         options: ["Яблоко", "Груша", "Апельсин", "Ежевика"],
         answer: 1,
         theme: "Сюда можно добавить тему квиза",
         // year: "1922–1942",
-        pic: "img/q-bg/01.jpg",
-        correct: `<p> Груша с её сладкими плодами часто появляется в изображениях Девы Марии с младенцем Иисусом. Она указывает на сладость добродетели.</p>`,
-        answer_pic: "https://crimeafruct.ru/wp-content/uploads/2019/08/grusha-djushes-zimnij.jpg",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Груша с её сладкими плодами часто появляется в изображениях Девы Марии с младенцем Иисусом. Она указывает на сладость добродетели.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/02/02-1.jpg",
+          popup: "img/quiz/02/02-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/02/02-2.jpg",
+          popup: "img/quiz/02/02-2-full.jpg"
+        }],
+      },
+      {
+        q: "Плод этого дерева — аллегория церкви, способной объединять в вере разных людей. К этому утверждению люди пришли в древности, изучив строение плода.",
+        options: ["Гранат", "Груша", "Яблоко", "Мандарин"],
+        answer: 0,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Плод граната содержит много семян, объединённых под одной оболочкой.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/03/03-1.jpg",
+          popup: "img/quiz/03/03-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/03/03-2.jpg",
+          popup: "img/quiz/03/03-2-full.jpg"
+        }],
+      },
+      {
+        q: "На шпалере «Иоанн Креститель» мы видим плод, который в разные времена в различных культурах являлся символ вечной молодости и красоты, раздора и любви, символом искушения и греха. ",
+        options: ["Яблоко", "Шиповник", "Клубника", "Ежевика"],
+        answer: 0,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Яблоки Гесперид – символ вечной молодости. <br>
+                Яблоко любви и раздора привело к Троянской войне. <br>
+                Яблоко – райский плод с древа познания добра и зла, который Ева предложила <br>
+               Адаму, что привело к грехопадению первых людей.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/04/04-1.jpg",
+          popup: "img/quiz/04/04-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/04/04-2.jpg",
+          popup: "img/quiz/04/04-2-full.jpg"
+        }],
+      },
+      {
+        q: "В христианской религии красная роза — символ милосердия и мученичества, она выросла из капель крови Христа на Голгофе, а её шипы — символ Страстей Господних. Какое ещё название розе дали учёные-ботаники.",
+        options: ["Шиповник", "Клубника", "Ежевика", "Яблоко"],
+        answer: 0,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>В научной ботанической литературе роза и шиповник — растения, относящиеся к одному роду с латинским названием <i>Rosa</i>. В цветоводстве к шиповникам нередко относят дикие виды, а садовые формы называют розами.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/05/05-1.jpg",
+          popup: "img/quiz/05/05-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/05/05-2.jpg",
+          popup: "img/quiz/05/05-2-full.jpg"
+        }],
+      },
+      {
+        q: "По современным представлениям в христианстве несколько растений считают райским древом познания добра и зла. Выбери правильный ответ.",
+        options: ["Гранат, яблоня, апельсин", "Слива, груша, финик", "Инжир, виноград, банан"],
+        answer: 0,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Чаше всего считают, что это яблоня. В латинском языке есть слово "malum", обозначающее одновременно "зло" и "яблоко". Средневековые богословы могли рассуждать так: вкусив от древа познания первые люди совершили зло, а значит плод был плодом зла, то есть яблоком. Но филологи считают, что в слове "malum", обозначающем "зло", звук "a" короткий, а в случае с "яблоком" — долгий. В Библии также не уточняется, что это было за дерево. В разных культурах, почитающих Писание, сформировались различные представления на этот счет. В иудаизме чаще всего считают, что это были смоквы (фиги); в исламе – персик. Некоторые богословы упоминаю гранат, апельсин и вишни.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/06/06-1.jpg",
+          popup: "img/quiz/06/06-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/06/06-2.jpg",
+          popup: "img/quiz/06/06-2-full.jpg"
+        }],
+      },
+      {
+        q: "Виноград и вино в христианстве являются символом священной связи между человеком и Божественной сущностью. Виноград — один из древнейших символов плодородия, изобилия и жизненной силы. В Древней Греции виноград был связан с культом бога виноделия. Напиши его имя.",
+        options: ["Дионис", "Аполлон", "Зевс", "Гефест"],
+        answer: 0,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Дионис в греческой мифологии вечно юный бог плодоносящих сил земли, растительности, виноградарства и виноделия. Одним из его атрибутов была виноградная лоза и чаша для вина.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/07/07-1.jpg",
+          popup: "img/quiz/07/07-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/07/07-2.jpg",
+          popup: "img/quiz/07/07-2-full.jpg"
+        }],
+      },
+      {
+        q: "На шпалере «Иоанн Креститель» вы видим изображение плодов. Христианская легенда рассказывает об изгнании Адама и Евы из Рая. Адам, тщетно пытаясь вырастить что-то на бесплодной земле, начал плакать от отчаяния. Там, где падали слезы Адама, выросло это растение, плоды которого помогли выжить прародителям человечества. Оно на самом деле может расти на бедных почвах, благодаря бактериям, которые поселяются на его корнях и помогают получать необходимые питательные вещества. Выбери это растение из предложенных вариантов.",
+        options: ["Пшеница", "Горох", "Картофель", "Свёкла"],
+        answer: 1,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>На корнях гороха, как и у всех бобовых растений, поселяются клубеньковые бактерии, который помогают усваивать азот из воздуха. Азот необходим для роста и развития растений. Поэтому бобовые могут расти на менее плодородных почвах.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/08/08-1.jpg",
+          popup: "img/quiz/08/08-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/08/08-2.jpg",
+          popup: "img/quiz/08/08-2-full.jpg"
+        }],
+      },
+      {
+        q: "На шпалере «Иоанн Креститель» изображена птица (скорее всего канарейка), клюющая плоды вишни. В христианстве плод вишни означает «кровь Христову», считается райской ягодой. Такой кровавый оттенок плоды вишни приобретают благодаря растительному пигменту – антоциану. Зачем спелые вишни приобретают такой цвет?",
+        options: ["Такая окраска отпугивает насекомых вредителей.", "Красный цвет плодов привлекает птиц, распространяющих семена.", "Окраска плодов защищает их от гниения.", "Людям, собирающим плоды, проще заметить их среди зелени."],
+        answer: 1,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Птицы хорошо различают красный цвет. Они поедаю созревшие плоды, а семена –«косточки», не перевариваются в пищеварительном тракте. Поэтому птицы распространяют их на большие расстояния вместе с фекалиями.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/09/09-1.jpg",
+          popup: "img/quiz/09/09-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/09/09-2.jpg",
+          popup: "img/quiz/09/09-2-full.jpg"
+        }],
+      },
+      {
+        q: "На шпалере «Иоанн Креститель» изображено дерево, которое издавна было самым почитаемым, священным у народов Европы. Оно символизировало силу, мощь, знатность рода и храбрость воинов. Оно часто поражается молниями, поэтому в язычестве считается деревом громовержцев – Зевса и Перуна.",
+        options: ["Кипарис", "Дуб", "Кедр", "Орех"],
+        answer: 1,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Корни дуба уходят на большую глубину, достигая водных горизонтов, поэтому очень часто именно он поражается молниями.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/10/10-1.jpg",
+          popup: "img/quiz/10/10-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/10/10-2.jpg",
+          popup: "img/quiz/10/10-2-full.jpg"
+        }],
+      },
+      {
+        q: "У христиан птицы — крылатые души, все духовное, души в раю. На шпалере «Иоанн Креститель» спряталось несколько птиц. Сосчитай их?",
+        options: ["10", "19", "20", "17"],
+        answer: 1,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: null,
+        answer_pic: [
+        {
+          thumb: "img/quiz/11/11-1.png",
+          popup: "img/quiz/11/11-1-full.png"
+        }],
+      },
+      {
+        q: "На шпалере «Иоанн Креститель» изображен филин (или сова ушастая), поймавший утку. Сова (или филин) в античности являлась атрибутом богини Афины и символизировала мудрость и познание. В христианстве эти птицы символизируют силы тьмы, запустение, уединение, скорбь, дурные вести, смерть. Как вы думаете, с какими биологическими особенностями филина (совы) связана эта символика. Выберите правильные ответы.",
+        options: ["Эти птицы ведут ночной образ жизни.", "Филин и сова – хищные птицы.", "Хорошо видят в темноте.", "Удлиненные перья на голове у филина, помогающие ему сливаться с окружающей средой в дневное время и демонстрировать настроение, похожи на рога у чёрта."],
+        answer: 0,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `Эти птицы ведут ночной образ жизни и боятся света, как вся нечисть. Сова связана с символикой души, её проводами (бесшумным полетом) в загробный мир.`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/12/12-1.jpg",
+          popup: "img/quiz/12/12-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/12/12-2.jpg",
+          popup: "img/quiz/12/12-2-full.jpg"
+        }],
+      },
+      {
+        q: "На шпалере «Иоанн Креститель» изображён филин, поймавший утку. На кого ещё может охотиться эта птица? Выбери правильные ответы.",
+        options: ["Олень", "Заяц", "Волк", "Обезьяна"],
+        answer: 1,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Рацион филинов очень разнообразен. Они питаются земноводными, пресмыкающимися, небольшими млекопитающими, птицами и даже насекомыми.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/12a/12a-1.jpg",
+          popup: "img/quiz/12a/12a-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/12a/12a-2.jpg",
+          popup: "img/quiz/12a/12a-2-full.jpg"
+        }],
+      },
+      {
+        q: "Огурец в христианстве часто изображается рядом с яблоком и Девой Марией, ассоциируясь с жизнью и воскрешением. В Средней Европе огурец был распространен с VIII века. А вот у себя на родине он был окультурен около 6000 лет назад. Откуда огурец родом?",
+        options: ["Мексика", "Россия", "Индия", "Израиль"],
+        answer: 2,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-1.png",
+        correct: `<p>Эти лианы родом из тропических лесов Индии.</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/13/13-1.jpg",
+          popup: "img/quiz/13/13-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/13/13-2.jpg",
+          popup: "img/quiz/13/13-2-full.jpg"
+        }],
+      },
+      {
+        q: "На шпалере «Триумф Надежды» мы можем обнаружить ежевику. В христианстве по одной из версий считается, что горящим кустом, в котором Ангел Господень предстал перед Моисеем, был куст ежевики священной. Рассмотрите ежевику и отметь, какое растение является ее ближайшей родственницей.",
+        options: ["Клубника", "Малина", "Смоковница", "Земляника"],
+        answer: 1,
+        theme: "Сюда можно добавить тему квиза",
+        // year: "1922–1942",
+        pic: "img/quiz/quiz-bg-2.png",
+        correct: `<p>Малина и ежевика представители одного рода (Rubus).</p>`,
+        answer_pic: [
+        {
+          thumb: "img/quiz/14/14-1.jpg",
+          popup: "img/quiz/14/14-1-full.jpg"
+        },
+        {
+          thumb: "img/quiz/14/14-2.jpg",
+          popup: "img/quiz/14/14-2-full.jpg"
+        }],
       }, ];
       const quizSection = document.querySelector(".quiz__section");
       const quizStartBlock = document.querySelector(".quiz-start");
@@ -229,7 +479,7 @@
       let attemt = 0;
       let intervalId;
       let timer;
-      let timeerInterval = 60;
+      let timeerInterval = 120;
       // let timeerInterval = 6000;
       let circleLeft = document.querySelector(".circle__left");
       let circleRight = document.querySelector(".circle__right");
@@ -314,14 +564,43 @@
         currentQuestion = questionIndex;
         // console.log(currentQuestion);
         questionText.innerHTML = currentQuestion.q;
-        title.innerHTML = currentQuestion.theme;
+        // title.innerHTML = currentQuestion.theme;
         // subTitle.innerHTML = currentQuestion.year;
         // questionPic.src = currentQuestion.pic;
         quizSection.style.backgroundImage = "url(" + currentQuestion.pic + ")";
         // const answerPopupVideo = document.querySelector(".answer-popup video");
         // answerPopupVideo.src = "video/" + currentQuestion.video;
         const answerPopupText = document.querySelector(".answer-popup__text");
-        answerPopupText.innerHTML = currentQuestion.correct;
+        if (currentQuestion.correct !== null)
+        {
+          answerPopupText.innerHTML = currentQuestion.correct;
+        }
+        // currentQuestion.answer_pic.forEach(element => {
+        //   let pic = document.createElement('img')
+        //   pic.setAttribute('src', element)
+        //   pic.insertAdjacentElement(answerPopupText, 'afterend')
+        //   console.log(element);
+        // });
+        const photosContainer = document.querySelector('.popup__photos');
+        photosContainer.innerHTML = '';
+        if (currentQuestion.answer_pic)
+        {
+          for (let i = 0; i < currentQuestion.answer_pic.length; i++)
+          {
+            const photo = document.createElement('img');
+            // photo.classList.add('popup__photo');
+            // setAttributes(photo, {
+            //   src: currentQuestion.answer_pic[i],
+            // });
+            const popupLink = document.createElement('a');
+            console.log(popupLink);
+            popupLink.setAttribute('href', currentQuestion.answer_pic[i].popup)
+            popupLink.setAttribute('data-fancybox', '')
+            photo.setAttribute('src', currentQuestion.answer_pic[i].thumb)
+            popupLink.appendChild(photo);
+            photosContainer.appendChild(popupLink);
+          }
+        }
         const index1 = availableQuestions.indexOf(questionIndex);
         availableQuestions.splice(index1, 1);
         //set options
@@ -520,7 +799,7 @@
           count.classList.add("fadeOut");
           document.querySelector(".quiz-footer").style.overflowY = "hidden";
           document.querySelector(".quiz-footer").classList.add("fadeOut");
-          document.querySelector('.question-theme-subtitle').remove()
+          // document.querySelector('.question-theme-subtitle').remove()
         }
         else
         {
