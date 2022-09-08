@@ -5,7 +5,7 @@
   font-family: $m-font;
   font-size: 16px;
   // line-height: 161.8%;
-  background: $m-color url("../img/bg.svg") repeat-y top center;
+  background: $m-color url('../img/bg.svg') repeat-y top center;
   // background: $m-color url("img/bg.svg") repeat-y top center;
   background-size: cover;
   background-attachment: fixed;
@@ -20,7 +20,7 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       z-index: 10;
       top: 0;

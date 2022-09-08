@@ -1,6 +1,7 @@
 .textpage {
   // mix-blend-mode: multiply;
   min-height: 100%;
+  padding-top: 50px;
   padding-bottom: 100px;
   background-color: $s-color;
   background-image: url('../bg-light.svg');
@@ -788,9 +789,14 @@ a.textpage__read-more-btn {
 }
 
 .textpage__image-text {
+  max-width: 620px;
+  margin: 30px auto;
+  text-align: right;
+
   p {
     margin: 0 auto;
     font-size: 13px;
+    line-height: 20px;
   }
 }
 
