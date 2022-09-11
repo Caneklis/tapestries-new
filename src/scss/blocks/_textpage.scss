@@ -330,6 +330,11 @@
     }
   }
 
+  h2 + ul,
+  h2 + ol {
+    margin-bottom: 100px;
+  }
+
   a {
     color: inherit;
   }
@@ -851,6 +856,7 @@ a.textpage__read-more-btn {
     line-height: 30px;
     color: #21201e;
     font-family: $m-font;
+    text-align: justify;
 
     &:last-child {
       margin-bottom: 0;

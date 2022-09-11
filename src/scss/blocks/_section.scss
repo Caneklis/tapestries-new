@@ -181,7 +181,7 @@
   a {
     display: flex;
     justify-content: center;
-    margin: 0 auto 25px;
+    margin: 0 auto 15px;
 
     &:hover {
       img {
@@ -189,6 +189,11 @@
         transform: scale(1.02);
       }
     }
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 32px;
   }
 }
 
@@ -221,13 +226,17 @@
   blockquote {
     max-width: 680px;
     margin: 0 auto;
-    margin-bottom: 35px;
+    // margin-bottom: 35px;
     padding: 0;
     font-family: $s-font;
     font-size: 35px;
     line-height: 40px;
     text-align: center;
     position: relative;
+
+    + p {
+      margin-top: 35px;
+    }
 
     &::after {
       content: '';
@@ -260,6 +269,7 @@
     font-family: $m-font;
     font-size: 18px;
     line-height: 28px;
+    text-align: justify;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -446,10 +456,10 @@
   }
 }
 
-.section__image-text {
+p.section__image-text {
   margin: 0;
   font-size: 10px;
-  line-height: 30px;
+  line-height: 15px;
   color: #21201e;
   text-align: right;
 }
@@ -752,7 +762,7 @@
       p {
         max-width: 618px;
         margin: 0;
-        text-align: left;
+        text-align: justify;
       }
     }
   }

@@ -19,7 +19,7 @@ import './libs/jquery.magnific-popup.min';
 // require("../js/libs/panolens.min");
 import Swiper from 'swiper/bundle';
 import { Tabs } from './modules/tabs';
-import tippy, { followCursor } from 'tippy.js';
+import tippy, { followCursor, inlinePositioning } from 'tippy.js';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 
 let tabs;
@@ -453,12 +453,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   tippy('[data-tippy-content]', {
     arrow: false,
-    placement: 'bottom-start',
-    maxWidth: '800px',
+    placement: 'auto',
+    maxWidth: '600px',
     theme: 'custom',
     offset: [0, 10],
     plugins: [followCursor],
     followCursor: true,
+    inlinePositioning: true,
 
     // trigger: "click",
     onShow(instance) {

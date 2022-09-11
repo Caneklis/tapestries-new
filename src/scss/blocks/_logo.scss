@@ -3,6 +3,7 @@
 .logo {
   position: relative;
   z-index: 2;
+  margin-right: 35px;
 
   @media (max-width: $mobile) {
     width: 100px;
