@@ -105,7 +105,7 @@
 
     figcaption {
       font-weight: 300;
-      font-size: 8px;
+      font-size: 12px;
       line-height: 10px;
       /* or 125% */
 
@@ -386,8 +386,8 @@
         font-family: $m-font;
         font-style: normal;
         font-weight: 300;
-        font-size: 8px;
-        line-height: 10px;
+        font-size: 12px;
+        line-height: 14px;
       }
 
       @media (max-width: $mobile) {
@@ -408,7 +408,7 @@
       p {
         font-family: $m-font;
         font-weight: 300;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 14px;
         color: #21201e;
       }
@@ -717,8 +717,8 @@
       margin: 10px auto 0;
       font-family: $m-font;
       font-weight: 300;
-      font-size: 8px;
-      line-height: 10px;
+      font-size: 12px;
+      line-height: 14px;
       color: #21201e;
     }
   }
@@ -751,8 +751,8 @@
     margin: 0;
     margin-top: 10px;
     font-weight: 300;
-    font-size: 8px;
-    line-height: 10px;
+    font-size: 12px;
+    line-height: 14px;
   }
 
   .swiper-pagination {
