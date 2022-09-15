@@ -411,6 +411,10 @@
         font-size: 12px;
         line-height: 14px;
         color: #21201e;
+
+        strong {
+          font-weight: 700;
+        }
       }
     }
   }
@@ -753,6 +757,7 @@
     font-weight: 300;
     font-size: 12px;
     line-height: 14px;
+    font-family: $m-font;
   }
 
   .swiper-pagination {
