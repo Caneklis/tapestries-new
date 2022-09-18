@@ -9,6 +9,14 @@
     background-color: #a39c8d;
   }
 
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
   @media ($desktop) {
     padding: 66px 0 34px;
 

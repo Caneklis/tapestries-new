@@ -2,11 +2,6 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 import { Fancybox } from '@fancyapps/ui';
-// import Swiper from "swiper/bundle";
-// import { gsap } from "../../node_modules/gsap/dist/gsap";
-// import { ScrollTrigger } from "../../node_modules/gsap/ScrollTrigger";
-
-// import LocomotiveScroll from "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
 import './libs/jquery.event.move';
 import './libs/jquery.twentytwenty';
@@ -19,7 +14,7 @@ import './libs/jquery.magnific-popup.min';
 // require("../js/libs/panolens.min");
 import Swiper from 'swiper/bundle';
 import { Tabs } from './modules/tabs';
-import tippy, { followCursor, inlinePositioning } from 'tippy.js';
+import tippy, { followCursor } from 'tippy.js';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 
 let tabs;
@@ -459,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
     offset: [0, 10],
     plugins: [followCursor],
     followCursor: true,
-    inlinePositioning: true,
+    // inlinePositioning: true,
 
     // trigger: "click",
     onShow(instance) {
@@ -748,6 +743,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     map.addControl(new mapboxgl.NavigationControl());
+  }
+
+  const header = document.querySelector('.header');
+
+  if (header.classList.contains('header--inner')) {
+    header.classList.add('header--fixed');
+    document.body.style.paddingTop = header.offsetHeight + 'px';
   }
 });
 
