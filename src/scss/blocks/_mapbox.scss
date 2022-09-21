@@ -41,7 +41,7 @@
   .poimapbox-listings {
     height: 100%;
     overflow: auto;
-    padding-bottom: 60px;
+    padding-bottom: 200px;
 
     .amenity-poi {
       border-bottom: 1px solid rgba($s-color, 0.8);
@@ -108,7 +108,7 @@
   cursor: pointer;
   height: 30px;
   width: 50px;
-  background-image: url("../marker.svg");
+  background-image: url('../marker.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0);
