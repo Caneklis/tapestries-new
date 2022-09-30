@@ -5,7 +5,7 @@
 
 .section__wrapper {
   width: 100%;
-  max-width: 1920;
+  max-width: 1920px;
   margin: 0 auto;
   padding-top: 50px;
 }
@@ -800,9 +800,13 @@ p.section__image-text {
 .section__fact {
   width: 100%;
   max-width: 1272px;
-  margin: 50px auto -75px;
+  margin: 50px auto 0;
   padding: 52px 20px;
   background: #21201e;
+
+  + .section__title-with-bg {
+    margin-bottom: -75px;
+  }
 
   h4 {
     margin: 0 auto 30px;
