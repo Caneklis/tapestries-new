@@ -505,7 +505,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const MAPBOXGLCONF = {
     accessToken:
       'pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg',
+    // accessToken:
+    //   'pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg',
     style: 'mapbox://styles/caneklis/cl4gpg4fw000j14ogfk525oi0',
+    // style: 'mapbox://styles/caneklis/cl4gpg4fw000j14ogfk525oi0',
   };
 
   // mapboxgl.accessToken = 'pk.eyJ1IjoiY2FuZWtsaXMiLCJhIjoiY2tqc2g2bWk1M3pyODJ6bG9jNTlicG1qbSJ9.kAq6U0hW3k2xL5j7paZWcg';
